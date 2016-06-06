@@ -1,6 +1,6 @@
 from app import app
 import sys
-from helpers.controllers import intercepts
+from helpers.views import helpers
 
 app.register_blueprint(helpers, url_prefix='/helpers')
 
