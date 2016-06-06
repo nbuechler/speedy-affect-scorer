@@ -2,13 +2,13 @@
 The idea is to score basic afffects - quickly!
 
 # Here is the scope, it's small
-fear, 
-sadness, 
-disgust, 
-surprise, 
-anticipation, 
-trust, 
-and joy 
+fear,
+sadness,
+disgust,
+surprise,
+anticipation,
+trust,
+and joy
 
 see: https://en.wikipedia.org/wiki/Robert_Plutchik
 
@@ -29,5 +29,5 @@ It will use Flask to do the api, and NLTK to do some of the processing. It will 
 # Run Server
 
 """
-python app/runserver.py
+python app/runserver.py 5000
 """

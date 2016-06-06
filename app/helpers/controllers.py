@@ -1,2 +1,3 @@
 def default():
-    return 'Hello helpers!'
+    print 'Here'
+    return 'Thanks controller, hello helpers!'
