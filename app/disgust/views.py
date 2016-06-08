@@ -3,11 +3,11 @@ from flask import render_template, redirect, url_for, jsonify
 
 import controllers
 
-helpers = Blueprint('helpers', __name__)
+disgust = Blueprint('disgust', __name__)
 
 @helpers.route('/')
 def default():
-    return 'Hello helpers!'
+    return 'Hello disgust!'
 
 @helpers.route('/alt/')
 def controller_default():
