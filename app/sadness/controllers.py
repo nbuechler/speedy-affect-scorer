@@ -1,3 +1,3 @@
 def default():
     print 'Here'
-    return 'Thanks controller, hello helpers!'
+    return 'Thanks controller, hello sadness!'
