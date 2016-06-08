@@ -2,13 +2,13 @@
 The idea is to score basic afffects - quickly!
 
 # Here is the scope, it's small
-fear,
-sadness,
-disgust,
-surprise,
 anticipation,
-trust,
-and joy
+disgust,
+fear,
+joy,
+sadness,
+surprise,
+and trust...
 
 see: https://en.wikipedia.org/wiki/Robert_Plutchik
 
