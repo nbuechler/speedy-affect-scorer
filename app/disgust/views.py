@@ -5,10 +5,10 @@ import controllers
 
 disgust = Blueprint('disgust', __name__)
 
-@helpers.route('/')
+@disgust.route('/')
 def default():
     return 'Hello disgust!'
 
-@helpers.route('/alt/')
+@disgust.route('/alt/')
 def controller_default():
     return controllers.default()

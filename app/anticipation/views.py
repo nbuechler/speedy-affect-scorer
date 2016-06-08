@@ -5,10 +5,10 @@ import controllers
 
 anticipation = Blueprint('anticipation', __name__)
 
-@helpers.route('/')
+@anticipation.route('/')
 def default():
     return 'Hello anticipation!'
 
-@helpers.route('/alt/')
+@anticipation.route('/alt/')
 def controller_default():
     return controllers.default()
