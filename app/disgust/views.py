@@ -12,3 +12,7 @@ def default():
 @disgust.route('/alt/')
 def controller_default():
     return controllers.default()
+
+@disgust.route('/score/')
+def get_score():
+    return 'Not Implemented'
