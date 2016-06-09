@@ -13,3 +13,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}}) #CORS :WARNING everything!
 @app.route('/')
 def home_page():
     return 'hello world'
+
+@app.route('/all-scores/')
+def get_scores():
+    return 'Not Implemented'
