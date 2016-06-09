@@ -12,3 +12,7 @@ def default():
 @sadness.route('/alt/')
 def controller_default():
     return controllers.default()
+
+@sadness.route('/score/')
+def get_score():
+    return 'Not Implemented'

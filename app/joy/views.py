@@ -12,3 +12,7 @@ def default():
 @joy.route('/alt/')
 def controller_default():
     return controllers.default()
+
+@joy.route('/score/')
+def get_score():
+    return 'Not Implemented'

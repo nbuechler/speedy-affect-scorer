@@ -12,3 +12,7 @@ def default():
 @fear.route('/alt/')
 def controller_default():
     return controllers.default()
+
+@fear.route('/score/')
+def get_score():
+    return 'Not Implemented'

@@ -12,3 +12,7 @@ def default():
 @surprise.route('/alt/')
 def controller_default():
     return controllers.default()
+
+@surprise.route('/score/')
+def get_score():
+    return 'Not Implemented'
