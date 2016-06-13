@@ -1,9 +1,19 @@
 from nltk.corpus import stopwords
 from nltk.tokenize import wordpunct_tokenize
 
+from flask import jsonify
+import requests
+
 def default():
     print 'Here'
     return 'Thanks controller, hello helpers!'
+
+def verify_bhl_api(api_key):
+    r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/affect/json')
+    if(r.raise_for_status()):
+        return 'error'
+    else:
+        return jsonify(r.json())
 
 def length_no_stop(doc, lang):
 
