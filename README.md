@@ -45,6 +45,10 @@ Werkzeug==0.11.3
 wheel==0.24.0
 nltk==3.2.1
 
+# To build a corpus ('Be Excellent to Each Other')
+
+https://words.bighugelabs.com/api.php
+
 # License
 
 MIT
