@@ -37,11 +37,13 @@ def get_single_word(api_key, word):
         return jsonify(r.json())
 
 def get_ten_words(words):
-    if len(words) == 10:
+    if words and len(words) == 10:
         for word in words:
             print word
+        return 'Success'
     else:
-        print
+        print 'No valid input, sorry'
+        return 'Error'
 
 '''
 ********************************************************************************
@@ -66,8 +68,8 @@ def default():
     return 'Hello corpus_builder!'
 
 @corpus.route('/10')
-def ten_words_view(words):
-    print words
+def ten_words_view(words=None):
+    return get_ten_words(words)
 
 @corpus.route('/100')
 def hundred_words_view(words):
