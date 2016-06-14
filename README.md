@@ -49,6 +49,9 @@ nltk==3.2.1
 
 https://words.bighugelabs.com/api.php
 
+# TODO:
+-Break out the code that doesn't actually have anything to do with affect.
+
 # License
 
 MIT
