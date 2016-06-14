@@ -40,3 +40,39 @@ def get_ten_words(words):
     if len(words) == 10:
         for word in words:
             print word
+    else:
+        print
+
+'''
+********************************************************************************
+
+This is a way to keep all the corpus stuff in one file. I will refactor later.
+
+********************************************************************************
+'''
+
+
+from flask import Blueprint
+from flask import render_template, redirect, url_for, jsonify, request
+
+corpus = Blueprint('corpus', __name__)
+
+'''
+Flask views below as an endpoint
+'''
+
+@corpus.route('/')
+def default():
+    return 'Hello corpus_builder!'
+
+@corpus.route('/10')
+def ten_words_view(words):
+    print words
+
+@corpus.route('/100')
+def hundred_words_view(words):
+    print 'Not Implemented'
+
+@corpus.route('/500')
+def five_hundred_words_view(words):
+    print 'Not Implemented'
