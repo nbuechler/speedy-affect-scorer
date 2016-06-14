@@ -42,7 +42,7 @@ def get_ten_words(words):
             print word
         return 'Success'
     else:
-        print 'No valid input, sorry'
+        print 'MESSAGE: No valid input, sorry'
         return 'Error'
 
 '''
@@ -68,13 +68,13 @@ def default():
     return 'Hello corpus_builder!'
 
 @corpus.route('/10')
-def ten_words_view(words=None):
+def ten_words_view(words=None, methods=['GET', 'POST']):
     return get_ten_words(words)
 
 @corpus.route('/100')
-def hundred_words_view(words):
+def hundred_words_view(words=None, methods=['GET', 'POST']):
     print 'Not Implemented'
 
 @corpus.route('/500')
-def five_hundred_words_view(words):
+def five_hundred_words_view(words=None, methods=['GET', 'POST']):
     print 'Not Implemented'
