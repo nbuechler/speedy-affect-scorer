@@ -29,9 +29,14 @@ def verify_bhl_api(api_key):
     else:
         return jsonify(r.json())
 
-def get_single word(api_key, word):
+def get_single_word(api_key, word):
     r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/' + word + '/json')
     if(r.raise_for_status()):
         return 'error'
     else:
         return jsonify(r.json())
+
+def get_ten_words(words):
+    if len(words) == 10:
+        for word in words:
+            print word
