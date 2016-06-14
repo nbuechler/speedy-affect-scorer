@@ -40,6 +40,7 @@ def get_ten_words(words):
     if words and len(words) == 10:
         for word in words:
             print word
+            #TODO: Do mongodb stuff
         return 'Success'
     else:
         print 'MESSAGE: No valid input, sorry'
@@ -57,6 +58,8 @@ This is a way to keep all the corpus stuff in one file. I will refactor later.
 from flask import Blueprint
 from flask import render_template, redirect, url_for, jsonify, request
 
+import json
+
 corpus = Blueprint('corpus', __name__)
 
 '''
@@ -67,14 +70,17 @@ Flask views below as an endpoint
 def default():
     return 'Hello corpus_builder!'
 
-@corpus.route('/10')
-def ten_words_view(words=None, methods=['GET', 'POST']):
-    return get_ten_words(words)
+@corpus.route('/10', methods=['GET', 'POST'])
+def ten_words_view():
+    r = request.get_json()
+    print r
+    w = r.get('words')
+    return get_ten_words(w)
 
-@corpus.route('/100')
-def hundred_words_view(words=None, methods=['GET', 'POST']):
+@corpus.route('/100', methods=['GET', 'POST'])
+def hundred_words_view(words=None):
     print 'Not Implemented'
 
-@corpus.route('/500')
-def five_hundred_words_view(words=None, methods=['GET', 'POST']):
+@corpus.route('/500', methods=['GET', 'POST'])
+def five_hundred_words_view(words=None):
     print 'Not Implemented'
