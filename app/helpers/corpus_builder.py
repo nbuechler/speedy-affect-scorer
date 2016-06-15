@@ -36,7 +36,7 @@ def get_single_word(api_key, word):
     else:
         return jsonify(r.json())
 
-def get_ten_words(words):
+def get_ten_words(api_key, words):
     if words and len(words) == 10:
         for word in words:
             print word
@@ -73,9 +73,10 @@ def default():
 @corpus.route('/10', methods=['GET', 'POST'])
 def ten_words_view():
     r = request.get_json()
-    print r
+    # print r
+    k = r.get('key')
     w = r.get('words')
-    return get_ten_words(w)
+    return get_ten_words(k, w)
 
 @corpus.route('/100', methods=['GET', 'POST'])
 def hundred_words_view(words=None):
