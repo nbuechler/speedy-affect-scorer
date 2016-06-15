@@ -37,7 +37,7 @@ def get_single_word(api_key, word):
         return jsonify(r.json())
 
 def get_ten_words(api_key, words):
-    if words and len(words) == 10:
+    if api_key and words and len(words) == 10:
         for word in words:
             print word
             #TODO: Do mongodb stuff
