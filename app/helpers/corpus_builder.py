@@ -2,6 +2,37 @@ from flask import jsonify
 import requests
 
 '''
+********************************************************************************
+
+This is a way to keep all the corpus stuff in one file. I will refactor later.
+
+======
+This section is for databases
+======
+
+********************************************************************************
+'''
+
+from app import app
+from flask.ext.pymongo import PyMongo
+
+app.config['MONGOCORPUS_DBNAME'] = 'affect-corpus'
+mongo_corpus = PyMongo(app, config_prefix='MONGOCORPUS')
+
+
+'''
+********************************************************************************
+
+This is a way to keep all the corpus stuff in one file. I will refactor later.
+
+======
+This section is for controllers
+======
+
+********************************************************************************
+'''
+
+'''
 The aim of corpus_builder.py is to build a corpus of synonyms around a primary word.
 
 i.e.
@@ -13,8 +44,8 @@ Affect
 Moreover, the words will be stored as follows:
 
 {
-  word: <string of word>
-  response: <json response from bighugelabs>
+  "word": <string of word>
+  "response": <json response from bighugelabs>
 }
 
 This gets stored in a mongo database. Collections are named after the inital parent.
@@ -34,13 +65,22 @@ def get_single_word(api_key, word):
     if(r.raise_for_status()):
         return 'error'
     else:
-        return jsonify(r.json())
+        return r.json()
 
-def get_ten_words(words):
-    if words and len(words) == 10:
+def get_ten_words(api_key, words):
+    if api_key and words and len(words) == 10:
         for word in words:
-            print word
+            print '======' + word + '======'
             #TODO: Do mongodb stuff
+            data = get_single_word(api_key, word)
+            # print data
+            result = mongo_corpus.db.initten.insert_one({
+              "word": word,
+              "response": data
+            })
+            print result.inserted_id
+            print data
+            print '------------------'
         return 'Success'
     else:
         print 'MESSAGE: No valid input, sorry'
@@ -51,9 +91,12 @@ def get_ten_words(words):
 
 This is a way to keep all the corpus stuff in one file. I will refactor later.
 
+======
+This section is for views
+======
+
 ********************************************************************************
 '''
-
 
 from flask import Blueprint
 from flask import render_template, redirect, url_for, jsonify, request
@@ -73,9 +116,10 @@ def default():
 @corpus.route('/10', methods=['GET', 'POST'])
 def ten_words_view():
     r = request.get_json()
-    print r
+    # print r
+    k = r.get('key')
     w = r.get('words')
-    return get_ten_words(w)
+    return get_ten_words(k, w)
 
 @corpus.route('/100', methods=['GET', 'POST'])
 def hundred_words_view(words=None):
