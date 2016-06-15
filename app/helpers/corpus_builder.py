@@ -2,6 +2,37 @@ from flask import jsonify
 import requests
 
 '''
+********************************************************************************
+
+This is a way to keep all the corpus stuff in one file. I will refactor later.
+
+======
+This section is for databases
+======
+
+********************************************************************************
+'''
+
+from app import app
+from flask.ext.pymongo import PyMongo
+
+app.config['MONGOCORPUS'] = 'test'
+mongo_corpus = PyMongo(app, config_prefix='MONGOCORPUS')
+
+
+'''
+********************************************************************************
+
+This is a way to keep all the corpus stuff in one file. I will refactor later.
+
+======
+This section is for controllers
+======
+
+********************************************************************************
+'''
+
+'''
 The aim of corpus_builder.py is to build a corpus of synonyms around a primary word.
 
 i.e.
@@ -41,8 +72,9 @@ def get_ten_words(api_key, words):
         for word in words:
             print '======' + word + '======'
             #TODO: Do mongodb stuff
-            data = get_single_word(api_key, word)
-            print data
+            # data = get_single_word(api_key, word)
+            # print data
+            print jsonify({u'noun': {u'syn': [u'feeling']}})
             print '------------------'
         return 'Success'
     else:
@@ -54,9 +86,12 @@ def get_ten_words(api_key, words):
 
 This is a way to keep all the corpus stuff in one file. I will refactor later.
 
+======
+This section is for views
+======
+
 ********************************************************************************
 '''
-
 
 from flask import Blueprint
 from flask import render_template, redirect, url_for, jsonify, request
