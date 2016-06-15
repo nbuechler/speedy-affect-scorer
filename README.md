@@ -18,7 +18,7 @@ It will use Flask to do the api, and NLTK to do some of the processing. It will 
 
 # Steps
 
-.. first, install virtualenv if not done so already -- https://virtualenv.pypa.io/en/latest/installation.html
+.. first, install virtualenv if not done so already -- https://virtualenv.pypa.io/en/latest/installation.html(https://virtualenv.pypa.io/en/latest/installation.html)
 
 .. then, run this command: $ virtualenv venv
 
@@ -45,9 +45,15 @@ Werkzeug==0.11.3
 wheel==0.24.0
 nltk==3.2.1
 
-# To build a corpus ('Be Excellent to Each Other')
 
-https://words.bighugelabs.com/api.php
+# CREDITS
+'''
+__To build a corpus ('Be Excellent to Each Other')__
+'''
+
+_Thesaurus service provided by words.bighugelabs.com (https://words.bighugelabs.com/api.php)_
+
+
 
 # TODO:
 -Break out the code that doesn't actually have anything to do with affect.
