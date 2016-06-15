@@ -34,13 +34,16 @@ def get_single_word(api_key, word):
     if(r.raise_for_status()):
         return 'error'
     else:
-        return jsonify(r.json())
+        return r.json()
 
 def get_ten_words(api_key, words):
     if api_key and words and len(words) == 10:
         for word in words:
-            print word
+            print '======' + word + '======'
             #TODO: Do mongodb stuff
+            data = get_single_word(api_key, word)
+            print data
+            print '------------------'
         return 'Success'
     else:
         print 'MESSAGE: No valid input, sorry'
