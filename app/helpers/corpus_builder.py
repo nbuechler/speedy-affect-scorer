@@ -16,7 +16,7 @@ This section is for databases
 from app import app
 from flask.ext.pymongo import PyMongo
 
-app.config['MONGOCORPUS'] = 'test'
+app.config['MONGOCORPUS_DBNAME'] = 'affect-corpus'
 mongo_corpus = PyMongo(app, config_prefix='MONGOCORPUS')
 
 
@@ -44,8 +44,8 @@ Affect
 Moreover, the words will be stored as follows:
 
 {
-  word: <string of word>
-  response: <json response from bighugelabs>
+  "word": <string of word>
+  "response": <json response from bighugelabs>
 }
 
 This gets stored in a mongo database. Collections are named after the inital parent.
@@ -72,9 +72,14 @@ def get_ten_words(api_key, words):
         for word in words:
             print '======' + word + '======'
             #TODO: Do mongodb stuff
-            # data = get_single_word(api_key, word)
+            data = get_single_word(api_key, word)
             # print data
-            print jsonify({u'noun': {u'syn': [u'feeling']}})
+            result = mongo_corpus.db.initten.insert_one({
+              "word": word,
+              "response": data
+            })
+            print result.inserted_id
+            print data
             print '------------------'
         return 'Success'
     else:
