@@ -28,9 +28,9 @@ It will use Flask to do the api, and NLTK to do some of the processing. It will 
 
 # Run Server
 
-"""
+```
 python app/runserver.py 5000
-"""
+```
 
 
 # Requirements
@@ -47,9 +47,9 @@ nltk==3.2.1
 
 
 # CREDITS
-"""
+```
 __To build a corpus ('Be Excellent to Each Other')__
-"""
+```
 
 _Thesaurus service provided by words.bighugelabs.com (https://words.bighugelabs.com/api.php)_
 
