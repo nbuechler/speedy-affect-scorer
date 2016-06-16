@@ -81,6 +81,7 @@ def save_word(word, data):
     print result.inserted_id
     print data
     print '------------------'
+    return data
 
 def get_word_or_words(word_length, api_key, words, collection):
     if api_key and words and len(words) == 10:
