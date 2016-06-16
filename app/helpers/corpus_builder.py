@@ -74,14 +74,20 @@ def handle_next_level(raw_response):
     print '*************************************'
     print 'next-level'
     print '*************************************'
-    va = raw_response.get('verb').get('ant') if raw_response.get('verb').get('ant') is not None else [] 
-    print va
-    vs = raw_response.get('verb').get('syn') if raw_response.get('verb').get('syn') is not None else [] 
-    print vs
-    na = raw_response.get('noun').get('ant') if raw_response.get('noun').get('ant') is not None else [] 
-    print na
-    ns = raw_response.get('noun').get('syn') if raw_response.get('noun').get('syn') is not None else [] 
-    print ns
+    va = []
+    vs = []
+    na = []
+    ns = []
+    if(raw_response.get('verb')):
+        va = raw_response.get('verb').get('ant') if raw_response.get('verb').get('ant') is not None else []
+        print va
+        vs = raw_response.get('verb').get('syn') if raw_response.get('verb').get('syn') is not None else []
+        print vs
+    if(raw_response.get('noun')):
+        na = raw_response.get('noun').get('ant') if raw_response.get('noun').get('ant') is not None else []
+        print na
+        ns = raw_response.get('noun').get('syn') if raw_response.get('noun').get('syn') is not None else []
+        print ns
     print '*************************************'
     flat_list = va + vs + na + ns
     print '*-----------------------------------*'
@@ -141,6 +147,26 @@ Flask views below as an endpoint
 @corpus.route('/')
 def default():
     return 'Hello corpus_builder!'
+
+'''
+A human can build a corpus manulally by passing a word list of unknown count
+to the method:
+
+unknown_count_word_view()
+
+Make sure to pass three paramaters via a form -- (api_key for BHT, words list, and a collection name)
+Then the human can use the flattened list of each of the lists created to generate the next level.
+This should also be automated. :-)
+'''
+
+# TODO: This should also be automated. :-)
+@corpus.route('/x', methods=['GET', 'POST'])
+def unknown_count_word_view():
+    r = request.get_json()
+    k = r.get('key')
+    w = r.get('words')
+    c = r.get('collection')
+    return get_word_or_words(len(w), k, w, c)
 
 @corpus.route('/1', methods=['GET', 'POST'])
 def one_word_view():
