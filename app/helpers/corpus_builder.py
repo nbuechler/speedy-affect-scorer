@@ -45,10 +45,9 @@ Affect
 Moreover, the words will be stored as follows:
 
 {
-  "word": <string of word>
+  "word": <added by what word>
   "response": <json response from bighugelabs>
   "utc": <utc date>
-  "added_by": <added by what word>
 }
 
 This gets stored in a mongo database. Collections are named after the inital parent.
@@ -70,14 +69,13 @@ def get_single_word(api_key, word):
     else:
         return r.json()
 
-def save_word(word, data, added_by):
+def save_word(word, data, collection):
     # print word
     print '======' + word + '======'
     result = mongo_corpus.db[collection].insert_one({
       "word": word,
       "response": data,
       "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
-      "added_by": added_by,
     })
     # print data
     print result.inserted_id
@@ -86,10 +84,11 @@ def save_word(word, data, added_by):
     return data
 
 def get_word_or_words(word_length, api_key, words, collection):
-    if api_key and words and len(words) == 10:
+    if api_key and words and len(words) == int(word_length):
+        # Level One
         for word in words:
-            data = get_single_word(api_key, word)
-            data = save_word(word, data)
+            response = get_single_word(api_key, word)
+            data = save_word(word, response, collection)
         return 'Success'
     else:
         print 'MESSAGE: No valid input, sorry'
