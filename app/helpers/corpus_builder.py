@@ -48,6 +48,7 @@ Moreover, the words will be stored as follows:
   "word": <string of word>
   "response": <json response from bighugelabs>
   "utc": <utc date>
+  "added_by": <added by what word>
 }
 
 This gets stored in a mongo database. Collections are named after the inital parent.
@@ -69,13 +70,14 @@ def get_single_word(api_key, word):
     else:
         return r.json()
 
-def save_word(word, data):
+def save_word(word, data, added_by):
     # print word
     print '======' + word + '======'
     result = mongo_corpus.db[collection].insert_one({
       "word": word,
       "response": data,
-      "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+      "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
+      "added_by": added_by,
     })
     # print data
     print result.inserted_id
@@ -121,7 +123,7 @@ def default():
     return 'Hello corpus_builder!'
 
 @corpus.route('/1', methods=['GET', 'POST'])
-def ten_words_view():
+def one_word_view():
     r = request.get_json()
     k = r.get('key')
     w = r.get('words')
