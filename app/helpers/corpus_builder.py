@@ -1,5 +1,6 @@
 from flask import jsonify
 import requests
+from datetime import datetime
 
 '''
 ********************************************************************************
@@ -44,8 +45,10 @@ Affect
 Moreover, the words will be stored as follows:
 
 {
-  "word": <string of word>
+  "word": <added by what word>
   "response": <json response from bighugelabs>
+  "utc": <utc date>
+  "flat-list": <list of all words (syn/ant of verb/noun) for this word>
 }
 
 This gets stored in a mongo database. Collections are named after the inital parent.
@@ -67,20 +70,52 @@ def get_single_word(api_key, word):
     else:
         return r.json()
 
-def get_ten_words(api_key, words):
-    if api_key and words and len(words) == 10:
+def handle_next_level(raw_response):
+    print '*************************************'
+    print 'next-level'
+    print '*************************************'
+    va = []
+    vs = []
+    na = []
+    ns = []
+    if(raw_response.get('verb')):
+        va = raw_response.get('verb').get('ant') if raw_response.get('verb').get('ant') is not None else []
+        print va
+        vs = raw_response.get('verb').get('syn') if raw_response.get('verb').get('syn') is not None else []
+        print vs
+    if(raw_response.get('noun')):
+        na = raw_response.get('noun').get('ant') if raw_response.get('noun').get('ant') is not None else []
+        print na
+        ns = raw_response.get('noun').get('syn') if raw_response.get('noun').get('syn') is not None else []
+        print ns
+    print '*************************************'
+    flat_list = va + vs + na + ns
+    print '*-----------------------------------*'
+    return flat_list
+
+def save_word(word, raw_response, collection):
+    # print word
+    print '======' + word + '======'
+    flat_list = handle_next_level(raw_response)
+    result = mongo_corpus.db[collection].insert_one({
+      "word": word,
+      "response": raw_response,
+      "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
+      "flat_list": flat_list,
+    })
+    # print raw_response
+    print result.inserted_id
+    print raw_response
+    print '------------------'
+    return result
+
+
+def get_word_or_words(word_length, api_key, words, collection):
+    if api_key and words and len(words) == int(word_length):
+        # Level One
         for word in words:
-            print '======' + word + '======'
-            #TODO: Do mongodb stuff
-            data = get_single_word(api_key, word)
-            # print data
-            result = mongo_corpus.db.initten.insert_one({
-              "word": word,
-              "response": data
-            })
-            print result.inserted_id
-            print data
-            print '------------------'
+            raw_response = get_single_word(api_key, word)
+            data = save_word(word, raw_response, collection)
         return 'Success'
     else:
         print 'MESSAGE: No valid input, sorry'
@@ -113,18 +148,54 @@ Flask views below as an endpoint
 def default():
     return 'Hello corpus_builder!'
 
+'''
+A human can build a corpus manulally by passing a word list of unknown count
+to the method:
+
+unknown_count_word_view()
+
+Make sure to pass three paramaters via a form -- (api_key for BHT, words list, and a collection name)
+Then the human can use the flattened list of each of the lists created to generate the next level.
+This should also be automated. :-)
+'''
+
+# TODO: This should also be automated. :-)
+@corpus.route('/x', methods=['GET', 'POST'])
+def unknown_count_word_view():
+    r = request.get_json()
+    k = r.get('key')
+    w = r.get('words')
+    c = r.get('collection')
+    return get_word_or_words(len(w), k, w, c)
+
+@corpus.route('/1', methods=['GET', 'POST'])
+def one_word_view():
+    r = request.get_json()
+    k = r.get('key')
+    w = r.get('words')
+    c = r.get('collection')
+    return get_word_or_words(1, k, w, c)
+
 @corpus.route('/10', methods=['GET', 'POST'])
 def ten_words_view():
     r = request.get_json()
-    # print r
     k = r.get('key')
     w = r.get('words')
-    return get_ten_words(k, w)
+    c = r.get('collection')
+    return get_word_or_words(10, k, w, c)
 
 @corpus.route('/100', methods=['GET', 'POST'])
 def hundred_words_view(words=None):
-    print 'Not Implemented'
+    r = request.get_json()
+    k = r.get('key')
+    w = r.get('words')
+    c = r.get('collection')
+    return get_word_or_words(100, k, w, c)
 
 @corpus.route('/500', methods=['GET', 'POST'])
 def five_hundred_words_view(words=None):
-    print 'Not Implemented'
+    r = request.get_json()
+    k = r.get('key')
+    w = r.get('words')
+    c = r.get('collection')
+    return get_word_or_words(500, k, w, c)
