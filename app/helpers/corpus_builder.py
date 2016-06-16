@@ -1,5 +1,6 @@
 from flask import jsonify
 import requests
+from datetime import datetime 
 
 '''
 ********************************************************************************
@@ -76,7 +77,8 @@ def get_ten_words(api_key, words):
             # print data
             result = mongo_corpus.db.initten.insert_one({
               "word": word,
-              "response": data
+              "response": data,
+              "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
             })
             print result.inserted_id
             print data
