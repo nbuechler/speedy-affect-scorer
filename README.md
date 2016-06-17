@@ -1,5 +1,5 @@
 # speedy-affect-scorer
-The idea is to score basic afffects - quickly!
+The idea is to score basic afffects - quickly! As of now, the project also includes a 'corpus_builder.py' file which will most likely be seperated into a sperate project.
 
 # Here is the scope, it's small
 anticipation,
