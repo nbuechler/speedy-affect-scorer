@@ -119,6 +119,7 @@ def get_word_or_words(word_length, api_key, words, collection):
             raw_response = get_single_word(api_key, word)
             data = save_word(word, raw_response, collection)
             print json.dumps(data.get('flat_list'))
+            # TODO: Return just the flat list and use it as the next level
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
         return json.dumps(all_flat_lists)
@@ -129,6 +130,7 @@ def get_word_or_words(word_length, api_key, words, collection):
 def get_two_levels(w, k, c):
     # get level one
     get_word_or_words(len(w), k, w, c)
+    # TODO: Return just the flat list and use it as the next level
     # get level two
     for value in variable:
         pass
