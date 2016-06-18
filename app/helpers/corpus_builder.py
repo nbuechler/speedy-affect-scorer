@@ -97,14 +97,15 @@ def save_word(word, raw_response, collection):
     # print word
     print '======' + word + '======'
     flat_list = handle_next_level(raw_response)
-    result = mongo_corpus.db[collection].insert_one({
-      "word": word,
-      "response": raw_response,
-      "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
-      "flat_list": flat_list,
-    })
+    result = {
+              "word": word,
+              "response": raw_response,
+              "utc": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
+              "flat_list": flat_list,
+             }
+    stored_result = mongo_corpus.db[collection].insert_one(result)
     # print raw_response
-    print result.inserted_id
+    print stored_result.inserted_id
     print raw_response
     print '------------------'
     return result
@@ -112,14 +113,27 @@ def save_word(word, raw_response, collection):
 
 def get_word_or_words(word_length, api_key, words, collection):
     if api_key and words and len(words) == int(word_length):
+        all_flat_lists = []
         # Level One
         for word in words:
             raw_response = get_single_word(api_key, word)
             data = save_word(word, raw_response, collection)
-        return 'Success'
+            print json.dumps(data.get('flat_list'))
+            all_flat_lists = all_flat_lists + data.get('flat_list')
+        print all_flat_lists
+        return json.dumps(all_flat_lists)
     else:
         print 'MESSAGE: No valid input, sorry'
         return 'Error'
+
+def get_two_levels(w, k, c):
+    # get level one
+    get_word_or_words(len(w), k, w, c)
+    # get level two
+    for value in variable:
+        pass
+    get_word_or_words(len(w), k, w, c)
+    return 'Not Implemented'
 
 '''
 ********************************************************************************
