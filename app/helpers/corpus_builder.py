@@ -189,7 +189,7 @@ def unknown_count_word_view_with_level():
     k = r.get('key')
     w = r.get('words')
     c = r.get('collection')
-    return get_two_levels(len(w), k, w, c)
+    return get_two_levels(k, w, c)
 
 @corpus.route('/1', methods=['GET', 'POST'])
 def one_word_view():
