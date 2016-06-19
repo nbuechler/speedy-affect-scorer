@@ -119,7 +119,6 @@ def get_word_or_words(word_length, api_key, words, collection):
             raw_response = get_single_word(api_key, word)
             data = save_word(word, raw_response, collection)
             print json.dumps(data.get('flat_list'))
-            # TODO: Return just the flat list and use it as the next level
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
         return all_flat_lists
@@ -131,11 +130,28 @@ def get_two_levels(k, w, c):
     # get level one
     flat_list_one = get_word_or_words(len(w), k, w, c)
     print type(flat_list_one)
-    # TODO: Return just the flat list and use it as the next level
     # get level two
     get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-two'))
 
     return 'Success'
+
+def generic_get_levels(k, w, c, list_number):
+    # get level one
+    input_flat_list_set = get_word_or_words(len(w), k, w, c)
+    print type(flat_list_one)
+    # TODO: Do something with the input, and return the output flat list
+    # get level two
+    output_flat_list_set = get_word_or_words(len(input_flat_list_set), k, input_flat_list_set, (c + '-order-' + list_number))
+
+    return output_flat_list_set
+
+def get_undetermined_levels(k, w, c, number_of_levels):
+
+    # while number of levels is blah
+
+    # iterate and run generic_get_levels(k, w, c, ##)
+
+    return 'Not implemented'
 
 '''
 ********************************************************************************
