@@ -130,10 +130,11 @@ def get_word_or_words(word_length, api_key, words, collection):
 def get_two_levels(k, w, c):
     # get level one
     flat_list_one = get_word_or_words(len(w), k, w, c)
+    print type(flat_list_one)
     # TODO: Return just the flat list and use it as the next level
     # get level two
-    for words_of_one in flat_list_one:
-        get_word_or_words(len(words_of_one), k, words_of_one, (c + '-order-two'))
+    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-two'))
+
     return 'Success'
 
 '''
