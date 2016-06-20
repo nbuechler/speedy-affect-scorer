@@ -136,24 +136,8 @@ def get_two_levels(k, w, c):
     return 'Success'
 
 def generic_get_levels(k, w, c, list_number):
-    # get level one
-    input_flat_list_set = get_word_or_words(len(w), k, w, c)
-    print type(input_flat_list_set)
-    # TODO: Do something with the input, and return the output flat list
-    # get level two
-    output_flat_list_set = get_word_or_words(len(input_flat_list_set), k, input_flat_list_set, (c + '-order-' + str(list_number)))
-
+    output_flat_list_set = get_word_or_words(len(w), k, w, (c + '-order-' + str(list_number)))
     return output_flat_list_set
-
-# def get_undetermined_levels(k, w, c, number_of_levels):
-#
-#     countup = 1; # Starts at one beause we pass inital word(s) as w
-#     while countup != number_of_levels:
-#         # iterate and run generic_get_levels(k, w, c, ##)
-#         countup += 1
-#         w = generic_get_levels(k, w, c, countup)
-#
-#     return 'Success'
 
 def get_undetermined_levels(k, w, c, remaining_levels, total_levels):
 
@@ -203,7 +187,7 @@ Then the human can use the flattened list of each of the lists created to genera
 This should also be automated. :-)
 '''
 
-# TODO: This should also be automated. :-)
+# This automated as <root>/y .... unknown_count_word_view_with_level() :-)
 @corpus.route('/x', methods=['GET', 'POST'])
 def unknown_count_word_view():
     r = request.get_json()
@@ -218,7 +202,7 @@ def unknown_count_word_view_with_level():
     k = r.get('key')
     w = r.get('words')
     c = r.get('collection')
-    levels = 2 # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
+    levels = int(r.get('levels')) # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
     return get_undetermined_levels(k, w, c, levels, levels)
 
 @corpus.route('/1', methods=['GET', 'POST'])
