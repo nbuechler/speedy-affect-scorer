@@ -119,7 +119,6 @@ def get_word_or_words(word_length, api_key, words, collection):
             raw_response = get_single_word(api_key, word)
             data = save_word(word, raw_response, collection)
             print json.dumps(data.get('flat_list'))
-            # TODO: Return just the flat list and use it as the next level
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
         return all_flat_lists
@@ -130,10 +129,40 @@ def get_word_or_words(word_length, api_key, words, collection):
 def get_two_levels(k, w, c):
     # get level one
     flat_list_one = get_word_or_words(len(w), k, w, c)
-    # TODO: Return just the flat list and use it as the next level
+    print type(flat_list_one)
     # get level two
-    for words_of_one in flat_list_one:
-        get_word_or_words(len(words_of_one), k, words_of_one, (c + '-order-two'))
+    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-2'))
+
+    return 'Success'
+
+def generic_get_levels(k, w, c, list_number):
+    # get level one
+    input_flat_list_set = get_word_or_words(len(w), k, w, c)
+    print type(input_flat_list_set)
+    # TODO: Do something with the input, and return the output flat list
+    # get level two
+    output_flat_list_set = get_word_or_words(len(input_flat_list_set), k, input_flat_list_set, (c + '-order-' + str(list_number)))
+
+    return output_flat_list_set
+
+# def get_undetermined_levels(k, w, c, number_of_levels):
+#
+#     countup = 1; # Starts at one beause we pass inital word(s) as w
+#     while countup != number_of_levels:
+#         # iterate and run generic_get_levels(k, w, c, ##)
+#         countup += 1
+#         w = generic_get_levels(k, w, c, countup)
+#
+#     return 'Success'
+
+def get_undetermined_levels(k, w, c, remaining_levels, total_levels):
+
+    if remaining_levels == 1:
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
+    else :
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
+        get_undetermined_levels(k, word_list, c, (remaining_levels - 1), total_levels)
+
     return 'Success'
 
 '''
@@ -189,7 +218,8 @@ def unknown_count_word_view_with_level():
     k = r.get('key')
     w = r.get('words')
     c = r.get('collection')
-    return get_two_levels(k, w, c)
+    levels = 2 # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
+    return get_undetermined_levels(k, w, c, levels, levels)
 
 @corpus.route('/1', methods=['GET', 'POST'])
 def one_word_view():
