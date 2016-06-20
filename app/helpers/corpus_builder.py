@@ -158,10 +158,10 @@ def generic_get_levels(k, w, c, list_number):
 def get_undetermined_levels(k, w, c, remaining_levels, total_levels):
 
     if remaining_levels == 1:
-        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels))
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
     else :
-        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels))
-        get_undetermined_levels(k, word_list, c, (remaining_levels - 1))
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
+        get_undetermined_levels(k, word_list, c, (remaining_levels - 1), total_levels)
 
     return 'Success'
 
@@ -218,7 +218,7 @@ def unknown_count_word_view_with_level():
     k = r.get('key')
     w = r.get('words')
     c = r.get('collection')
-    levels = 1 # how many levels. 1 is just the inital array
+    levels = 2 # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
     return get_undetermined_levels(k, w, c, levels, levels)
 
 @corpus.route('/1', methods=['GET', 'POST'])
