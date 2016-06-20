@@ -131,27 +131,39 @@ def get_two_levels(k, w, c):
     flat_list_one = get_word_or_words(len(w), k, w, c)
     print type(flat_list_one)
     # get level two
-    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-two'))
+    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-2'))
 
     return 'Success'
 
 def generic_get_levels(k, w, c, list_number):
     # get level one
     input_flat_list_set = get_word_or_words(len(w), k, w, c)
-    print type(flat_list_one)
+    print type(input_flat_list_set)
     # TODO: Do something with the input, and return the output flat list
     # get level two
-    output_flat_list_set = get_word_or_words(len(input_flat_list_set), k, input_flat_list_set, (c + '-order-' + list_number))
+    output_flat_list_set = get_word_or_words(len(input_flat_list_set), k, input_flat_list_set, (c + '-order-' + str(list_number)))
 
     return output_flat_list_set
 
-def get_undetermined_levels(k, w, c, number_of_levels):
+# def get_undetermined_levels(k, w, c, number_of_levels):
+#
+#     countup = 1; # Starts at one beause we pass inital word(s) as w
+#     while countup != number_of_levels:
+#         # iterate and run generic_get_levels(k, w, c, ##)
+#         countup += 1
+#         w = generic_get_levels(k, w, c, countup)
+#
+#     return 'Success'
 
-    # while number of levels is blah
+def get_undetermined_levels(k, w, c, remaining_levels, total_levels):
 
-    # iterate and run generic_get_levels(k, w, c, ##)
+    if remaining_levels == 1:
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels))
+    else :
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels))
+        get_undetermined_levels(k, word_list, c, (remaining_levels - 1))
 
-    return 'Not implemented'
+    return 'Success'
 
 '''
 ********************************************************************************
@@ -206,7 +218,8 @@ def unknown_count_word_view_with_level():
     k = r.get('key')
     w = r.get('words')
     c = r.get('collection')
-    return get_two_levels(k, w, c)
+    levels = 1 # how many levels. 1 is just the inital array
+    return get_undetermined_levels(k, w, c, levels, levels)
 
 @corpus.route('/1', methods=['GET', 'POST'])
 def one_word_view():
