@@ -37,10 +37,9 @@ This section is for controllers
 The aim of corpus_builder.py is to build a corpus of synonyms around a primary word.
 
 i.e.
-Affect
-  it has synonyms
-     those synonyms have synonyms
-       and after the 4th level deep is likely where we don't care.
+Affect (order-1)
+  it has synonyms/antonyms (order-2)
+     those synonyms/antonyms have synonyms/antonyms (order-3)... orders after 3 is likely where we don't care.
 
 Moreover, the words will be stored as follows:
 
@@ -121,6 +120,7 @@ def get_word_or_words(word_length, api_key, words, collection):
             print json.dumps(data.get('flat_list'))
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
+        print len(all_flat_lists)
         return all_flat_lists
     else:
         print 'MESSAGE: No valid input, sorry'
