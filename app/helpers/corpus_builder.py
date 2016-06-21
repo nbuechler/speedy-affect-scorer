@@ -37,10 +37,13 @@ This section is for controllers
 The aim of corpus_builder.py is to build a corpus of synonyms around a primary word.
 
 i.e.
-Affect
-  it has synonyms
-     those synonyms have synonyms
-       and after the 4th level deep is likely where we don't care.
+Affect (order-1)
+  it has synonyms/antonyms (order-2)
+     those synonyms/antonyms have synonyms/antonyms (order-3)... orders after 3 is likely where begin to stop caring so we don't make another order of requests.
+
+But,
+We do print the 4th order to the terminal. We could store this.
+
 
 Moreover, the words will be stored as follows:
 
@@ -70,7 +73,7 @@ def get_single_word(api_key, word):
     else:
         return r.json()
 
-def handle_next_level(raw_response):
+def handle_next_level(raw_response, include_syn, include_ant):
     print '*************************************'
     print 'next-level'
     print '*************************************'
@@ -79,24 +82,28 @@ def handle_next_level(raw_response):
     na = []
     ns = []
     if(raw_response.get('verb')):
-        va = raw_response.get('verb').get('ant') if raw_response.get('verb').get('ant') is not None else []
-        print va
-        vs = raw_response.get('verb').get('syn') if raw_response.get('verb').get('syn') is not None else []
-        print vs
+        if(include_ant):
+            va = raw_response.get('verb').get('ant') if raw_response.get('verb').get('ant') is not None else []
+            # print va
+        if(include_syn):
+            vs = raw_response.get('verb').get('syn') if raw_response.get('verb').get('syn') is not None else []
+            # print vs
     if(raw_response.get('noun')):
-        na = raw_response.get('noun').get('ant') if raw_response.get('noun').get('ant') is not None else []
-        print na
-        ns = raw_response.get('noun').get('syn') if raw_response.get('noun').get('syn') is not None else []
-        print ns
+        if(include_ant):
+            na = raw_response.get('noun').get('ant') if raw_response.get('noun').get('ant') is not None else []
+            # print na
+        if(include_syn):
+            ns = raw_response.get('noun').get('syn') if raw_response.get('noun').get('syn') is not None else []
+            # print ns
     print '*************************************'
     flat_list = va + vs + na + ns
     print '*-----------------------------------*'
     return flat_list
 
-def save_word(word, raw_response, collection):
+def save_word(word, raw_response, collection, inc_syn, inc_ant):
     # print word
     print '======' + word + '======'
-    flat_list = handle_next_level(raw_response)
+    flat_list = handle_next_level(raw_response, inc_syn, inc_ant)
     result = {
               "word": word,
               "response": raw_response,
@@ -111,16 +118,17 @@ def save_word(word, raw_response, collection):
     return result
 
 
-def get_word_or_words(word_length, api_key, words, collection):
+def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant):
     if api_key and words and len(words) == int(word_length):
         all_flat_lists = []
         # Level One
         for word in words:
             raw_response = get_single_word(api_key, word)
-            data = save_word(word, raw_response, collection)
+            data = save_word(word, raw_response, collection, inc_syn, inc_ant)
             print json.dumps(data.get('flat_list'))
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
+        print len(all_flat_lists)
         return all_flat_lists
     else:
         print 'MESSAGE: No valid input, sorry'
@@ -128,24 +136,24 @@ def get_word_or_words(word_length, api_key, words, collection):
 
 def get_two_levels(k, w, c):
     # get level one
-    flat_list_one = get_word_or_words(len(w), k, w, c)
+    flat_list_one = get_word_or_words(len(w), k, w, c, 1, 1)
     print type(flat_list_one)
     # get level two
-    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-2'))
+    get_word_or_words(len(flat_list_one), k, flat_list_one, (c + '-order-2'), 1, 1)
 
     return 'Success'
 
-def generic_get_levels(k, w, c, list_number):
-    output_flat_list_set = get_word_or_words(len(w), k, w, (c + '-order-' + str(list_number)))
+def generic_get_levels(k, w, c, list_number, inc_syn, inc_ant):
+    output_flat_list_set = get_word_or_words(len(w), k, w, (c + '-order-' + str(list_number)), inc_syn, inc_ant)
     return output_flat_list_set
 
-def get_undetermined_levels(k, w, c, remaining_levels, total_levels):
+def get_undetermined_levels(k, w, c, remaining_levels, total_levels, inc_syn, inc_ant):
 
     if remaining_levels == 1:
-        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1), inc_syn, inc_ant)
     else :
-        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1))
-        get_undetermined_levels(k, word_list, c, (remaining_levels - 1), total_levels)
+        word_list = generic_get_levels(k, w, c, (total_levels - remaining_levels + 1), inc_syn, inc_ant)
+        get_undetermined_levels(k, word_list, c, (remaining_levels - 1), total_levels, inc_syn, inc_ant)
 
     return 'Success'
 
@@ -199,11 +207,13 @@ def unknown_count_word_view():
 @corpus.route('/y', methods=['GET', 'POST'])
 def unknown_count_word_view_with_level():
     r = request.get_json()
-    k = r.get('key')
-    w = r.get('words')
-    c = r.get('collection')
+    k = r.get('key') # String
+    w = r.get('words') # List of Strings
+    c = r.get('collection') # String
+    inc_syn = int(r.get('include_synonyms')) # String
+    inc_ant = int(r.get('include_antonyms')) # String
     levels = int(r.get('levels')) # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
-    return get_undetermined_levels(k, w, c, levels, levels)
+    return get_undetermined_levels(k, w, c, levels, levels, inc_syn, inc_ant)
 
 @corpus.route('/1', methods=['GET', 'POST'])
 def one_word_view():
