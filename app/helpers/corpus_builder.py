@@ -59,6 +59,14 @@ In this case that parent is 'Affect'. To be clear, this is probably not the best
 to build a corpus, but it is a quick and effective way for getting started.
 '''
 
+import logging
+
+logging.basicConfig(level=logging.INFO, filename="logfile", filemode="a+",
+                    format="%(asctime)-15s %(levelname)-8s %(message)s")
+
+def test_logging():
+    logging.info("hello")
+
 def verify_bhl_api(api_key):
     r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/affect/json')
     if(r.raise_for_status()):
@@ -129,6 +137,12 @@ def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant)
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
         print len(all_flat_lists)
+        logging.info("=====NEW FLAT LIST=====")
+        logging.info(all_flat_lists)
+        logging.info("=====END FLAT LIST=====")
+        logging.info("Length of list is:")
+        logging.info(len(all_flat_lists))
+        logging.info("***************************")
         return all_flat_lists
     else:
         print 'MESSAGE: No valid input, sorry'
@@ -144,6 +158,9 @@ def get_two_levels(k, w, c):
     return 'Success'
 
 def generic_get_levels(k, w, c, list_number, inc_syn, inc_ant):
+    logging.info("***************************")
+    logging.info("List is in the following mongo collection:")
+    logging.info(c + '-order-' + str(list_number))
     output_flat_list_set = get_word_or_words(len(w), k, w, (c + '-order-' + str(list_number)), inc_syn, inc_ant)
     return output_flat_list_set
 
@@ -180,6 +197,11 @@ corpus = Blueprint('corpus', __name__)
 Flask views below as an endpoint
 '''
 
+@corpus.route('/log')
+def log_test():
+    test_logging()
+    return 'Success'
+
 @corpus.route('/')
 def default():
     return 'Hello corpus_builder!'
@@ -210,8 +232,8 @@ def unknown_count_word_view_with_level():
     k = r.get('key') # String
     w = r.get('words') # List of Strings
     c = r.get('collection') # String
-    inc_syn = int(r.get('include_synonyms')) # String
-    inc_ant = int(r.get('include_antonyms')) # String
+    inc_syn = int(r.get('include_synonyms')) # String, really it is a string representation of a 0 or 1, 0 - don't include, 1 - include
+    inc_ant = int(r.get('include_antonyms')) # String, really it is a string representation of a 0 or 1, 0 - don't include, 1 - include
     levels = int(r.get('levels')) # how many levels. 1 is just the inital array in addition to the flat_list(s) of the intital array
     return get_undetermined_levels(k, w, c, levels, levels, inc_syn, inc_ant)
 
