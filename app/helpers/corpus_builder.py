@@ -59,6 +59,14 @@ In this case that parent is 'Affect'. To be clear, this is probably not the best
 to build a corpus, but it is a quick and effective way for getting started.
 '''
 
+import logging
+
+logging.basicConfig(level=logging.INFO, filename="logfile", filemode="a+",
+                    format="%(asctime)-15s %(levelname)-8s %(message)s")
+
+def test_logging():
+    logging.info("hello")
+
 def verify_bhl_api(api_key):
     r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/affect/json')
     if(r.raise_for_status()):
@@ -179,6 +187,11 @@ corpus = Blueprint('corpus', __name__)
 '''
 Flask views below as an endpoint
 '''
+
+@corpus.route('/log')
+def log_test():
+    test_logging()
+    return 'Success'
 
 @corpus.route('/')
 def default():

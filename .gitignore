@@ -67,3 +67,6 @@ venv/
 #nohup
 nohup.out
 logfile.txt
+
+#logger logfile
+logfile
