@@ -37,9 +37,9 @@ This section is for controllers
 The aim of corpus_builder.py is to build a corpus of synonyms around a primary word.
 
 i.e.
-Affect (order-1)
-  it has synonyms/antonyms (order-2)
-     those synonyms/antonyms have synonyms/antonyms (order-3)... orders after 3 is likely where begin to stop caring so we don't make another order of requests.
+Affect (order-0)
+  it has synonyms/antonyms (order-1)
+     those synonyms/antonyms have synonyms/antonyms (order-2)... orders after 3 is likely where begin to stop caring so we don't make another order of requests.
 
 But,
 We do print the 4th order to the terminal. We could store this.
