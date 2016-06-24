@@ -137,11 +137,13 @@ def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant)
             all_flat_lists = all_flat_lists + data.get('flat_list')
         print all_flat_lists
         print len(all_flat_lists)
-        logging.info("=====NEW FLAT LIST=====")
-        logging.info(all_flat_lists)
+        logging.info("=====NEW !!SET!! FLAT LIST=====")
+        logging.info(set(all_flat_lists))
         logging.info("=====END FLAT LIST=====")
         logging.info("Length of list is:")
         logging.info(len(all_flat_lists))
+        logging.info("Length of setlist is:")
+        logging.info(len(set(all_flat_lists)))
         logging.info("***************************")
         return set(all_flat_lists) # return just the unque words in the set, no duplicates!
     else:
