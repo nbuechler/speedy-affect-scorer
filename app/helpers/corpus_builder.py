@@ -143,7 +143,7 @@ def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant)
         logging.info("Length of list is:")
         logging.info(len(all_flat_lists))
         logging.info("***************************")
-        return all_flat_lists
+        return set(all_flat_lists) # return just the unque words in the set, no duplicates!
     else:
         print 'MESSAGE: No valid input, sorry'
         return 'Error'
