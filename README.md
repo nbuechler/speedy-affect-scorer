@@ -57,6 +57,7 @@ _Thesaurus service provided by words.bighugelabs.com (https://words.bighugelabs.
 
 # TODO:
 -Break out the code that doesn't actually have anything to do with affect.
+-For the corpus, I don't do adjectives, so something to consider.
 
 # License
 
