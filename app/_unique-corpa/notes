@@ -1,0 +1,28 @@
+emotionML-link
+https://www.w3.org/TR/emotion-voc/xml#everyday-categories
+
+===DIFFERENCES===
+everyday-categories
+-----------------
+words that are adjectives and not nouns return things from 'bighugethesaurus' I can't use...
+affectionate +becomes+ affection
+afraid +becomes+ anxiety 
+amused +becomes+ amuse
+angry +becomes + anger
+bored +becomes + boredom
+confident +becomes+ confidence
+content +becomes+ satisfaction
+disappointed +becomes+ disappointment
+excited +becomes+ excitement
+happy +becomes+ joy
+interested +becomes+ curiosity
+
+    <item name="loving"/>
+    <item name="pleased"/>
+    <item name="relaxed"/>
+    <item name="sad"/>
+    <item name="satisfied"/>
+    <item name="worried"/>
+
+loving +becomes+ love
+
