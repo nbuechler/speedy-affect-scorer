@@ -16,13 +16,10 @@ disappointed +becomes+ disappointment
 excited +becomes+ excitement
 happy +becomes+ joy
 interested +becomes+ curiosity
-
-    <item name="loving"/>
-    <item name="pleased"/>
-    <item name="relaxed"/>
-    <item name="sad"/>
-    <item name="satisfied"/>
-    <item name="worried"/>
-
 loving +becomes+ love
+pleased +becomes+ pride
+relaxed +becomes+ calmness
+sad + becomes+ sadness
+satisfied +becomes+ harmony
 
+worried +becomes+ worry
