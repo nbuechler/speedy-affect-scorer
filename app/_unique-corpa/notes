@@ -31,9 +31,9 @@ I keep the same as below ( I am noticing an overlap ;-) )
     <item name="admiration"/>
     <item name="anger"/>
     <item name="disappointment"/>
-    <item name="distress"/>    <====== stopped here
+    <item name="distress"/>
     <item name="fear"/>
-    <item name="fears-confirmed"/>
+    <item name="fears-confirmed"/>    <====== stopped here
     <item name="gloating"/>
     <item name="gratification"/>
     <item name="gratitude"/>
