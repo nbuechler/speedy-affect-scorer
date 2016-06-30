@@ -77,7 +77,7 @@ def verify_bhl_api(api_key):
 def get_single_word(api_key, word):
     r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/' + word + '/json')
     if(r.raise_for_status()):
-        return 'error'
+        return 404
     else:
         return r.json()
 
@@ -131,10 +131,14 @@ def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant)
         all_flat_lists = []
         # Level One
         for word in words:
-            raw_response = get_single_word(api_key, word)
-            data = save_word(word, raw_response, collection, inc_syn, inc_ant)
-            print json.dumps(data.get('flat_list'))
-            all_flat_lists = all_flat_lists + data.get('flat_list')
+            try:
+                raw_response = get_single_word(api_key, word)
+                if(raw_response != '404'): # Save things if there wasn't a 404 error
+                    data = save_word(word, raw_response, collection, inc_syn, inc_ant)
+                    print json.dumps(data.get('flat_list'))
+                    all_flat_lists = all_flat_lists + data.get('flat_list')
+            except:
+                pass
         set_of_flat_lists = set(all_flat_lists)
         unique_flat_lists = list(set_of_flat_lists)
         print unique_flat_lists
@@ -150,7 +154,7 @@ def get_word_or_words(word_length, api_key, words, collection, inc_syn, inc_ant)
         return unique_flat_lists # return just the unique words in the set, no duplicates!
     else:
         print 'MESSAGE: No valid input, sorry'
-        return 'Error'
+        return '' # Return an empty string becaus this gets used in the event of there not being a valid words list to gracefully fail
 
 def get_two_levels(k, w, c):
     # get level one
