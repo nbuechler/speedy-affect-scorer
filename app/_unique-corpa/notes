@@ -7,7 +7,7 @@ everyday-categories
 words that are adjectives and not nouns return things from 'bighugethesaurus' I can't use...
 affectionate +becomes+ affection
 afraid +becomes+ anxiety 
-amused +becomes+ amuse
+amused +becomes+ amusement
 angry +becomes + anger
 bored +becomes + boredom
 confident +becomes+ confidence
@@ -21,5 +21,34 @@ pleased +becomes+ pride
 relaxed +becomes+ calmness
 sad + becomes+ sadness
 satisfied +becomes+ harmony
-
 worried +becomes+ worry
+
+========
+for occ-categories
+========
+I keep the same as below ( I am noticing an overlap ;-) )
+
+    <item name="admiration"/>
+    <item name="anger"/>
+    <item name="disappointment"/>
+    <item name="distress"/>    <====== stopped here
+    <item name="fear"/>
+    <item name="fears-confirmed"/>
+    <item name="gloating"/>
+    <item name="gratification"/>
+    <item name="gratitude"/>
+    <item name="happy-for"/>
+    <item name="hate"/>
+    <item name="hope"/>
+    <item name="joy"/>
+    <item name="love"/>
+    <item name="pity"/>
+    <item name="pride"/>
+    <item name="relief"/>
+    <item name="remorse"/>
+    <item name="reproach"/>
+    <item name="resentment"/>
+    <item name="satisfaction"/>
+    <item name="shame"/>
+
+
