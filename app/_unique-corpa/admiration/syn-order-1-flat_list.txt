@@ -1,0 +1,1 @@
+['blessing', 'astonishment', 'approving', 'appreciation', 'esteem', 'approval', 'amazement', 'liking', 'wonder', 'wonderment']
