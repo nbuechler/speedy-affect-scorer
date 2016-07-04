@@ -26,7 +26,7 @@ worried +becomes+ worry
 ========
 for occ-categories
 ========
-I keep the same as below ( I am noticing an overlap ;-) )
+I mostly keep the same as below ( I am noticing an overlap ;-) )
 
     <item name="admiration"/>
     <item name="anger"/>
@@ -50,5 +50,8 @@ I keep the same as below ( I am noticing an overlap ;-) )
     <item name="resentment"/>
     <item name="satisfaction"/>
     <item name="shame"/>
+
+but here are the exceptions:
+fears-confirmed == dread
 
 
