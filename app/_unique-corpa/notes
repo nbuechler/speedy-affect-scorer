@@ -33,16 +33,16 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="disappointment"/>
     <item name="distress"/>
     <item name="fear"/>
-    <item name="fears-confirmed"/>    <====== stopped here
+    <item name="fears-confirmed"/>    
     <item name="gloating"/>
     <item name="gratification"/>
     <item name="gratitude"/>
     <item name="happy-for"/>
-    <item name="hate"/>
+    <item name="hate"/> 
     <item name="hope"/>
     <item name="joy"/>
     <item name="love"/>
-    <item name="pity"/>
+    <item name="pity"/> <====== stopped here
     <item name="pride"/>
     <item name="relief"/>
     <item name="remorse"/>
@@ -52,6 +52,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="shame"/>
 
 but here are the exceptions:
-fears-confirmed == dread
-
+fears-confirmed +becomes+ dread
+gloating +becomes+ pride
+happy-for +becomes+ thankful
 
