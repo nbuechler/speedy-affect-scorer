@@ -1,0 +1,53 @@
+2016-07-04 16:33:05,044 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-04 16:33:05,045 INFO      * Restarting with stat
+2016-07-04 16:33:05,302 WARNING   * Debugger is active!
+2016-07-04 16:33:05,306 INFO      * Debugger pin code: 248-009-146
+2016-07-04 16:33:35,451 INFO     ***************************
+2016-07-04 16:33:35,452 INFO     List is in the following mongo collection:
+2016-07-04 16:33:35,452 INFO     hate-corpus-only-syn-unq-order-1
+2016-07-04 16:33:35,458 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:35,589 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-04 16:33:35,589 INFO     [u'emotion', u'dislike', u'detest', u'hatred']
+2016-07-04 16:33:35,589 INFO     =====END FLAT LIST=====
+2016-07-04 16:33:35,589 INFO     Length of list is:
+2016-07-04 16:33:35,589 INFO     4
+2016-07-04 16:33:35,589 INFO     Length of setlist is:
+2016-07-04 16:33:35,590 INFO     4
+2016-07-04 16:33:35,590 INFO     ***************************
+2016-07-04 16:33:35,590 INFO     ***************************
+2016-07-04 16:33:35,590 INFO     List is in the following mongo collection:
+2016-07-04 16:33:35,590 INFO     hate-corpus-only-syn-unq-order-2
+2016-07-04 16:33:35,591 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:35,713 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:35,837 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:35,957 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,074 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-04 16:33:36,075 INFO     [u'emotion', u'disapproval', u'tendency', u'disposition', u'disfavor', u'dislike', u'feeling', u'hate', u'disfavour', u'inclination']
+2016-07-04 16:33:36,075 INFO     =====END FLAT LIST=====
+2016-07-04 16:33:36,075 INFO     Length of list is:
+2016-07-04 16:33:36,075 INFO     12
+2016-07-04 16:33:36,075 INFO     Length of setlist is:
+2016-07-04 16:33:36,075 INFO     10
+2016-07-04 16:33:36,076 INFO     ***************************
+2016-07-04 16:33:36,076 INFO     ***************************
+2016-07-04 16:33:36,076 INFO     List is in the following mongo collection:
+2016-07-04 16:33:36,076 INFO     hate-corpus-only-syn-unq-order-3
+2016-07-04 16:33:36,079 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,201 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,331 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,453 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,581 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,713 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,837 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:36,967 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:37,120 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:37,240 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-04 16:33:37,364 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-04 16:33:37,364 INFO     [u'emotion', u'impression', u'flavor', u'tone', u'magnetic inclination', u'liking', u'trend', u'hatred', u'inclination of an orbit', u'ambiance', u'atmosphere', u'feel', u'tactile sensation', u'touch', u'attitude', u'motion', u'movement', u'effort', u'message', u'property', u'feat', u'deed', u'tendency', u'move', u'subject matter', u'spatial relation', u'position', u'discriminate', u'intuition', u'disposal', u'inclining', u'separate', u'lean', u'state', u'disapproval', u'content', u'propensity', u'touch sensation', u'intuitive feeling', u'way', u'mental attitude', u'dislike', u'tactual sensation', u'assessment', u'somatic sensation', u'disfavour', u'inclination', u'direction', u'perception', u'belief', u'nature', u'idea', u'judgement', u'ambience', u'tilt', u'detest', u'motility', u'disposition', u'temperament', u'disfavor', u'flavour', u'judgment', u'spirit', u'disadvantage', u'substance', u'rejection', u'look', u'angle', u'smell', u'angle of inclination', u'list', u'exploit', u'magnetic dip', u'thought', u'angle of dip', u'single out', u'somatesthesia', u'leaning', u'opinion', u'somesthesia', u'feeling', u'dip', u'notion', u'somaesthesia']
+2016-07-04 16:33:37,364 INFO     =====END FLAT LIST=====
+2016-07-04 16:33:37,364 INFO     Length of list is:
+2016-07-04 16:33:37,365 INFO     121
+2016-07-04 16:33:37,365 INFO     Length of setlist is:
+2016-07-04 16:33:37,365 INFO     84
+2016-07-04 16:33:37,365 INFO     ***************************
+2016-07-04 16:33:37,367 INFO     127.0.0.1 - - [04/Jul/2016 16:33:37] "POST /corpus/y HTTP/1.1" 200 -
