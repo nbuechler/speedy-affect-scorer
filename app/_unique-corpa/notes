@@ -42,9 +42,9 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="hope"/>
     <item name="joy"/>
     <item name="love"/>
-    <item name="pity"/> <====== stopped here
+    <item name="pity"/> 
     <item name="pride"/>
-    <item name="relief"/>
+    <item name="relief"/> <====== stopped here
     <item name="remorse"/>
     <item name="reproach"/>
     <item name="resentment"/>
@@ -53,6 +53,6 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
 
 but here are the exceptions:
 fears-confirmed +becomes+ dread
-gloating +becomes+ pride
+gloating +becomes+ triumph
 happy-for +becomes+ thankful
 
