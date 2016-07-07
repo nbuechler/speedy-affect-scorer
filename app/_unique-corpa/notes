@@ -44,8 +44,8 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="love"/>
     <item name="pity"/> 
     <item name="pride"/>
-    <item name="relief"/> <====== stopped here
-    <item name="remorse"/>
+    <item name="relief"/> 
+    <item name="remorse"/> <====== stopped here
     <item name="reproach"/>
     <item name="resentment"/>
     <item name="satisfaction"/>
