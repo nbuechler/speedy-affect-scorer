@@ -23,9 +23,10 @@ sad + becomes+ sadness
 satisfied +becomes+ harmony
 worried +becomes+ worry
 
+**********************************
 ========
 for occ-categories
-========
+--------
 I mostly keep the same as below ( I am noticing an overlap ;-) )
 
     <item name="admiration"/>
@@ -51,8 +52,10 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="satisfaction"/>
     <item name="shame"/>
 
-but here are the exceptions:
+========but here are the exceptions:========
 fears-confirmed +becomes+ dread
 gloating +becomes+ triumph
 happy-for +becomes+ thankful
+shame +becomes+ embarrassment
 
+**********************************
