@@ -1,6 +1,18 @@
 emotionML-link
 https://www.w3.org/TR/emotion-voc/xml#everyday-categories
 
+========
+for big-6
+
+    <item name="anger"/>
+    <item name="disgust"/>
+    <item name="fear"/>
+    <item name="happiness"/>
+    <item name="sadness"/>
+    <item name="surprise"/>
+
+**********************************
+
 ===DIFFERENCES===
 everyday-categories
 -----------------
@@ -76,8 +88,8 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="guilt"/>
     <item name="happiness"/>
     <item name="hate"/>
-    <item name="interest"/> <====== stopped here
-    <item name="irritation"/>
+    <item name="interest"/> 
+    <item name="irritation"/> <====== stopped here
     <item name="jealousy"/>
     <item name="joy"/>
     <item name="love"/>
