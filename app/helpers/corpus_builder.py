@@ -76,6 +76,7 @@ def verify_bhl_api(api_key):
 
 def get_single_word(api_key, word):
     r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/' + word + '/json')
+    # TODO: Figure out how to handle 500 error
     if(r.raise_for_status()):
         return 404
     else:
