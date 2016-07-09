@@ -1,0 +1,80 @@
+2016-06-29 23:32:18,693 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-06-29 23:32:18,693 INFO      * Restarting with stat
+2016-06-29 23:32:18,946 WARNING   * Debugger is active!
+2016-06-29 23:32:18,951 INFO      * Debugger pin code: 248-009-146
+2016-06-29 23:32:29,395 INFO     ***************************
+2016-06-29 23:32:29,395 INFO     List is in the following mongo collection:
+2016-06-29 23:32:29,395 INFO     amusement-corpus-only-syn-unq-order-1
+2016-06-29 23:32:29,417 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:29,585 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-06-29 23:32:29,585 INFO     [u'delight', u'diversion', u'delectation', u'recreation', u'entertainment']
+2016-06-29 23:32:29,585 INFO     =====END FLAT LIST=====
+2016-06-29 23:32:29,585 INFO     Length of list is:
+2016-06-29 23:32:29,585 INFO     5
+2016-06-29 23:32:29,585 INFO     Length of setlist is:
+2016-06-29 23:32:29,586 INFO     5
+2016-06-29 23:32:29,586 INFO     ***************************
+2016-06-29 23:32:29,586 INFO     ***************************
+2016-06-29 23:32:29,586 INFO     List is in the following mongo collection:
+2016-06-29 23:32:29,586 INFO     amusement-corpus-only-syn-unq-order-2
+2016-06-29 23:32:29,589 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:29,722 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:29,846 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:29,986 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,116 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,241 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-06-29 23:32:30,242 INFO     [u'enjoy', u'satisfy', u'digression', u'pleasance', u'onslaught', u'deflection', u'revel', u'divagation', u'transport', u'diversionary attack', u'please', u'refreshment', u'delectation', u'onset', u'enthral', u'attack', u'onrush', u'amusement', u'deviation', u'gratify', u'turning', u'enthrall', u'deflexion', u'enjoyment', u'joy', u'positive stimulus', u'delight', u'diversion', u'enrapture', u'recreation', u'rejuvenation', u'ravish', u'turn', u'activity', u'pleasure', u'enchant']
+2016-06-29 23:32:30,242 INFO     =====END FLAT LIST=====
+2016-06-29 23:32:30,242 INFO     Length of list is:
+2016-06-29 23:32:30,242 INFO     43
+2016-06-29 23:32:30,242 INFO     Length of setlist is:
+2016-06-29 23:32:30,242 INFO     36
+2016-06-29 23:32:30,242 INFO     ***************************
+2016-06-29 23:32:30,242 INFO     ***************************
+2016-06-29 23:32:30,242 INFO     List is in the following mongo collection:
+2016-06-29 23:32:30,242 INFO     amusement-corpus-only-syn-unq-order-3
+2016-06-29 23:32:30,243 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,367 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,492 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,619 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,739 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,861 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:30,984 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,111 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,252 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,381 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,516 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,639 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,764 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:31,888 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,007 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,133 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,271 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,396 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,520 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,652 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,779 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:32,903 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,033 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,151 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,285 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,410 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,545 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,686 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,808 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:33,929 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,061 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,208 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,332 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,470 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,593 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,719 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-06-29 23:32:34,842 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-06-29 23:32:34,843 INFO     [u'go', u'sexual practice', u'violate', u'send', u'degeneration', u'spate', u'choice', u'sexual activity', u'call on', u'rotary motion', u'affect', u'trouble', u'blast', u'change of direction', u'recreation', u'stimulus', u'duty period', u'enrapture', u'round', u'enjoy', u'fit', u'direct', u'start out', u'bombardment', u'channelize', u'move around', u'pander', u'employ', u'get down', u'favour', u'appeal', u'movement', u'satisfy', u'transportation', u'live up to', u'modify', u'metamorphose', u'linguistic communication', u'witch', u'meet', u'lash out', u'change', u'substance', u'ravish', u'shift', u'experience', u'pick', u'action', u'criticism', u'love', u'criticise', u'work shift', u'apply', u'subject matter', u'plow', u'injure', u'tape transport', u'captivate', u'entrance', u'trait', u'warp', u'train', u'flak', u'work', u'human action', u'channelise', u'sour', u'fulfill', u'change of course', u'shaving', u'excursion', u'control', u'do', u'process', u'onslaught', u'whoop it up', u'revelry', u'bend', u'surge', u'attract', u'rape', u'savor', u'travel', u'utilize', u'till', u'fete', u'raptus', u'utilise', u'deflexion', u'sex activity', u'bodily function', u'grow', u'end product', u'criticize', u'attempt', u'departure', u'outpouring', u'provide', u'wrench', u'pleasure', u'operate', u'irregularity', u'greening', u'deform', u'wound', u'move', u'beguile', u'divagation', u'change form', u'difference', u'jollify', u'shaping', u'bout', u'alter', u'flex', u'legal right', u'spell', u'indulge', u'rotation', u'enamor', u'capability', u'instrumentality', u'operation', u'organic phenomenon', u'contend', u'entertainment', u'content', u'onrush', u'turning', u'divergence', u'formation', u'struggle', u'collation', u'beginning', u'bask', u'care', u'change state', u'language', u'emotional state', u'motion', u'turn', u'change shape', u'undergo', u'emotion', u'set on', u'feel', u'savour', u'physical property', u'number', u'jollification', u'maturate', u'affliction', u'carry', u'message', u'pick apart', u'bite', u'good turn', u'stimulation', u'enthral', u'attack', u'natural process', u'enthrall', u'period of play', u'acquire', u'sex', u'commence', u'diffusion', u'bewitch', u'turn of events', u'crook', u'biological process', u'discolor', u'make merry', u'erroneousness', u'feeling', u'fluctuation', u'instrumentation', u'trance', u'devolution', u'mechanism', u'onset', u'wassail', u'take', u'transmit', u'performance', u'go through', u'channel', u'play', u'conform to', u'positive stimulus', u'assault', u'barrage', u'turn over', u'parenthesis', u'selection', u'rapture', u'excursus', u'flack', u'snack', u'refreshment', u'crime', u'rick', u'outrage', u'organic process', u'gratify', u'invoke', u'get', u'exaltation', u'relish', u'celebrate', u'make whoopie', u'activity', u'release', u'enchant', u'upsurge', u'plough', u'see', u'racket', u'capacity', u'diversionary attack', u'enamour', u'please', u'favor', u'state', u'routine', u'commercial enterprise', u'approach', u'aberration', u'joy', u'unfavorable judgment', u'paring', u'tape drive', u'refraction', u'senesce', u'supply', u'color', u'walk', u'wrick', u'plan of attack', u'conceptualization', u'public presentation', u'fire', u'locomote', u'playing period', u'catch', u'snipe', u'spirit', u'reverse', u'joyfulness', u'aim', u'conveyance', u'error', u'discolour', u'physical process', u'joyousness', u'pleasance', u'set about', u'ecstasy', u'law-breaking', u'capture', u'perform', u'dishonor', u'tour', u'sliver', u'development', u'enjoyment', u'delight', u'diversion', u'abnormality', u'fascinate', u'colour', u'bending', u'aside', u'shape', u'take aim', u'human activity', u'conceptualisation', u'input', u'displace', u'business enterprise', u'change by reversal', u'bit', u'retreat', u'knock', u'like', u'deviance', u'oncoming', u'military operation', u'output', u'sprain', u'fulfil', u'begin', u'deflection', u'revel', u'statistic', u'transport', u'get on', u'curved shape', u'delectation', u'gladden', u'natural action', u'business', u'aggress', u'use', u'ply', u'become', u'tone-beginning', u'conviviality', u'shipping', u'body process', u'journey', u'act', u'charm', u'transmute', u'bodily process', u'journeying', u'rejoice', u'transfer', u'hex', u'transform', u'fight', u'start', u'set out', u'jinx', u'form', u'merrymaking', u'glamour', u'assail', u'rush', u'rejuvenation', u'wish', u'mature', u'aberrance', u'make happy', u'digression', u'twist', u'formulation', u'ship', u'fill', u'activeness', u'ferment', u'stimulant', u'deviation', u'reorientation', u'variation', u'dishonour', u'restoration', u'cater', u'age', u'curve', u'aberrancy', u'becharm', u'commencement']
+2016-06-29 23:32:34,843 INFO     =====END FLAT LIST=====
+2016-06-29 23:32:34,843 INFO     Length of list is:
+2016-06-29 23:32:34,843 INFO     545
+2016-06-29 23:32:34,843 INFO     Length of setlist is:
+2016-06-29 23:32:34,844 INFO     353
+2016-06-29 23:32:34,844 INFO     ***************************
+2016-06-29 23:32:34,845 INFO     127.0.0.1 - - [29/Jun/2016 23:32:34] "POST /corpus/y HTTP/1.1" 200 -

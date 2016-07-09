@@ -1,0 +1,44 @@
+2016-07-08 23:15:37,465 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-08 23:15:37,466 INFO      * Restarting with stat
+2016-07-08 23:15:37,720 WARNING   * Debugger is active!
+2016-07-08 23:15:37,725 INFO      * Debugger pin code: 248-009-146
+2016-07-08 23:16:53,757 INFO     ***************************
+2016-07-08 23:16:53,758 INFO     List is in the following mongo collection:
+2016-07-08 23:16:53,758 INFO     contentment-corpus-only-syn-unq-order-1
+2016-07-08 23:16:53,767 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:53,900 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 23:16:53,900 INFO     [u'happiness']
+2016-07-08 23:16:53,900 INFO     =====END FLAT LIST=====
+2016-07-08 23:16:53,900 INFO     Length of list is:
+2016-07-08 23:16:53,900 INFO     1
+2016-07-08 23:16:53,900 INFO     Length of setlist is:
+2016-07-08 23:16:53,901 INFO     1
+2016-07-08 23:16:53,901 INFO     ***************************
+2016-07-08 23:16:53,901 INFO     ***************************
+2016-07-08 23:16:53,901 INFO     List is in the following mongo collection:
+2016-07-08 23:16:53,901 INFO     contentment-corpus-only-syn-unq-order-2
+2016-07-08 23:16:53,903 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:54,033 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 23:16:54,034 INFO     [u'emotional state', u'feeling', u'felicity', u'spirit']
+2016-07-08 23:16:54,034 INFO     =====END FLAT LIST=====
+2016-07-08 23:16:54,034 INFO     Length of list is:
+2016-07-08 23:16:54,034 INFO     4
+2016-07-08 23:16:54,034 INFO     Length of setlist is:
+2016-07-08 23:16:54,034 INFO     4
+2016-07-08 23:16:54,034 INFO     ***************************
+2016-07-08 23:16:54,035 INFO     ***************************
+2016-07-08 23:16:54,035 INFO     List is in the following mongo collection:
+2016-07-08 23:16:54,035 INFO     contentment-corpus-only-syn-unq-order-3
+2016-07-08 23:16:54,038 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:54,178 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:54,311 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:54,506 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 23:16:54,632 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 23:16:54,632 INFO     [u'emotion', u'impression', u'atmosphere', u'tone', u'disposition', u'purport', u'feel', u'ambiance', u'intuition', u'signification', u'liven up', u'brio', u'supernatural being', u'touch', u'flavor', u'animate', u'intuitive feeling', u'fibre', u'enliven', u'life principle', u'character', u'state', u'liveliness', u'touch sensation', u'animation', u'happiness', u'significance', u'ambience', u'import', u'smell', u'somatic sensation', u'spiritual being', u'life', u'perception', u'sprightliness', u'belief', u'liven', u'spirit up', u'invigoration', u'heart', u'idea', u'meaning', u'vivification', u'intent', u'inspirit', u'temperament', u'spirit', u'felicitousness', u'tactual sensation', u'disembodied spirit', u'feeling', u'flavour', u'look', u'vital principle', u'emotional state', u'tactile sensation', u'spiritedness', u'thought', u'invigorate', u'somatesthesia', u'fiber', u'opinion', u'somesthesia', u'appropriateness', u'notion', u'somaesthesia']
+2016-07-08 23:16:54,632 INFO     =====END FLAT LIST=====
+2016-07-08 23:16:54,633 INFO     Length of list is:
+2016-07-08 23:16:54,633 INFO     79
+2016-07-08 23:16:54,633 INFO     Length of setlist is:
+2016-07-08 23:16:54,633 INFO     66
+2016-07-08 23:16:54,633 INFO     ***************************
+2016-07-08 23:16:54,635 INFO     127.0.0.1 - - [08/Jul/2016 23:16:54] "POST /corpus/y HTTP/1.1" 200 -
