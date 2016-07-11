@@ -89,7 +89,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="happiness"/>
     <item name="hate"/>
     <item name="interest"/> 
-    <item name="irritation"/> <====== stopped here
+    <item name="irritation"/> 
     <item name="jealousy"/>
     <item name="joy"/>
     <item name="love"/>
@@ -97,13 +97,12 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="pride"/>
     <item name="sadness"/>
     <item name="shame"/>
-    <item name="stress"/>
+    <item name="stress"/> <====== stopped here
     <item name="surprise"/>
 
 ========but here are the exceptions:========
 being-hurt +becomes+ pain
-interest +becomes+ curiosity
-shame +becomes+ embarrassment
+interest +can mean a few things so also included+ curiosity
 
 **********************************
 
