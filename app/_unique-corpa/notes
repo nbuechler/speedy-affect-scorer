@@ -97,7 +97,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="pride"/>
     <item name="sadness"/>
     <item name="shame"/>
-    <item name="stress"/> <====== stopped here
+    <item name="stress"/> 
     <item name="surprise"/>
 
 ========but here are the exceptions:========
@@ -106,19 +106,25 @@ interest +can mean a few things so also included+ curiosity
 
 **********************************
 
-
-
-
-
-
-
-
-
-
-
-
 ========
 for frijda-categories
 --------
+
+I mostly keep the same as below ( I am noticing an overlap ;-) )
+    <item name="anger"/>
+    <item name="arrogance"/>
+    <item name="desire"/>
+    <item name="disgust"/>
+    <item name="enjoyment"/>
+    <item name="fear"/>
+    <item name="humility"/>
+    <item name="indifference"/> <====== stopped here
+    <item name="interest"/>
+    <item name="resignation"/>
+    <item name="shock"/>
+    <item name="surprise"/>
+
+========but here are the exceptions:========
+<none>
 
 **********************************
