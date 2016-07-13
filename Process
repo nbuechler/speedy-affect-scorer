@@ -1,0 +1,6 @@
+Process for making the corpus
+
+1. Write the script and coding, and tweak the technical implementation of gathering all the synonyms
+2. Make sure that all the Emotions in emotionML are <nouns>, but there are anywhere between a small number, like 4, to an infinte amount of emotions -- similar to that of color... or sounds, etc.
+3. Run the querying, from big huge thesaurus. Doing no more than 1000 per day. This made it easier and less redunant for me, but also made me think more about what I was doing.
+4. Stored the result with a logfile, and also in mongo.
