@@ -1,6 +1,10 @@
 emotionML-link
 https://www.w3.org/TR/emotion-voc/xml#everyday-categories
 
+
+<!-- CATEGORIES -->
+
+
 ========
 for big-6
 
@@ -118,7 +122,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="enjoyment"/>
     <item name="fear"/>
     <item name="humility"/>
-    <item name="indifference"/> <====== stopped here
+    <item name="indifference"/> 
     <item name="interest"/>
     <item name="resignation"/>
     <item name="shock"/>
@@ -128,3 +132,33 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
 <none>
 
 **********************************
+
+
+**********************************
+**********************************
+**********************************
+
+
+<!-- DIMENSIONS -->
+
+
+  <vocabulary type="dimension" id="pad-dimensions">
+    <item name="pleasure"/> <====== stopped here
+    <item name="arousal"/>
+    <item name="dominance"/>
+  </vocabulary>
+  <vocabulary type="dimension" id="fsre-dimensions">
+    <item name="valence"/>
+    <item name="potency"/>
+    <item name="arousal"/>
+    <item name="unpredictability"/>
+  </vocabulary>
+  <vocabulary type="dimension" id="intensity-dimension">
+    <item name="intensity"/>
+  </vocabulary>
+
+
+**********************************
+**********************************
+**********************************
+
