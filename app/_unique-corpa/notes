@@ -71,7 +71,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
 ========but here are the exceptions:========
 fears-confirmed +becomes+ dread
 gloating +becomes+ triumph
-happy-for +becomes+ thankful
+happy-for +becomes+ thankful  -- missing this one!
 shame +becomes+ embarrassment
 
 **********************************
@@ -81,11 +81,11 @@ for fsre-categories
 I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="anger"/>
     <item name="anxiety"/>
-    <item name="being-hurt"/> 
-    <item name="compassion"/> 
-    <item name="contempt"/> 
-    <item name="contentment"/>
-    <item name="despair"/>
+    <item name="being-hurt"/> -- missing this one!
+    <item name="compassion"/> -- missing this one!
+    <item name="contempt"/>  -- missing this one!
+    <item name="contentment"/> -- missing this one!
+    <item name="despair"/> -- missing this one!
     <item name="disappointment"/>
     <item name="disgust"/>
     <item name="fear"/>
@@ -105,7 +105,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="surprise"/>
 
 ========but here are the exceptions:========
-being-hurt +becomes+ pain
+being-hurt +becomes+ pain -- missing this one!
 interest +can mean a few things so also included+ curiosity
 
 **********************************
