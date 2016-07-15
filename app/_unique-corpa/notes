@@ -81,7 +81,7 @@ for fsre-categories
 I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="anger"/>
     <item name="anxiety"/>
-    <item name="being-hurt"/> -- missing this one!
+    <item name="being-hurt"/>
     <item name="compassion"/> -- missing this one!
     <item name="contempt"/>  -- missing this one!
     <item name="contentment"/> -- missing this one!
@@ -105,7 +105,7 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="surprise"/>
 
 ========but here are the exceptions:========
-being-hurt +becomes+ pain -- missing this one!
+being-hurt +becomes+ pain
 interest +can mean a few things so also included+ curiosity
 
 **********************************
