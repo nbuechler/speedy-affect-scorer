@@ -1,0 +1,73 @@
+2016-07-07 22:39:14,111 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-07 22:39:14,113 INFO      * Restarting with stat
+2016-07-07 22:39:14,366 WARNING   * Debugger is active!
+2016-07-07 22:39:14,372 INFO      * Debugger pin code: 248-009-146
+2016-07-07 22:39:19,792 INFO     ***************************
+2016-07-07 22:39:19,792 INFO     List is in the following mongo collection:
+2016-07-07 22:39:19,792 INFO     remorse-corpus-only-syn-unq-order-1
+2016-07-07 22:39:19,806 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:19,969 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-07 22:39:19,970 INFO     [u'compunction', u'regret', u'sorrow', u'rue', u'self-reproach', u'ruefulness']
+2016-07-07 22:39:19,970 INFO     =====END FLAT LIST=====
+2016-07-07 22:39:19,970 INFO     Length of list is:
+2016-07-07 22:39:19,970 INFO     6
+2016-07-07 22:39:19,970 INFO     Length of setlist is:
+2016-07-07 22:39:19,970 INFO     6
+2016-07-07 22:39:19,970 INFO     ***************************
+2016-07-07 22:39:19,970 INFO     ***************************
+2016-07-07 22:39:19,970 INFO     List is in the following mongo collection:
+2016-07-07 22:39:19,970 INFO     remorse-corpus-only-syn-unq-order-2
+2016-07-07 22:39:19,971 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,133 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,275 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,442 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,612 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,749 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:20,904 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-07 22:39:20,904 INFO     [u'regret', u'self-reproof', u'feel', u'ruefulness', u'sorrowfulness', u'street', u'suffer', u'miss', u'herbaceous plant', u'unhappiness', u'decline', u'reproach', u'self-reproach', u'repent', u'remorse', u'negative stimulus', u'herb', u'sorrow', u'rue', u'grief', u'compunction', u'refuse', u'grieve', u'herb of grace', u'experience', u'inform', u'sadness', u'Ruta graveolens']
+2016-07-07 22:39:20,904 INFO     =====END FLAT LIST=====
+2016-07-07 22:39:20,904 INFO     Length of list is:
+2016-07-07 22:39:20,904 INFO     56
+2016-07-07 22:39:20,905 INFO     Length of setlist is:
+2016-07-07 22:39:20,905 INFO     28
+2016-07-07 22:39:20,905 INFO     ***************************
+2016-07-07 22:39:20,905 INFO     ***************************
+2016-07-07 22:39:20,905 INFO     List is in the following mongo collection:
+2016-07-07 22:39:20,905 INFO     remorse-corpus-only-syn-unq-order-3
+2016-07-07 22:39:20,908 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,062 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,204 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,335 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,471 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,611 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,743 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:21,874 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,002 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,142 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,273 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,411 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,542 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,671 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,806 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:22,936 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,076 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,209 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,343 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,478 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,609 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,742 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:23,871 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,002 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,131 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,258 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,387 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,517 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-07 22:39:24,648 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-07 22:39:24,649 INFO     [u'slope', u'atmosphere', u'consider', u'consciousness', u'lack', u'uncheerfulness', u'knowingness', u'rebuke', u'participate', u'touch', u'flavor', u'suffer', u'find', u'digest', u'go down', u'pretermit', u'garbage', u'title', u'brook', u'comprehend', u'environment', u'turn down', u'ambience', u'remorse', u'alter', u'awareness', u'mournfulness', u'put up', u'stick out', u'get', u'perceive', u'bear', u'occurrent', u'know', u'accuse', u'fall', u'food waste', u'hold on', u'look for', u'condition', u'desire', u'deny', u'flavoring', u'stimulus', u'conceive', u'drop', u'herb of grace', u'downslope', u'come down', u'lose', u'side', u'respond', u'intercommunicate', u'ruthfulness', u'neighborhood', u'regret', u'self-reproof', u'reprehension', u'lessen', u'ambiance', u'impeach', u'incriminate', u'see', u'street', u'escape', u'fail', u'girl', u'miscarry', u'neighbourhood', u'heartache', u'appear', u'worsen', u'grieve', u'avoid', u'tactile property', u'lean', u'abide', u'tend', u'content', u'reason out', u'sustain', u'finger', u'declension', u'correct', u'regain', u'be', u'run', u'thoroughfare', u'waste matter', u'herb', u'sorrow', u'communicate', u'mental object', u'rue', u'title of respect', u'reason', u'let', u'aggrieve', u'diminution', u'ache', u'reproach', u'lugubriousness', u'change', u'flavourer', u'react', u'search', u'property', u'ignominy', u'incline', u'receive', u'omit', u'adult female', u'countenance', u'experience', u'keep', u'turn', u'leave out', u'stand', u'cognizance', u'upbraid', u'cognisance', u'undergo', u'think', u'tone', u'declivity', u'conclude', u'feel', u'ruefulness', u'negative stimulus', u'sorrowfulness', u'elude', u'turn away', u'decrease', u'decrement', u'miss', u'unhappiness', u'decline', u'seasoner', u'afflict', u'flavouring', u'support', u'overlook', u'criminate', u'waste material', u'stimulation', u'seasoning', u'live', u'missy', u'young woman', u'tracheophyte', u'form of address', u'stomach', u'go wrong', u'reproof', u'foreplay', u'take part', u'vascular plant', u'slump', u'pass up', u'hurt', u'grief', u'failure', u'change state', u'input', u'diminish', u'believe', u'spirit', u'resist', u'cognitive content', u'waste', u'flavour', u'look', u'decay', u'tolerate', u'brokenheartedness', u'emotional state', u'sadness', u'modify', u'endure', u'reprimand', u'meet', u'waste product', u'feeling', u'Miss', u'natural event', u'disgrace', u'want', u'wane', u'compunction', u'atone', u'shame', u'woman', u'have', u'sense', u'arousal', u'seem', u'education', u'seek', u'gloominess', u'descent', u'fille', u'flavorer', u'herbaceous plant', u'repent', u'heartbreak', u'descend', u'reject', u'scraps', u'go through', u'smell', u'inflect', u'stimulant', u'status', u'defy', u'permit', u'palpate', u'chance', u'be given', u'reproval', u'opportunity', u'young lady', u'occurrence', u'refuse', u'happening', u'misfire', u'neglect', u'inform', u'self-reproach', u'declination', u'overleap', u'allow', u'Ruta graveolens']
+2016-07-07 22:39:24,649 INFO     =====END FLAT LIST=====
+2016-07-07 22:39:24,649 INFO     Length of list is:
+2016-07-07 22:39:24,649 INFO     335
+2016-07-07 22:39:24,650 INFO     Length of setlist is:
+2016-07-07 22:39:24,650 INFO     232
+2016-07-07 22:39:24,650 INFO     ***************************
+2016-07-07 22:39:24,652 INFO     127.0.0.1 - - [07/Jul/2016 22:39:24] "POST /corpus/y HTTP/1.1" 200 -

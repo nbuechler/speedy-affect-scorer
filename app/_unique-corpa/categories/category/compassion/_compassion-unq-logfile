@@ -1,0 +1,80 @@
+2016-07-08 21:49:44,710 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-08 21:49:44,711 INFO      * Restarting with stat
+2016-07-08 21:49:44,950 WARNING   * Debugger is active!
+2016-07-08 21:49:44,955 INFO      * Debugger pin code: 248-009-146
+2016-07-08 22:13:57,284 INFO     ***************************
+2016-07-08 22:13:57,284 INFO     List is in the following mongo collection:
+2016-07-08 22:13:57,284 INFO     compassion-corpus-only-syn-unq-order-1
+2016-07-08 22:13:57,292 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:57,434 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 22:13:57,434 INFO     [u'pity', u'mercy', u'compassionateness', u'fellow feeling', u'sympathy', u'mercifulness']
+2016-07-08 22:13:57,434 INFO     =====END FLAT LIST=====
+2016-07-08 22:13:57,434 INFO     Length of list is:
+2016-07-08 22:13:57,435 INFO     6
+2016-07-08 22:13:57,435 INFO     Length of setlist is:
+2016-07-08 22:13:57,435 INFO     6
+2016-07-08 22:13:57,435 INFO     ***************************
+2016-07-08 22:13:57,435 INFO     ***************************
+2016-07-08 22:13:57,435 INFO     List is in the following mongo collection:
+2016-07-08 22:13:57,435 INFO     compassion-corpus-only-syn-unq-order-2
+2016-07-08 22:13:57,438 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:57,582 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:57,717 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:57,858 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:57,998 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,135 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,264 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 22:13:58,264 INFO     [u'ministration', u'disposition', u'humaneness', u'shame', u'lenience', u'mercifulness', u'sympathize with', u'tendency', u'misfortune', u'succour', u'condole with', u'affinity', u'boon', u'ruth', u'inclination', u'compassionateness', u'compassion', u'feel for', u'sorrow', u'blessing', u'understanding', u'clemency', u'leniency', u'pathos', u'mercy', u'fellow feeling', u'sympathy', u'compassionate', u'grieve', u'commiseration', u'succor', u'bad luck', u'relief', u'feeling', u'kinship']
+2016-07-08 22:13:58,264 INFO     =====END FLAT LIST=====
+2016-07-08 22:13:58,264 INFO     Length of list is:
+2016-07-08 22:13:58,264 INFO     50
+2016-07-08 22:13:58,264 INFO     Length of setlist is:
+2016-07-08 22:13:58,264 INFO     35
+2016-07-08 22:13:58,264 INFO     ***************************
+2016-07-08 22:13:58,264 INFO     ***************************
+2016-07-08 22:13:58,264 INFO     List is in the following mongo collection:
+2016-07-08 22:13:58,264 INFO     compassion-corpus-only-syn-unq-order-3
+2016-07-08 22:13:58,266 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,398 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,552 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,685 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,820 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:58,961 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,093 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,229 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,361 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,499 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,650 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,780 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:13:59,912 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,047 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,182 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,311 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,445 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,577 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,709 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,852 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:00,982 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,121 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,251 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,380 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,517 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,649 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,779 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:01,905 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,038 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,185 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,319 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,453 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,586 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,718 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,842 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-08 22:14:02,962 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-08 22:14:02,962 INFO     [u'ministration', u'atmosphere', u'social welfare', u'impression', u'help', u'alleviation', u'dishonor', u'ballplayer', u'inclination of an orbit', u'ill luck', u'intuition', u'rest', u'humaneness', u'attitude', u'relation', u'surpass', u'welfare', u'embossment', u'equal', u'flavor', u'suffer', u'feat', u'tendency', u'style', u'succour', u'resemblance', u'disposal', u'ease', u'state', u'grace', u'attraction', u'affinity', u'rest period', u'ambience', u'suspension', u'match', u'ruefulness', u'petition', u'sculptural relief', u'move', u'fate', u'compassion', u'aggrieve', u'supplication', u'phylogenetic relation', u'amends', u'clemency', u'Book of Ruth', u'trouble', u'married woman', u'fortune', u'outperform', u'compassionate', u'list', u'alteration', u'orison', u'good weather', u'intermission', u'obligate', u'rilievo', u'break', u'family relationship', u'outdo', u'movement', u'dip', u'somaesthesia', u'luck', u'interruption', u'exceed', u'force', u'regret', u'afflict', u'trend', u'peer', u'idea', u'module', u'touch', u'arouse', u'mercifulness', u'surmount', u'liking', u'intellect', u'substitute', u'misfortune', u'destiny', u'permissiveness', u'spatial relation', u'assistance', u'lean', u'attractiveness', u'touch sensation', u'outgo', u'tolerance', u'magnetic dip', u'inclination', u'knowing', u'perception', u'belief', u'nature', u'feel for', u'sorrow', u'agreement', u'rue', u'release', u'reason', u'pause', u'respite', u'disposition', u'aid', u'diminution', u'baseball player', u'understanding', u'indemnity', u'change', u'lenity', u'pity', u'property', u'ignominy', u'comfortableness', u'sculpture', u'George Herman Ruth', u'chance', u'motion', u'enkindle', u'statement', u'evoke', u'benediction', u'stand-in', u'spirit', u'freeing', u'inclining', u'tone', u'Babe Ruth', u'feel', u'attaint', u'poignancy', u'negative stimulus', u'sorrowfulness', u'leniency', u'sympathy', u'exploit', u'lenience', u'decrease', u'good luck', u'sympathize with', u'Ruth', u'quality', u'intuitive feeling', u'unhappiness', u'chemical attraction', u'raise', u'liberation', u'support', u'assuagement', u'good fortune', u'reduction', u'motility', u'way', u'outmatch', u'tactual sensation', u'somatic sensation', u'direction', u'modification', u'somatesthesia', u'lot', u'relationship', u'fire', u'ambiance', u'indulgence', u'mildness', u'approving', u'grief', u'moderation', u'fellow feeling', u'mishap', u'magnetic inclination', u'temperament', u'luckiness', u'expressive style', u'approval', u'effort', u'pathos', u'reliever', u'circumstances', u'mercy', u'flavour', u'look', u'easement', u'apprehension', u'acknowledgement', u'grieve', u'discernment', u'commiseration', u'sadness', u'redress', u'bad luck', u'fill-in', u'leaning', u'backup man', u'kindle', u'somesthesia', u'feeling', u'angle of dip', u'tactile sensation', u'disgrace', u'step-down', u'compassionateness', u'Sultan of Swat', u'elicit', u'outstrip', u'prayer', u'deed', u'provoke', u'angle of inclination', u'restitution', u'easing', u'angle', u'attractive force', u'tilt', u'condole with', u'comfort', u'compel', u'mental faculty', u'propensity', u'book', u'damages', u'boon', u'mental attitude', u'condolence', u'ruth', u'smell', u'blessing', u'tough luck', u'oblige', u'assist', u'indemnification', u'hazard', u'dishonour', u'faculty', u'relievo', u'compeer', u'acknowledgment', u'mischance', u'wife', u'backup', u'thanksgiving', u'thought', u'portion', u'succor', u'relief', u'savvy', u'position', u'opinion', u'notion', u'kinship']
+2016-07-08 22:14:02,962 INFO     =====END FLAT LIST=====
+2016-07-08 22:14:02,962 INFO     Length of list is:
+2016-07-08 22:14:02,963 INFO     394
+2016-07-08 22:14:02,963 INFO     Length of setlist is:
+2016-07-08 22:14:02,963 INFO     255
+2016-07-08 22:14:02,963 INFO     ***************************
+2016-07-08 22:14:02,965 INFO     127.0.0.1 - - [08/Jul/2016 22:14:02] "POST /corpus/y HTTP/1.1" 200 -

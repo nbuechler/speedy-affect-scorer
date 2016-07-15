@@ -1,0 +1,68 @@
+2016-07-11 23:35:53,107 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-11 23:35:53,108 INFO      * Restarting with stat
+2016-07-11 23:35:53,350 WARNING   * Debugger is active!
+2016-07-11 23:35:53,355 INFO      * Debugger pin code: 248-009-146
+2016-07-11 23:35:54,850 INFO     ***************************
+2016-07-11 23:35:54,850 INFO     List is in the following mongo collection:
+2016-07-11 23:35:54,850 INFO     arrogance-corpus-only-syn-unq-order-1
+2016-07-11 23:35:54,859 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:54,995 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-11 23:35:54,995 INFO     [u'pride', u'high-handedness', u'haughtiness', u'hauteur', u'lordliness']
+2016-07-11 23:35:54,996 INFO     =====END FLAT LIST=====
+2016-07-11 23:35:54,996 INFO     Length of list is:
+2016-07-11 23:35:54,996 INFO     5
+2016-07-11 23:35:54,996 INFO     Length of setlist is:
+2016-07-11 23:35:54,996 INFO     5
+2016-07-11 23:35:54,996 INFO     ***************************
+2016-07-11 23:35:54,996 INFO     ***************************
+2016-07-11 23:35:54,997 INFO     List is in the following mongo collection:
+2016-07-11 23:35:54,997 INFO     arrogance-corpus-only-syn-unq-order-2
+2016-07-11 23:35:55,000 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,131 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,264 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,401 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,545 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,671 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-11 23:35:55,671 INFO     [u'bearing', u'presence', u'feel', u'satisfaction', u'animal group', u'superbia', u'congratulate', u'mien', u'plume', u'arrogance', u'comportment', u'pride', u'hauteur', u'haughtiness', u'dignity', u'deadly sin', u'trait', u'pridefulness', u'mortal sin', u'lordliness', u'gravitas', u'experience', u'high-handedness', u'feeling']
+2016-07-11 23:35:55,671 INFO     =====END FLAT LIST=====
+2016-07-11 23:35:55,671 INFO     Length of list is:
+2016-07-11 23:35:55,671 INFO     38
+2016-07-11 23:35:55,671 INFO     Length of setlist is:
+2016-07-11 23:35:55,671 INFO     24
+2016-07-11 23:35:55,672 INFO     ***************************
+2016-07-11 23:35:55,672 INFO     ***************************
+2016-07-11 23:35:55,672 INFO     List is in the following mongo collection:
+2016-07-11 23:35:55,672 INFO     arrogance-corpus-only-syn-unq-order-3
+2016-07-11 23:35:55,675 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,817 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:55,952 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,080 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,220 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,348 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,482 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,613 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,749 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:56,884 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,016 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,149 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,282 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,411 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,539 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,667 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,811 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:57,941 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,069 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,196 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,326 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,468 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,612 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,739 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-11 23:35:58,863 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-11 23:35:58,864 INFO     [u'impression', u'atmosphere', u'consider', u'consciousness', u'deck', u'being', u'proximity', u'fleece', u'shape', u'sinning', u'knowingness', u'participate', u'touch', u'existence', u'flavor', u'find', u'get up', u'plume', u'conclude', u'touch sensation', u'comprehend', u'cheat', u'charge', u'armorial bearing', u'ambience', u'pride', u'rob', u'awareness', u'adornment', u'haughtiness', u'dignity', u'bid', u'perceive', u'gratification', u'front', u'look for', u'posture', u'beingness', u'bedeck', u'deadly sin', u'conceive', u'primp', u'indemnity', u'animal material', u'heading', u'triumph', u'occurrence', u'crow', u'rig out', u'ambiance', u'idea', u'plumage', u'see', u'redress', u'heraldic bearing', u'congratulate', u'appear', u'mien', u'tactile property', u'content', u'reason out', u'finger', u'attire', u'expiation', u'hauteur', u'compliment', u'regain', u'be', u'perception', u'deck up', u'belief', u'state', u'mental object', u'pluck', u'attending', u'reason', u'overcharge', u'gloat', u'change', u'tactual sensation', u'occurrent', u'search', u'feeling', u'deck out', u'emotional state', u'tactile sensation', u'experience', u'preen', u'make clean', u'gazump', u'cognizance', u'opinion', u'cognisance', u'undergo', u'think', u'intuition', u'self-respect', u'tone', u'presence', u'feel', u'satisfaction', u'hook', u'fancy up', u'arrogance', u'animal group', u'intuitive feeling', u'superbia', u'attendance', u'support', u'relatedness', u'stimulation', u'live', u'contentment', u'way', u'set up', u'feather', u'high-handedness', u'somatic sensation', u'direction', u'biological group', u'form', u'foreplay', u'body covering', u'cognitive content', u'atonement', u'bodily property', u'felicitate', u'fig out', u'believe', u'personal manner', u'spirit', u'take part', u'self-esteem', u'disembodied spirit', u'flavour', u'look', u'wish', u'chisel', u'self-worth', u'aim', u'receive', u'carriage', u'somatesthesia', u'praise', u'somesthesia', u'property', u'natural event', u'self-regard', u'bearing', u'tog up', u'attribute', u'manner', u'have', u'sense', u'arousal', u'seem', u'education', u'seek', u'restitution', u'soak', u'dress', u'get', u'comportment', u'damages', u'trait', u'go through', u'smell', u'sin', u'bedight', u'status', u'heraldry', u'indemnification', u'palpate', u'surcharge', u'position', u'pridefulness', u'trick up', u'mortal sin', u'dress up', u'happening', u'overdress', u'arrange', u'prink', u'gravitas', u'fig up', u'thought', u'tog out', u'amends', u'trick out', u'clean', u'somaesthesia', u'rip off', u'gussy up', u'lordliness', u'notion', u'know']
+2016-07-11 23:35:58,864 INFO     =====END FLAT LIST=====
+2016-07-11 23:35:58,864 INFO     Length of list is:
+2016-07-11 23:35:58,864 INFO     291
+2016-07-11 23:35:58,864 INFO     Length of setlist is:
+2016-07-11 23:35:58,864 INFO     196
+2016-07-11 23:35:58,864 INFO     ***************************
+2016-07-11 23:35:58,865 INFO     127.0.0.1 - - [11/Jul/2016 23:35:58] "POST /corpus/y HTTP/1.1" 200 -

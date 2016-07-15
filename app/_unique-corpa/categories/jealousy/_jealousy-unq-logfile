@@ -1,0 +1,78 @@
+2016-07-10 23:46:13,397 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-10 23:46:13,398 INFO      * Restarting with stat
+2016-07-10 23:46:13,646 WARNING   * Debugger is active!
+2016-07-10 23:46:13,651 INFO      * Debugger pin code: 248-009-146
+2016-07-10 23:46:24,163 INFO     ***************************
+2016-07-10 23:46:24,163 INFO     List is in the following mongo collection:
+2016-07-10 23:46:24,163 INFO     jealousy-corpus-only-syn-unq-order-1
+2016-07-10 23:46:24,173 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:24,325 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-10 23:46:24,325 INFO     [u'envy', u'watchfulness', u'wakefulness', u'green-eyed monster', u'vigilance', u'enviousness', u'alertness']
+2016-07-10 23:46:24,325 INFO     =====END FLAT LIST=====
+2016-07-10 23:46:24,325 INFO     Length of list is:
+2016-07-10 23:46:24,325 INFO     7
+2016-07-10 23:46:24,325 INFO     Length of setlist is:
+2016-07-10 23:46:24,326 INFO     7
+2016-07-10 23:46:24,326 INFO     ***************************
+2016-07-10 23:46:24,326 INFO     ***************************
+2016-07-10 23:46:24,326 INFO     List is in the following mongo collection:
+2016-07-10 23:46:24,326 INFO     jealousy-corpus-only-syn-unq-order-2
+2016-07-10 23:46:24,328 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:24,481 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:24,624 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:24,772 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:24,919 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,065 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,226 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,366 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-10 23:46:25,366 INFO     [u'physiological condition', u'sharp-sightedness', u'waking', u'alerting', u'resentment', u'weather eye', u'arousal', u'want', u'gall', u'enviousness', u'invidia', u'envy', u'watchfulness', u'temporary state', u'jealousy', u'wakefulness', u'look up to', u'vigilance', u'deadly sin', u'alertness', u'on the qui vive', u'attention', u'begrudge', u'rancor', u'rancour', u'desire', u'mortal sin', u'attentiveness', u'physiological state', u'bitterness', u'admire', u'sleeplessness']
+2016-07-10 23:46:25,366 INFO     =====END FLAT LIST=====
+2016-07-10 23:46:25,366 INFO     Length of list is:
+2016-07-10 23:46:25,366 INFO     53
+2016-07-10 23:46:25,366 INFO     Length of setlist is:
+2016-07-10 23:46:25,367 INFO     32
+2016-07-10 23:46:25,367 INFO     ***************************
+2016-07-10 23:46:25,367 INFO     ***************************
+2016-07-10 23:46:25,367 INFO     List is in the following mongo collection:
+2016-07-10 23:46:25,367 INFO     jealousy-corpus-only-syn-unq-order-3
+2016-07-10 23:46:25,370 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,510 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,650 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,791 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:25,942 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,083 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,230 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,404 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,542 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,680 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,821 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:26,963 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,105 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,251 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,403 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,543 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,689 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,829 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:27,971 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,110 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,251 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,406 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,552 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,692 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,836 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:28,981 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,121 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,263 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,403 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,542 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,687 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,836 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-10 23:46:29,986 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-10 23:46:29,986 INFO     [u'consciousness', u'privation', u'rudeness', u'wishing', u'alerting', u'sinning', u'tendency', u'thoughtfulness', u'sexual practice', u'rousing', u'attraction', u'look up to', u'impoverishment', u'bespeak', u'hope', u'desire', u'lack', u'hostility', u'resent', u'sexual activity', u'ill will', u'begrudge', u'look for', u'rancour', u'plant tissue', u'attentiveness', u'necessary', u'prize', u'freshness', u'taste perception', u'magnet', u'heed', u'wish', u'essential', u'vision', u'requirement', u'work', u'be', u'paying attention', u'waking', u'module', u'sex', u'deficiency', u'basic cognitive process', u'sight', u'watchfulness', u'disagreeableness', u'trust', u'attracter', u'crust', u'wakefulness', u'state', u'irk', u'jaundice', u'impudence', u'alertness', u'inclination', u'on the qui vive', u'digestive fluid', u'impertinence', u'stance', u'attention', u'envy', u'cheekiness', u'attending', u'poverty', u'consideration', u'fret', u'chafe', u'search', u'enmity', u'deprivation', u'insolence', u'sleeplessness', u'animal disease', u'green-eyed monster', u'attractor', u'physiological condition', u'faculty', u'taste sensation', u'resentment', u'weather eye', u'esteem', u'respect', u'invidia', u'miss', u'discourtesy', u'irritate', u'stimulation', u'anger', u'care', u'bitter', u'saddle sore', u'considerateness', u'foreplay', u'trait', u'regard', u'gustatory perception', u'sore', u'tending', u'poorness', u'demand', u'requisite', u'enviousness', u'bile', u'look', u'neediness', u'physiological state', u'visual acuity', u'attractive feature', u'bitterness', u'value', u'acuity', u'admire', u'thorniness', u'aid', u'feeling', u'tartness', u'want', u'taste', u'digestive juice', u'sharp-sightedness', u'rancor', u'gall', u'visual sense', u'warning', u'visual modality', u'arousal', u'seek', u'call for', u'change of state', u'acrimony', u'mental faculty', u'need', u'acerbity', u'gustatory sensation', u'taste property', u'vigilance', u'prise', u'deadly sin', u'sin', u'require', u'alert', u'courtesy', u'necessity', u'sex activity', u'mortal sin', u'request', u'temporary state', u'quest']
+2016-07-10 23:46:29,986 INFO     =====END FLAT LIST=====
+2016-07-10 23:46:29,986 INFO     Length of list is:
+2016-07-10 23:46:29,986 INFO     254
+2016-07-10 23:46:29,986 INFO     Length of setlist is:
+2016-07-10 23:46:29,986 INFO     150
+2016-07-10 23:46:29,986 INFO     ***************************
+2016-07-10 23:46:29,987 INFO     127.0.0.1 - - [10/Jul/2016 23:46:29] "POST /corpus/y HTTP/1.1" 200 -

@@ -1,0 +1,1 @@
+﻿['emotion', 'emotional arousal', 'choler', 'deadly sin', 'raise', 'mortal sin', 'feel', 'enkindle', 'experience', 'see red', 'fire', 'elicit', 'arouse', 'evoke', 'ira', 'kindle', 'provoke', 'ire', 'angriness', 'wrath']
