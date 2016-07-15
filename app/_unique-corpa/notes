@@ -82,9 +82,9 @@ I mostly keep the same as below ( I am noticing an overlap ;-) )
     <item name="anger"/>
     <item name="anxiety"/>
     <item name="being-hurt"/>
-    <item name="compassion"/> -- missing this one!
-    <item name="contempt"/>  -- missing this one!
-    <item name="contentment"/> -- missing this one!
+    <item name="compassion"/>
+    <item name="contempt"/> 
+    <item name="contentment"/>
     <item name="despair"/> -- missing this one!
     <item name="disappointment"/>
     <item name="disgust"/>
