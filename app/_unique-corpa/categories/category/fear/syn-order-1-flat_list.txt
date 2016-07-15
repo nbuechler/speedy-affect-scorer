@@ -1,1 +1,0 @@
-﻿['regret', 'care', 'emotion', 'veneration', 'prize', 'fright', 'value', 'fearfulness', 'awe', 'venerate', 'anxiety', 'esteem', 'reverence', 'respect', 'prise', 'concern', 'revere', 'worry', 'dread']
