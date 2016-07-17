@@ -1,0 +1,88 @@
+2016-07-16 23:04:30,025 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-16 23:04:30,026 INFO      * Restarting with stat
+2016-07-16 23:04:30,279 WARNING   * Debugger is active!
+2016-07-16 23:04:30,284 INFO      * Debugger pin code: 248-009-146
+2016-07-16 23:04:34,839 INFO     ***************************
+2016-07-16 23:04:34,839 INFO     List is in the following mongo collection:
+2016-07-16 23:04:34,839 INFO     valence-corpus-only-syn-unq-order-1
+2016-07-16 23:04:34,849 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:34,974 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:04:34,974 INFO     [u'powerfulness', u'power', u'valency']
+2016-07-16 23:04:34,974 INFO     =====END FLAT LIST=====
+2016-07-16 23:04:34,974 INFO     Length of list is:
+2016-07-16 23:04:34,974 INFO     3
+2016-07-16 23:04:34,975 INFO     Length of setlist is:
+2016-07-16 23:04:34,975 INFO     3
+2016-07-16 23:04:34,975 INFO     ***************************
+2016-07-16 23:04:34,975 INFO     ***************************
+2016-07-16 23:04:34,975 INFO     List is in the following mongo collection:
+2016-07-16 23:04:34,975 INFO     valence-corpus-only-syn-unq-order-2
+2016-07-16 23:04:34,976 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,097 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,227 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,348 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:04:35,348 INFO     [u'commonwealth', u'force', u'office', u'supply', u'valence', u'powerfulness', u'mightiness', u'physical phenomenon', u'quality', u'superpower', u'index', u'strength', u'baron', u'provide', u'country', u'body politic', u'state', u'man of affairs', u'might', u'knowledge', u'tycoon', u'ability', u'power', u'causal agency', u'top executive', u'mathematical notation', u'ply', u'nation', u'land', u'cater', u'res publica', u'great power', u'causal agent', u'exponent', u'king', u'big businessman', u'magnate', u'mogul', u'cause', u'world power', u'chemical phenomenon', u'cognition', u'businessman', u'major power', u'business leader', u'noesis']
+2016-07-16 23:04:35,349 INFO     =====END FLAT LIST=====
+2016-07-16 23:04:35,349 INFO     Length of list is:
+2016-07-16 23:04:35,349 INFO     49
+2016-07-16 23:04:35,349 INFO     Length of setlist is:
+2016-07-16 23:04:35,349 INFO     46
+2016-07-16 23:04:35,349 INFO     ***************************
+2016-07-16 23:04:35,350 INFO     ***************************
+2016-07-16 23:04:35,350 INFO     List is in the following mongo collection:
+2016-07-16 23:04:35,350 INFO     valence-corpus-only-syn-unq-order-3
+2016-07-16 23:04:35,353 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,475 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,613 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,736 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,852 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:35,971 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,091 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,215 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,337 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,460 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,581 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,702 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,821 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:36,943 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,061 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,180 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,299 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,421 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,538 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,658 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,775 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:37,893 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,014 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,135 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,284 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,407 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,525 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,646 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,766 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:38,890 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,021 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,148 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,268 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,388 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,506 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,635 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,761 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:39,886 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,007 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,131 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,262 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,382 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,512 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,634 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,755 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,878 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:04:40,996 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:04:40,996 INFO     [u'realty', u'aggression', u'baron', u'reverend', u'hump', u'federation', u'stipulate', u'administrative body', u'gibbosity', u'chessman', u'physical object', u'bring down', u'condition', u'posture', u'magnate', u'level', u'issue', u'psychological feature', u'list', u'global organization', u'leave', u'Mogul', u'long suit', u'real estate', u'Rex', u'force', u'Billie Jean Moffitt King', u'set up', u'State', u'utter', u'append', u'index', u'power', u'verbalize', u'superpower', u'political entity', u'staff', u'set down', u'intensity level', u'movement', u'justification', u'degree', u'social group', u'military group', u'successfulness', u'geographic region', u'supplying', u'dry', u'engage', u'administrative district', u'reason', u'verbalise', u'campaign', u'ground', u'legal proceeding', u'apply', u'unit', u'use', u'wield', u'asset', u'office staff', u'tell', u'Land', u'solid ground', u'economic process', u'billet', u'validity', u'force play', u'government agency', u'effort', u'graduated table', u'berth', u'gear up', u'join', u'coerce', u'business establishment', u'soul', u'sound property', u'impel', u'force-out', u'modify', u'res publica', u'arrive', u'wedge', u'political unit', u'speciality', u'estate', u'give', u'attribute', u'sphere', u'powerfulness', u'Lord', u'religious rite', u'democracy', u'provide', u'travel', u'utilize', u'Edwin Herbert Land', u'B. B. King', u'utilise', u'protuberance', u'spot', u'swayer', u'induce', u'persuasiveness', u'administrative division', u'shore', u'allow', u'suggest', u'DoS', u'furnish', u'office', u'move', u'mightiness', u'Billie Jean King', u'position', u'organisation', u'acres', u'force out', u'strand', u'listing', u'might', u'alter', u'someone', u'put up', u'propose', u'origination', u'nation', u'world organisation', u'vocalizer', u'place of business', u'hale', u'inception', u'crowned head', u'provision', u'big businessman', u'scale of measurement', u'cognition', u'capability', u'magnitude', u'lastingness', u'commonwealth', u'domain', u'durability', u'bump', u'challenger', u'line of work', u'excrescence', u'drive home', u'geographical region', u'shoot down', u'State Department', u'forte', u'enduringness', u'causa', u'military capability', u'cause', u'afford', u'social rank', u'qualify', u'thrust', u'set ashore', u'causal agency', u'emotional state', u'place', u'mortal', u'stimulate', u'origin', u'render', u'grade', u'contender', u'rank', u'guitar player', u'eminence', u'quality', u'bring home the bacon', u'military force', u'indefinite quantity', u'international organisation', u'body politic', u'immovable', u'checker', u'storm', u'farming', u'form of government', u'world organization', u'part', u'specify', u'inventor', u'king', u'allow for', u'artificer', u'rival', u'bed', u'individual', u'rural area', u'venture', u'posit', u'business office', u'ram', u'mogul', u'say', u'have', u'strong suit', u'prosperity', u'strength', u'realm', u'permanence', u'agency', u'note', u'jaunt', u'permanency', u'take', u'effectiveness', u'province', u'caliber', u'top executive', u'object', u'organization', u'man of the cloth', u'putout', u'singer', u'potency', u'drive', u'proceedings', u'index finger', u'businessman', u'fact', u'discoverer', u'queen', u'bring', u'give tongue to', u'industrialist', u'earth', u'occupation', u'protrusion', u'indicator', u'knowledge', u'tennis player', u'face card', u'civil rights leader', u'do', u'handle', u'notation', u'get', u'hostility', u'express', u'penetrate', u'great power', u'social unit', u'perforate', u'Riley B King', u'yield', u'geographic area', u'activity', u'major power', u'landed estate', u'set', u'King', u'executive department', u'intensity', u'businessperson', u'exponent', u'state', u'bureau', u'finger', u'rite', u'military unit', u'Din Land', u'ability', u'deliver', u'lineament', u'bring together', u'job', u'United States Department of State', u'come', u'capableness', u'military strength', u'country', u'region', u'distinction', u'fix', u'business leader', u'grounds', u'duty', u'tone', u'supply', u'terra firma', u'civil rights activist', u'notational system', u'lawsuit', u'create', u'Carry Nation', u'change', u'arena', u'vocaliser', u'spirit', u'case', u'prominence', u'employ', u'territorial division', u'forefinger', u'situation', u'property', u'layer', u'soil', u'male monarch', u'strong point', u'ready', u'somebody', u'regulate', u'perform', u'natural phenomenon', u'make', u'Nation', u'indicant', u'ordered series', u'monarch', u'advise', u'noble', u'physical entity', u'effect', u'put forward', u'vocalist', u'bourgeois', u'timbre', u'military posture', u'person', u'Moghul', u'chemical phenomenon', u'civil rights worker', u'dimension', u'noesis', u'guitarist', u'dry land', u'distribute', u'shape', u'real property', u'political system', u'timber', u'wage', u'clergyman', u'character', u'calibre', u'add', u'man of affairs', u'republic', u'confederacy', u'kingdom', u'extrusion', u'government', u'ruler', u'advocate', u'displace', u'state of matter', u'put down', u'proponent', u'court card', u'geographical area', u'Martin Luther King', u'valency', u'bulge', u'forcefulness', u'Carry Amelia Moore Nation', u'index number', u'people', u'authority', u'convey', u'intensiveness', u'physical phenomenon', u'intellect', u'administrative unit', u'nobleman', u'scale', u'competitor', u'preeminence', u'social status', u'refer', u'run', u'business', u'metier', u'ply', u'pressure', u'peer', u'post', u'Martin Luther King Jr.', u'violence', u'plus', u'act', u'prohibitionist', u'social station', u'intellectual', u'down', u'obligate', u'determine', u'prepare', u'area', u'support', u'sovereign', u'submit', u'picture card', u'suit', u'function', u'tycoon', u'offer', u'specialty', u'competition', u'jut', u'line', u'squeeze', u'advocator', u'pull', u'world power', u'gibbousness', u'influence', u'denote', u'crusade', u'mold', u'trip', u'regime', u'personnel', u'international organization', u'compel', u'field', u'role', u'demesne', u'mathematical notation', u'Department of State', u'world-beater', u'draw', u'oblige', u'cater', u'authorities', u'proceeding', u'causal agent', u'land', u'chess piece', u'validness', u'orbit', u'confederation', u'push', u'federal agency']
+2016-07-16 23:04:40,996 INFO     =====END FLAT LIST=====
+2016-07-16 23:04:40,996 INFO     Length of list is:
+2016-07-16 23:04:40,997 INFO     726
+2016-07-16 23:04:40,997 INFO     Length of setlist is:
+2016-07-16 23:04:40,997 INFO     442
+2016-07-16 23:04:40,997 INFO     ***************************
+2016-07-16 23:04:40,999 INFO     127.0.0.1 - - [16/Jul/2016 23:04:40] "POST /corpus/y HTTP/1.1" 200 -

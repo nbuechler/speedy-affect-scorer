@@ -1,0 +1,87 @@
+2016-07-16 23:07:47,806 INFO      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2016-07-16 23:07:47,807 INFO      * Restarting with stat
+2016-07-16 23:07:48,052 WARNING   * Debugger is active!
+2016-07-16 23:07:48,058 INFO      * Debugger pin code: 248-009-146
+2016-07-16 23:07:50,244 INFO     ***************************
+2016-07-16 23:07:50,245 INFO     List is in the following mongo collection:
+2016-07-16 23:07:50,245 INFO     unpredictability-corpus-only-syn-unq-order-1
+2016-07-16 23:07:50,256 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:50,383 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:07:50,383 INFO     [u'irresoluteness', u'uncertainness', u'inconstancy', u'uncertainty', u'precariousness', u'changefulness', u'capriciousness', u'irresolution', u'volatility']
+2016-07-16 23:07:50,383 INFO     =====END FLAT LIST=====
+2016-07-16 23:07:50,383 INFO     Length of list is:
+2016-07-16 23:07:50,383 INFO     9
+2016-07-16 23:07:50,383 INFO     Length of setlist is:
+2016-07-16 23:07:50,383 INFO     9
+2016-07-16 23:07:50,383 INFO     ***************************
+2016-07-16 23:07:50,384 INFO     ***************************
+2016-07-16 23:07:50,384 INFO     List is in the following mongo collection:
+2016-07-16 23:07:50,384 INFO     unpredictability-corpus-only-syn-unq-order-2
+2016-07-16 23:07:50,386 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:50,513 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:50,635 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:50,755 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:50,880 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,004 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,127 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,248 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,369 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,488 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:07:51,488 INFO     [u'irresponsibility', u'cognitive state', u'falseness', u'arbitrariness', u'changeability', u'irresolution', u'whimsy', u'doubt', u'changeableness', u'dubiety', u'state of mind', u'quality', u'infidelity', u'dangerousness', u'inconstancy', u'emotionalism', u'fickleness', u'dubiousness', u'faithlessness', u'indecisiveness', u'uncertainness', u'trait', u'chemical property', u'indecision', u'incertitude', u'precariousness', u'changefulness', u'doubtfulness', u'whimsicality', u'excitableness', u'unfaithfulness', u'irresponsibleness', u'unpredictability', u'irresoluteness', u'emotionality', u'uncertainty', u'excitability', u'whimsey', u'flightiness']
+2016-07-16 23:07:51,488 INFO     =====END FLAT LIST=====
+2016-07-16 23:07:51,488 INFO     Length of list is:
+2016-07-16 23:07:51,489 INFO     58
+2016-07-16 23:07:51,489 INFO     Length of setlist is:
+2016-07-16 23:07:51,489 INFO     39
+2016-07-16 23:07:51,489 INFO     ***************************
+2016-07-16 23:07:51,489 INFO     ***************************
+2016-07-16 23:07:51,489 INFO     List is in the following mongo collection:
+2016-07-16 23:07:51,490 INFO     unpredictability-corpus-only-syn-unq-order-3
+2016-07-16 23:07:51,493 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,617 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,736 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,853 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:51,979 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,099 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,219 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,341 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,465 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,585 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,704 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,838 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:52,956 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,081 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,203 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,323 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,445 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,568 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,692 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,819 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:53,944 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,067 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,184 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,305 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,438 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,559 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,685 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,802 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:54,922 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,051 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,189 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,309 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,429 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,551 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,671 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,792 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:07:55,912 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:08:03,053 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:08:03,175 INFO     Starting new HTTP connection (1): words.bighugelabs.com
+2016-07-16 23:08:03,297 INFO     =====NEW !!UNIQUE!! FLAT LIST=====
+2016-07-16 23:08:03,297 INFO     [u'cognitive state', u'changeableness', u'dubiety', u'timber', u'responsiveness', u'dangerousness', u'character', u'unreality', u'dubiousness', u'faithlessness', u'social status', u'indecisiveness', u'mischievousness', u'irresponsibleness', u'capriciousness', u'irresolution', u'volatility', u'irresoluteness', u'level', u'mistrust', u'distrust', u'untruthfulness', u'untrustworthiness', u'whim', u'arbitrariness', u'whimsy', u'excitableness', u'irreality', u'state of mind', u'irritability', u'changeability', u'playfulness', u'state', u'suspect', u'lineament', u'uncertainness', u'degree', u'social rank', u'indecision', u'incertitude', u'frame of mind', u'puckishness', u'reactivity', u'tone', u'falsity', u'grade', u'social station', u'rank', u'calibre', u'quality', u'infidelity', u'untrustiness', u'inconstancy', u'irresponsibility', u'question', u'doubt', u'mental state', u'psychological state', u'trait', u'idea', u'insincerity', u'doubtfulness', u'characteristic', u'excitability', u'sound property', u'fun', u'property', u'uncertainty', u'falseness', u'fickleness', u'attribute', u'disbelieve', u'impishness', u'emotionalism', u'flightiness', u'hollowness', u'discredit', u'caliber', u'changefulness', u'whimsicality', u'unfaithfulness', u'precariousness', u'emotionality', u'timbre', u'temporary state', u'notion', u'thought', u'whimsey', u'dimension']
+2016-07-16 23:08:03,297 INFO     =====END FLAT LIST=====
+2016-07-16 23:08:03,297 INFO     Length of list is:
+2016-07-16 23:08:03,297 INFO     243
+2016-07-16 23:08:03,297 INFO     Length of setlist is:
+2016-07-16 23:08:03,297 INFO     89
+2016-07-16 23:08:03,297 INFO     ***************************
+2016-07-16 23:08:03,298 INFO     127.0.0.1 - - [16/Jul/2016 23:08:03] "POST /corpus/y HTTP/1.1" 200 -
