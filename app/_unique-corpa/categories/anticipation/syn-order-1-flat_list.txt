@@ -1,0 +1,1 @@
+['expectancy', 'prospect', 'outlook', 'logical thinking', 'prediction', 'prevision', 'expectation', 'abstract thought', 'hopefulness', 'reasoning']
