@@ -18,17 +18,6 @@ app.register_blueprint(sadness, url_prefix='/sadness')
 app.register_blueprint(surprise, url_prefix='/surprise')
 app.register_blueprint(trust, url_prefix='/trust')
 
-
-'''
-********************************************************************************
-TODO: Refactor this out later
-'''
-from helpers.corpus_builder import corpus
-app.register_blueprint(corpus, url_prefix='/corpus')
-'''
-********************************************************************************
-'''
-
 # Sets the port, or defaults to 80
 if (len(sys.argv) > 1):
     port = int(sys.argv[1])
