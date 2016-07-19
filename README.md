@@ -10,6 +10,9 @@ sadness,
 surprise,
 and trust...
 
+# Here is the extedned scope, it's larger,
+58 or more that exist in copious-affect-corpus
+
 see: https://en.wikipedia.org/wiki/Robert_Plutchik
 
 # Tech stack
@@ -42,24 +45,11 @@ python app/runserver.py 5000
 * nltk==3.2.1
 * requests==2.10.0
 * Flask-PyMongo==0.3.1
-* pymongo==3.2.2
-
-
-
-# CREDITS
-```
-To build a corpus ('Be Excellent to Each Other')
-```
-
-_Thesaurus service provided by words.bighugelabs.com (https://words.bighugelabs.com/api.php)_
-
+* pymongo==2.9.3
 
 
 # TODO:
--Break out the code that doesn't actually have anything to do with affect.
--For the corpus, I don't do adjectives, so something to consider.
-
--Also do think about things like analytic ----- intutive
+-Also do think about things like analytic ----- intutive (as a spectrum)
 
 # License
 
