@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import render_template, redirect, url_for, jsonify, request
 
 import controllers
-from helpers.controllers import length_no_stop
+from helpers.controllers import length_no_stop_punct
 
 anticipation = Blueprint('anticipation', __name__)
 
@@ -17,5 +17,5 @@ def controller_default():
 @anticipation.route('/score/', methods=['GET', 'POST'])
 def get_score():
     doc = request.form.get('doc')
-    important_length = length_no_stop(doc, 'english')
+    important_length = length_no_stop_punct(doc, 'english')
     return 'Your anticipation string is ' + str(important_length) + ' word(s)!'
