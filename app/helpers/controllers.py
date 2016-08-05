@@ -4,6 +4,8 @@ from nltk.tokenize import wordpunct_tokenize
 from flask import jsonify
 import requests
 
+from bson.json_util import loads, dumps
+
 '''
 ********************************************************************************
 
@@ -69,11 +71,22 @@ Business logic below
 
 def process_emotion(doc, lang, emotion):
 
-    print mongo_corpus_synopsis.db['lingustic-affects'].find({'word': emotion})
+    # TODO: Make this better
+    order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
+    order_2 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-2']
+    order_3 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-3']
+
 
     stop_words = stopwords.words(lang)
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-    print list_of_words
+    # print list_of_words
 
+    print order_3
+
+    for word in list_of_words:
+        print '+++++++++++++'
+        print 'This is the word: ' + word
+        print word in order_3
+        print '+++++++++++++'
 
     return 'Not Implemented'
