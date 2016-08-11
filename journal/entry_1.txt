@@ -1,0 +1,23 @@
+
+Aug 10, 2016
+
+This data was sent three times
+==========
+{
+  "doc": " Sadness is an emotional pain associated with, or characterized by, feelings of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow. An individual experiencing sadness may become quiet or lethargic, and withdraw themselves from others. An example of severe sadness is depression. Crying is often an indication of sadness",
+  "lang": "english"
+}
+
+Like so with results...
+==========
+analyze_emotion/anger/ HTTP/1.1" 200 -
+
+{'is_in_order_3': 4, 'is_in_order_2': 0, 'is_in_order_1': 0, 'length_words_no_stop': 41, 'r_affect_density_score': 0.6504065040650406, 'r_affect_score': 0.26666666666666666}
+
+analyze_emotion/sadness/ HTTP/1.1" 200 -
+
+{'is_in_order_3': 6, 'is_in_order_2': 5, 'is_in_order_1': 1, 'length_words_no_stop': 41, 'r_affect_density_score': 2.6016260162601625, 'r_affect_score': 1.0666666666666667}
+
+analyze_emotion/joy/ HTTP/1.1" 200 -
+
+{'is_in_order_3': 3, 'is_in_order_2': 0, 'is_in_order_1': 0, 'length_words_no_stop': 41, 'r_affect_density_score': 0.4878048780487806, 'r_affect_score': 0.20000000000000004}

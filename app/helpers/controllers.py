@@ -79,14 +79,43 @@ def process_emotion(doc, lang, emotion):
 
     stop_words = stopwords.words(lang)
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-    # print list_of_words
 
-    print order_3
+    is_in_order_1 = 0
+    is_in_order_2 = 0
+    is_in_order_3 = 0
+
+    length_words_no_stop = len(list_of_words)
 
     for word in list_of_words:
-        print '+++++++++++++'
-        print 'This is the word: ' + word
-        print word in order_3
-        print '+++++++++++++'
+        if word in order_1:
+            is_in_order_1+=1
+        if word in order_2:
+            is_in_order_2+=1
+        if word in order_3:
+            is_in_order_3+=1
+
+    # Create a rudimentry scores
+    # order one gets
+
+
+    ## Score of the affect, based on weights in the order
+    r_affect_score = (
+        ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
+    )
+
+    ## But this one is based on density
+    r_affect_density_score = r_affect_score/length_words_no_stop * 100
+
+
+    order_metadata = {
+        "is_in_order_1": is_in_order_1,
+        "is_in_order_2": is_in_order_2,
+        "is_in_order_3": is_in_order_3,
+        "length_words_no_stop": length_words_no_stop,
+        "r_affect_score": r_affect_score,
+        "r_affect_density_score": r_affect_density_score,
+    }
+
+    print order_metadata
 
     return 'Not Implemented'
