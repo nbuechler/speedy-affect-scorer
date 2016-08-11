@@ -79,14 +79,25 @@ def process_emotion(doc, lang, emotion):
 
     stop_words = stopwords.words(lang)
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-    # print list_of_words
 
-    print order_3
+    is_in_order_1 = 0
+    is_in_order_2 = 0
+    is_in_order_3 = 0
 
     for word in list_of_words:
-        print '+++++++++++++'
-        print 'This is the word: ' + word
-        print word in order_3
-        print '+++++++++++++'
+        if word in order_1:
+            is_in_order_1+=1
+        if word in order_2:
+            is_in_order_2+=1
+        if word in order_3:
+            is_in_order_3+=1
+
+    order_counts = {
+        "is_in_order_1": is_in_order_1,
+        "is_in_order_2": is_in_order_2,
+        "is_in_order_3": is_in_order_3,
+    }
+
+    print order_counts
 
     return 'Not Implemented'
