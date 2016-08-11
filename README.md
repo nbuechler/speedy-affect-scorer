@@ -1,7 +1,7 @@
 # speedy-affect-scorer
 The idea is to score basic afffects - quickly! As of now, the project also includes a 'corpus_builder.py' file which will most likely be seperated into a sperate project.
 
-# Here is the scope, it's small
+# Here is the inital scope, it's small
 anticipation,
 disgust,
 fear,
@@ -9,6 +9,22 @@ joy,
 sadness,
 surprise,
 and trust...
+
+(and the addition of lots of other words!)
+
+# The extended scope includes a better scoring like so
+
+## Score of the affect, based on weights in the order
+```
+r_affect_score = (
+    ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
+)
+```
+
+## But this one is based on density
+```
+r_affect_density_score = r_affect_score/length_words_no_stop * 100
+```
 
 # Here is the extedned scope, it's larger,
 58 or more that exist in copious-affect-corpus
