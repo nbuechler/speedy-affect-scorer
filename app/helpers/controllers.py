@@ -38,6 +38,16 @@ This a section for actual controller logic
 ********************************************************************************
 '''
 
+'''
+The first 85 inspired by emotionml
+'''
+emotionml_inspired = ['acceptance', 'admiration', 'affection', 'amusement', 'anger', 'anticipation', 'anxiety', 'appraisal', 'appreciation', 'arousal', 'arrogance', 'awe', 'blame', 'boredom', 'calmness', 'compassion', 'compromise', 'concern', 'confidence', 'confusion', 'contempt', 'contentment', 'curiosity', 'denial', 'depression', 'desire', 'despair', 'dimension', 'disappointment', 'disgust', 'dissonance', 'distress', 'dread', 'ecstasy', 'edginess', 'embarrassment', 'enjoyment', 'enthusiasm', 'envy', 'eroticism', 'excitement', 'exuberance', 'fear', 'grace', 'gratification', 'gratitude', 'grief', 'happiness', 'harmony', 'hate', 'hope', 'humility', 'indifference', 'interest', 'irritation', 'jealousy', 'joy', 'love', 'lunacy', 'lust', 'mania', 'melancholy', 'pain', 'panic', 'patience', 'perturbation', 'pity', 'pleasure', 'pride', 'rage', 'relief', 'remorse', 'reproach', 'resentment', 'resignation', 'sadness', 'satisfaction', 'shame', 'shock', 'stress', 'surprise', 'triumph', 'trust', 'wonder', 'worry']
+
+'''
+inspired by paul ekman, conforms to emotionml
+'''
+big_6 = ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise']
+
 def default():
     print 'Here'
     return 'Thanks controller, hello helpers!'
@@ -63,12 +73,12 @@ def length_no_stop_punct(doc, lang):
 Business logic below
 
 1. Take an emotion
-2. Do something with it
+2. Do something with it ---- this the 'process_emotion' method
 3. Return results
-4. Repeat for all emotions
+4. Repeat for all emotions in a set ---- this is the 'process_emotion_set' method
 '''
 
-
+# TODO: Error Handling needed!
 def process_emotion(doc, lang, emotion):
 
     # TODO: Make this better
@@ -106,8 +116,8 @@ def process_emotion(doc, lang, emotion):
     ## But this one is based on density
     r_affect_density_score = r_affect_score/length_words_no_stop * 100
 
-
-    process_doc_metadata = {
+    # TODO: Make a model for this?
+    processed_doc_metadata = {
         "emotion": emotion,
         "is_in_order_1": is_in_order_1,
         "is_in_order_2": is_in_order_2,
@@ -118,4 +128,24 @@ def process_emotion(doc, lang, emotion):
     }
 
     # print process_doc_metadata
-    return process_doc_metadata
+    return processed_doc_metadata
+
+
+# TODO: Error Handling needed!
+def process_emotion_set(doc, lang, emotion_set):
+
+    processed_doc_list_metadata = []
+
+    e_set = None
+    # pick emotion_set
+    if emotion_set == 'big_6':
+        e_set = big_6
+    if emotion_set == 'emotion_ml':
+        e_set = emotionml_inspired
+
+    for emotion in e_set:
+        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion))
+
+    print processed_doc_list_metadata
+
+    return processed_doc_list_metadata
