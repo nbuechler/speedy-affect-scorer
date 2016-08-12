@@ -107,7 +107,7 @@ def process_emotion(doc, lang, emotion):
     r_affect_density_score = r_affect_score/length_words_no_stop * 100
 
 
-    order_metadata = {
+    process_doc_metadata = {
         "emotion": emotion,
         "is_in_order_1": is_in_order_1,
         "is_in_order_2": is_in_order_2,
@@ -117,6 +117,5 @@ def process_emotion(doc, lang, emotion):
         "r_affect_density_score": r_affect_density_score,
     }
 
-    print order_metadata
-
-    return 'Not Implemented'
+    # print process_doc_metadata
+    return process_doc_metadata

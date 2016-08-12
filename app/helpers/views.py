@@ -42,5 +42,5 @@ def analyze_emotion(emotion):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
-    controllers.process_emotion(doc, lang, emotion)
-    return 'Success'
+    process_doc_metadata = controllers.process_emotion(doc, lang, emotion)
+    return jsonify(process_doc_metadata)
