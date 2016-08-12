@@ -108,6 +108,7 @@ def process_emotion(doc, lang, emotion):
 
 
     order_metadata = {
+        "emotion": emotion,
         "is_in_order_1": is_in_order_1,
         "is_in_order_2": is_in_order_2,
         "is_in_order_3": is_in_order_3,
