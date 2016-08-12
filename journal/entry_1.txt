@@ -21,3 +21,16 @@ analyze_emotion/sadness/ HTTP/1.1" 200 -
 analyze_emotion/joy/ HTTP/1.1" 200 -
 
 {'is_in_order_3': 3, 'is_in_order_2': 0, 'is_in_order_1': 0, 'length_words_no_stop': 41, 'r_affect_density_score': 0.4878048780487806, 'r_affect_score': 0.20000000000000004}
+
+
+## Score of the affect, based on weights in the order
+```
+r_affect_score = (
+    ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
+)
+```
+
+## But this one is based on density
+```
+r_affect_density_score = r_affect_score/length_words_no_stop * 100
+```

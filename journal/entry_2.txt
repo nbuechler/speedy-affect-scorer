@@ -1,0 +1,905 @@
+
+Aug 11, 2016
+
+Start of an API document
+
+=========================
+
+
+'/analyze_emotion/<emotion>/', methods=['POST']
+{
+  doc: '<string>', i.e 'Sample Document*'
+  lang: '<string>', i.e. 'english'
+}
+
+RETURNS:
+
+{
+  "emotion": "sadness",
+  "is_in_order_1": 1,
+  "is_in_order_2": 5,
+  "is_in_order_3": 6,
+  "length_words_no_stop": 41,
+  "r_affect_density_score": 2.6016260162601625,
+  "r_affect_score": 1.0666666666666667
+}
+
+----------------
+
+'/analyze_emotion_set/<set>/', methods=['POST']
+
+{
+  doc: '<string>', i.e 'Sample Document*'
+  lang: '<string>', i.e. 'english'
+}
+
+RETURNS**:
+
+[{<analyzed_emotion}...{<analyzed _emotion>}]
+
+----------------
+
+*  Sadness is an emotional pain associated with, or characterized by, feelings
+   of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow.
+   An individual experiencing sadness may become quiet or lethargic, and withdraw
+   themselves from others. An example of severe sadness is depression. Crying is
+   often an indication of sadness"
+
+** <list of analyzed emotions like the result of ('/analyze_emotion/<emotion>/', methods=['POST'])>
+
+
+
+
+
+
+
+
+
+=====So here are examples of tonight's effot=====
+
+Source text is:
+
+  Sadness is an emotional pain associated with, or characterized by, feelings
+   of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow.
+   An individual experiencing sadness may become quiet or lethargic, and withdraw
+   themselves from others. An example of severe sadness is depression. Crying is
+   often an indication of sadness"
+
+*******************
+BIG_6
+*******************
+
+{
+  "emotion_set": [
+    {
+      "emotion": "anger",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "disgust",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "fear",
+      "is_in_order_1": 0,
+      "is_in_order_2": 4,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.2764227642276422,
+      "r_affect_score": 0.9333333333333332
+    },
+    {
+      "emotion": "happiness",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.3252032520325203,
+      "r_affect_score": 0.13333333333333333
+    },
+    {
+      "emotion": "sadness",
+      "is_in_order_1": 1,
+      "is_in_order_2": 5,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.6016260162601625,
+      "r_affect_score": 1.0666666666666667
+    },
+    {
+      "emotion": "surprise",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.1382113821138211,
+      "r_affect_score": 0.46666666666666673
+    }
+  ],
+  "name": "big_6"
+}
+
+*******************
+EMOTION_ML (Inspired from https://www.w3.org/TR/emotionml)
+*******************
+
+{
+  "emotion_set": [
+    {
+      "emotion": "acceptance",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "admiration",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "affection",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.5691056910569106,
+      "r_affect_score": 0.2333333333333333
+    },
+    {
+      "emotion": "amusement",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "anger",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "anticipation",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.40650406504065034,
+      "r_affect_score": 0.16666666666666666
+    },
+    {
+      "emotion": "anxiety",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "appraisal",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "appreciation",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "arousal",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "arrogance",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "awe",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.9756097560975612,
+      "r_affect_score": 0.4000000000000001
+    },
+    {
+      "emotion": "blame",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.3821138211382116,
+      "r_affect_score": 0.5666666666666668
+    },
+    {
+      "emotion": "boredom",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "calmness",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.7317073170731708,
+      "r_affect_score": 0.30000000000000004
+    },
+    {
+      "emotion": "compassion",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.056910569105691,
+      "r_affect_score": 0.43333333333333335
+    },
+    {
+      "emotion": "compromise",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.3821138211382116,
+      "r_affect_score": 0.5666666666666668
+    },
+    {
+      "emotion": "concern",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.6260162601626014,
+      "r_affect_score": 0.6666666666666666
+    },
+    {
+      "emotion": "confidence",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.5691056910569106,
+      "r_affect_score": 0.2333333333333333
+    },
+    {
+      "emotion": "confusion",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "contempt",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "contentment",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "curiosity",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "denial",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "depression",
+      "is_in_order_1": 3,
+      "is_in_order_2": 5,
+      "is_in_order_3": 11,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 4.227642276422764,
+      "r_affect_score": 1.7333333333333334
+    },
+    {
+      "emotion": "desire",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.2195121951219514,
+      "r_affect_score": 0.5000000000000001
+    },
+    {
+      "emotion": "despair",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.5691056910569106,
+      "r_affect_score": 0.2333333333333333
+    },
+    {
+      "emotion": "dimension",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "disappointment",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.40650406504065034,
+      "r_affect_score": 0.16666666666666666
+    },
+    {
+      "emotion": "disgust",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "dissonance",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.4878048780487806,
+      "r_affect_score": 0.20000000000000004
+    },
+    {
+      "emotion": "distress",
+      "is_in_order_1": 1,
+      "is_in_order_2": 1,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.2764227642276422,
+      "r_affect_score": 0.9333333333333332
+    },
+    {
+      "emotion": "dread",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "ecstasy",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.2195121951219514,
+      "r_affect_score": 0.5000000000000001
+    },
+    {
+      "emotion": "edginess",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "embarrassment",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.894308943089431,
+      "r_affect_score": 0.3666666666666667
+    },
+    {
+      "emotion": "enjoyment",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "enthusiasm",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.894308943089431,
+      "r_affect_score": 0.3666666666666667
+    },
+    {
+      "emotion": "envy",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.4878048780487806,
+      "r_affect_score": 0.20000000000000004
+    },
+    {
+      "emotion": "eroticism",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "excitement",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.4878048780487806,
+      "r_affect_score": 0.20000000000000004
+    },
+    {
+      "emotion": "exuberance",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.7317073170731708,
+      "r_affect_score": 0.30000000000000004
+    },
+    {
+      "emotion": "fear",
+      "is_in_order_1": 0,
+      "is_in_order_2": 4,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.2764227642276422,
+      "r_affect_score": 0.9333333333333332
+    },
+    {
+      "emotion": "grace",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.4878048780487806,
+      "r_affect_score": 0.20000000000000004
+    },
+    {
+      "emotion": "gratification",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "gratitude",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "grief",
+      "is_in_order_1": 1,
+      "is_in_order_2": 5,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.4390243902439024,
+      "r_affect_score": 1
+    },
+    {
+      "emotion": "happiness",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.3252032520325203,
+      "r_affect_score": 0.13333333333333333
+    },
+    {
+      "emotion": "harmony",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.3252032520325203,
+      "r_affect_score": 0.13333333333333333
+    },
+    {
+      "emotion": "hate",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "hope",
+      "is_in_order_1": 1,
+      "is_in_order_2": 1,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.788617886178862,
+      "r_affect_score": 0.7333333333333334
+    },
+    {
+      "emotion": "humility",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "indifference",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "interest",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.1382113821138211,
+      "r_affect_score": 0.46666666666666673
+    },
+    {
+      "emotion": "irritation",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.5447154471544717,
+      "r_affect_score": 0.6333333333333334
+    },
+    {
+      "emotion": "jealousy",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "joy",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.4878048780487806,
+      "r_affect_score": 0.20000000000000004
+    },
+    {
+      "emotion": "love",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.113821138211382,
+      "r_affect_score": 0.8666666666666667
+    },
+    {
+      "emotion": "lunacy",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "lust",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "mania",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "melancholy",
+      "is_in_order_1": 4,
+      "is_in_order_2": 4,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 3.577235772357724,
+      "r_affect_score": 1.4666666666666668
+    },
+    {
+      "emotion": "pain",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.788617886178862,
+      "r_affect_score": 0.7333333333333334
+    },
+    {
+      "emotion": "panic",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.2195121951219514,
+      "r_affect_score": 0.5000000000000001
+    },
+    {
+      "emotion": "patience",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "perturbation",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.8130081300813007,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "pity",
+      "is_in_order_1": 1,
+      "is_in_order_2": 5,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.6016260162601625,
+      "r_affect_score": 1.0666666666666667
+    },
+    {
+      "emotion": "pleasure",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.894308943089431,
+      "r_affect_score": 0.3666666666666667
+    },
+    {
+      "emotion": "pride",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "rage",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.1382113821138211,
+      "r_affect_score": 0.46666666666666673
+    },
+    {
+      "emotion": "relief",
+      "is_in_order_1": 0,
+      "is_in_order_2": 3,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.0325203252032518,
+      "r_affect_score": 0.8333333333333334
+    },
+    {
+      "emotion": "remorse",
+      "is_in_order_1": 1,
+      "is_in_order_2": 5,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.4390243902439024,
+      "r_affect_score": 1
+    },
+    {
+      "emotion": "reproach",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 1,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.16260162601626016,
+      "r_affect_score": 0.06666666666666667
+    },
+    {
+      "emotion": "resentment",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 0,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0,
+      "r_affect_score": 0
+    },
+    {
+      "emotion": "resignation",
+      "is_in_order_1": 1,
+      "is_in_order_2": 2,
+      "is_in_order_3": 3,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.3821138211382116,
+      "r_affect_score": 0.5666666666666668
+    },
+    {
+      "emotion": "sadness",
+      "is_in_order_1": 1,
+      "is_in_order_2": 5,
+      "is_in_order_3": 6,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.6016260162601625,
+      "r_affect_score": 1.0666666666666667
+    },
+    {
+      "emotion": "satisfaction",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 2,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.3252032520325203,
+      "r_affect_score": 0.13333333333333333
+    },
+    {
+      "emotion": "shame",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 12,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.1951219512195124,
+      "r_affect_score": 0.9
+    },
+    {
+      "emotion": "shock",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 2.113821138211382,
+      "r_affect_score": 0.8666666666666667
+    },
+    {
+      "emotion": "stress",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.5447154471544717,
+      "r_affect_score": 0.6333333333333334
+    },
+    {
+      "emotion": "surprise",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.1382113821138211,
+      "r_affect_score": 0.46666666666666673
+    },
+    {
+      "emotion": "triumph",
+      "is_in_order_1": 0,
+      "is_in_order_2": 1,
+      "is_in_order_3": 5,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.056910569105691,
+      "r_affect_score": 0.43333333333333335
+    },
+    {
+      "emotion": "trust",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 8,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.788617886178862,
+      "r_affect_score": 0.7333333333333334
+    },
+    {
+      "emotion": "wonder",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 4,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 0.6504065040650406,
+      "r_affect_score": 0.26666666666666666
+    },
+    {
+      "emotion": "worry",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 7,
+      "length_words_no_stop": 41,
+      "r_affect_density_score": 1.6260162601626014,
+      "r_affect_score": 0.6666666666666666
+    }
+  ],
+  "name": "emotion_ml"
+}
