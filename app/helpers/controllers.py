@@ -39,6 +39,12 @@ This a section for actual controller logic
 '''
 
 '''
+********************************************************************************
+emotion_sets
+********************************************************************************
+'''
+
+'''
 The first 85 inspired by emotionml
 '''
 emotionml_inspired = ['acceptance', 'admiration', 'affection', 'amusement', 'anger', 'anticipation', 'anxiety', 'appraisal', 'appreciation', 'arousal', 'arrogance', 'awe', 'blame', 'boredom', 'calmness', 'compassion', 'compromise', 'concern', 'confidence', 'confusion', 'contempt', 'contentment', 'curiosity', 'denial', 'depression', 'desire', 'despair', 'dimension', 'disappointment', 'disgust', 'dissonance', 'distress', 'dread', 'ecstasy', 'edginess', 'embarrassment', 'enjoyment', 'enthusiasm', 'envy', 'eroticism', 'excitement', 'exuberance', 'fear', 'grace', 'gratification', 'gratitude', 'grief', 'happiness', 'harmony', 'hate', 'hope', 'humility', 'indifference', 'interest', 'irritation', 'jealousy', 'joy', 'love', 'lunacy', 'lust', 'mania', 'melancholy', 'pain', 'panic', 'patience', 'perturbation', 'pity', 'pleasure', 'pride', 'rage', 'relief', 'remorse', 'reproach', 'resentment', 'resignation', 'sadness', 'satisfaction', 'shame', 'shock', 'stress', 'surprise', 'triumph', 'trust', 'wonder', 'worry']
@@ -47,6 +53,32 @@ emotionml_inspired = ['acceptance', 'admiration', 'affection', 'amusement', 'ang
 inspired by paul ekman, conforms to emotionml
 '''
 big_6 = ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise']
+
+
+
+'''
+********************************************************************************
+metrics
+********************************************************************************
+'''
+
+def calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3):
+    ## Score of the affect, based on weights in the order
+    r_affect_score = (
+        ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
+    )
+    return r_affect_score
+
+def calculate_r_density_score(r_affect_score, length_words_no_stop):
+    ## But this one is based on density
+    r_affect_density_score = r_affect_score/length_words_no_stop * 100
+    return r_affect_density_score
+
+'''
+********************************************************************************
+Start of actual Logic
+********************************************************************************
+'''
 
 def default():
     print 'Here'
@@ -107,14 +139,8 @@ def process_emotion(doc, lang, emotion):
     # Create a rudimentry scores
     # order one gets
 
-
-    ## Score of the affect, based on weights in the order
-    r_affect_score = (
-        ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
-    )
-
-    ## But this one is based on density
-    r_affect_density_score = r_affect_score/length_words_no_stop * 100
+    r_affect_score = calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3)
+    r_affect_density_score = calculate_r_density_score(r_affect_score, length_words_no_stop)
 
     # TODO: Make a model for this?
     processed_doc_metadata = {
