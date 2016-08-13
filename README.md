@@ -1,6 +1,12 @@
 # speedy-affect-scorer
 The idea is to score basic afffects - quickly! As of now, the project also includes a 'corpus_builder.py' file which will most likely be seperated into a sperate project.
 
+# Build your database/corpus by also downloading copious-affect-corpus (a sister project)
+
+Here is the link: https://github.com/nbuechler/copious-affect-corpus
+
+Make sure to follow the instructions in that git project
+
 # Here is the inital scope, it's small
 anticipation,
 disgust,
