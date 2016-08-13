@@ -1,0 +1,34 @@
+Process for making the corpus
+
+1. Write the script and coding, and tweak the technical implementation of gathering all the synonyms
+2. Make sure that all the Emotions in emotionML are <nouns>, but there are anywhere between a small number, like 4, to an infinite amount of emotions -- similar to that of color... or sounds, etc.
+3. Run the querying, from big huge thesaurus. Doing no more than 1000 per day. This made it easier and less redundant for me, but also made me think more about what I was doing.
+
+
+Here's the endpoint and an example JSON form to submit:
+
+'''
+<root>/corpus/y
+'''
+
+{
+    "words":  [
+		"courageousness"
+	],
+    "key": "<YOUR_API_KEY>",
+    "collection": "courageousness-corpus-only-syn-unq",
+    "levels": "3",
+    "include_synonyms": "1",
+    "include_antonyms": "0"
+}
+
+
+4. Stored the result with a logfile, and also in mongo (specifically in  <affect-corpus>).
+
+Process for making the synopsis
+
+5. Write an API to make the  <affect-corpus> more understandable, it allows for calling each collection in <affect-corpus>.
+6. Use the API to take the flat words in  <affect-corpus> and organize them in  <affect-synopsis>.
+
+=== At this point ==
+We can move past linguistic data, but I'm going to see what I can do with this semantic information.
