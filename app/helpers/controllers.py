@@ -45,9 +45,9 @@ emotion_sets
 '''
 
 '''
-The first 85 inspired by emotionml
+The first 83 inspired by emotionml
 '''
-emotionml_inspired = ['acceptance', 'admiration', 'affection', 'amusement', 'anger', 'anticipation', 'anxiety', 'appraisal', 'appreciation', 'arousal', 'arrogance', 'awe', 'blame', 'boredom', 'calmness', 'compassion', 'compromise', 'concern', 'confidence', 'confusion', 'contempt', 'contentment', 'curiosity', 'denial', 'depression', 'desire', 'despair', 'dimension', 'disappointment', 'disgust', 'dissonance', 'distress', 'dread', 'ecstasy', 'edginess', 'embarrassment', 'enjoyment', 'enthusiasm', 'envy', 'eroticism', 'excitement', 'exuberance', 'fear', 'grace', 'gratification', 'gratitude', 'grief', 'happiness', 'harmony', 'hate', 'hope', 'humility', 'indifference', 'interest', 'irritation', 'jealousy', 'joy', 'love', 'lunacy', 'lust', 'mania', 'melancholy', 'pain', 'panic', 'patience', 'perturbation', 'pity', 'pleasure', 'pride', 'rage', 'relief', 'remorse', 'reproach', 'resentment', 'resignation', 'sadness', 'satisfaction', 'shame', 'shock', 'stress', 'surprise', 'triumph', 'trust', 'wonder', 'worry']
+emotionml_inspired = ['acceptance', 'admiration', 'affection', 'amusement', 'anger', 'anticipation', 'anxiety', 'appreciation', 'arousal', 'arrogance', 'awe', 'blame', 'boredom', 'calmness', 'compassion', 'compromise', 'concern', 'confidence', 'confusion', 'contempt', 'contentment', 'curiosity', 'denial', 'depression', 'desire', 'despair', 'disappointment', 'disgust', 'dissonance', 'distress', 'dread', 'ecstasy', 'edginess', 'embarrassment', 'enjoyment', 'enthusiasm', 'envy', 'eroticism', 'excitement', 'exuberance', 'fear', 'grace', 'gratification', 'gratitude', 'grief', 'happiness', 'harmony', 'hate', 'hope', 'humility', 'indifference', 'interest', 'irritation', 'jealousy', 'joy', 'love', 'lunacy', 'lust', 'mania', 'melancholy', 'pain', 'panic', 'patience', 'perturbation', 'pity', 'pleasure', 'pride', 'rage', 'relief', 'remorse', 'reproach', 'resentment', 'resignation', 'sadness', 'satisfaction', 'shame', 'shock', 'stress', 'surprise', 'triumph', 'trust', 'wonder', 'worry']
 
 '''
 inspired by paul ekman, conforms to emotionml
@@ -68,6 +68,13 @@ def calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3):
         ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
     )
     return r_affect_score
+
+def calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3):
+    ## Score of the affect, based on weights in the order
+    normalized_r_score = (
+        ((normalized_order_1 * 0.5) + (normalized_order_2 * 0.3) + (normalized_order_3 * 0.2))/3
+    )
+    return normalized_r_score
 
 def calculate_r_density_score(r_affect_score, length_words_no_stop):
     ## But this one is based on density
@@ -117,7 +124,11 @@ def process_emotion(doc, lang, emotion):
     order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
     order_2 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-2']
     order_3 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-3']
+    order_1_length = len(order_1)
+    order_2_length = len(order_2)
+    order_3_length = len(order_3)
 
+    print order_1_length
 
     stop_words = stopwords.words(lang)
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
@@ -139,7 +150,12 @@ def process_emotion(doc, lang, emotion):
     # Create a rudimentry scores
     # order one gets
 
+    normalized_order_1 = float(is_in_order_1)/order_1_length * 100
+    normalized_order_2 = float(is_in_order_2)/order_2_length * 100
+    normalized_order_3 = float(is_in_order_3)/order_3_length * 100
+
     r_affect_score = calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3)
+    normalized_r_score = calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3)
     r_affect_density_score = calculate_r_density_score(r_affect_score, length_words_no_stop)
 
     # TODO: Make a model for this?
@@ -148,8 +164,15 @@ def process_emotion(doc, lang, emotion):
         "is_in_order_1": is_in_order_1,
         "is_in_order_2": is_in_order_2,
         "is_in_order_3": is_in_order_3,
+        "order_1_length": order_1_length,
+        "order_2_length": order_2_length,
+        "order_3_length": order_3_length,
+        "normalized_order_1": normalized_order_1,
+        "normalized_order_2": normalized_order_2,
+        "normalized_order_3": normalized_order_3,
         "length_words_no_stop": length_words_no_stop,
         "r_affect_score": r_affect_score,
+        "normalized_r_score": normalized_r_score,
         "r_affect_density_score": r_affect_density_score,
     }
 
