@@ -128,8 +128,6 @@ def process_emotion(doc, lang, emotion):
     order_2_length = len(order_2)
     order_3_length = len(order_3)
 
-    print order_1_length
-
     stop_words = stopwords.words(lang)
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
 
