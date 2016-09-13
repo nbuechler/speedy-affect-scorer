@@ -1,0 +1,28 @@
+
+Sept 12, 2016 (roughly 20 hours later)
+
+I used ample-affect-exhibit to go through words and to see how the normalization
+'tuned' the results. And, as expected, it had the effect of leveling out the
+'overbearing' - or loud - signals (representational affects) like 'shock'.
+
+Remember, representational in this case means language, as a representation of the
+biological pattern of neurons that are activated when emotions are felt.
+
+In the following passage taken from this source: https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch01.htm
+...
+Chapter I. Bourgeois and Proletarians
+...
+
+The passage returned these results for the top ten:
+
+Emotion	      Normalized Score	   Basic Score
+despair	      23.638417341342386	 13.966666666666669
+enthusiasm	  22.413679276424375	 29.833333333333332
+exuberance	  18.35838263575007	   18
+enjoyment	    15.143283946100846	 17.500000000000004
+harmony	      14.835929771182952	 31.400000000000002
+arousal	      12.872356548299097	 14
+perturbation	12.640061238000662	 29.46666666666667
+gratification	9.267053165752051	   10.666666666666666
+pleasure	    9.009221685466335	   31.599999999999998
+trust	        8.748872023352613	   64.46666666666665
