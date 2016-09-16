@@ -1,12 +1,12 @@
 # speedy-affect-scorer
-The idea is to score basic afffects - quickly! 
+The idea is to score basic afffects - quickly!
 
-*Appoximately 400 (IN PROGRESS) representational emotions are categorized, these do not absolutely map to the neurological emotion of a human
+*Appoximately 400 representational emotions are categorized, these do not absolutely map to the neurological emotion of a human
 *One human maps the neurological emotion - the one that they experience chemically/electrically - to a representation. This is what we call it via an english word.
-*Humans will often map one neurological emotion to their defined preset of many representational emotions. This might be why we confuse and sometimes argue with each other about emotions. Remember that a word is only a represetnation of an idea. Anger - the word - is not a neurological emotion. The set of neurological impulses is actually the neurological emotion and it might be represented by something like a set of words; e.g. Anger, Sadness, Fear, etc.
+*Humans will often map one neurological emotion to their defined preset of many representational emotions. This might be why we confuse and sometimes argue with each other about emotions. Remember that a word is only a representation of an idea. Anger - the word - is not a neurological emotion. The set of neurological impulses is actually the neurological emotion and it might be represented by something like a set of words; e.g. Anger, Sadness, Fear, etc.
 
 ## History
-The project originally included a file called 'corpus_builder.py' file which was seperated into a different project called: copious-affect-corpus 
+The project originally included a file called 'corpus_builder.py' file which was seperated into a different project called: copious-affect-corpus
 
 Find the project here: https://github.com/nbuechler/copious-affect-corpus
 
