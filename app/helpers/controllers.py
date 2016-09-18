@@ -140,15 +140,22 @@ def process_emotion(doc, lang, emotion):
     is_in_order_2 = 0
     is_in_order_3 = 0
 
+    list_of_order_1 = list()
+    list_of_order_2 = list()
+    list_of_order_3 = list()
+
     length_words_no_stop = len(list_of_words)
 
     for word in list_of_words:
         if word in order_1:
             is_in_order_1+=1
+            list_of_order_1.append(word)
         if word in order_2:
             is_in_order_2+=1
+            list_of_order_2.append(word)
         if word in order_3:
             is_in_order_3+=1
+            list_of_order_3.append(word)
 
     # Create a rudimentry scores
     # order one gets
@@ -167,6 +174,9 @@ def process_emotion(doc, lang, emotion):
         "is_in_order_1": is_in_order_1,
         "is_in_order_2": is_in_order_2,
         "is_in_order_3": is_in_order_3,
+        'list_of_order_1': list_of_order_1,
+        'list_of_order_2': list_of_order_2,
+        'list_of_order_3': list_of_order_3,
         "order_1_length": order_1_length,
         "order_2_length": order_2_length,
         "order_3_length": order_3_length,
