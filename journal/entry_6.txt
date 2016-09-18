@@ -1,0 +1,42 @@
+
+Sept 17, 2016
+
+I extended the api - </analyze_emotion/<emotion>/> -
+of what gets returned from an representational affect to include this:
+
+'list_of_order_1': list_of_order_1,
+'list_of_order_2': list_of_order_2,
+'list_of_order_3': list_of_order_3,
+
+where one list_of_order_n is a list of the words, like so:
+
+['word-1', 'word-2', 'word-n']
+
+so the full emotion returned is this:
+
+processed_doc_metadata = {
+    "emotion": emotion,
+    "is_in_order_1": is_in_order_1,
+    "is_in_order_2": is_in_order_2,
+    "is_in_order_3": is_in_order_3,
+    'list_of_order_1': list_of_order_1,
+    'list_of_order_2': list_of_order_2,
+    'list_of_order_3': list_of_order_3,
+    "order_1_length": order_1_length,
+    "order_2_length": order_2_length,
+    "order_3_length": order_3_length,
+    "normalized_order_1": normalized_order_1,
+    "normalized_order_2": normalized_order_2,
+    "normalized_order_3": normalized_order_3,
+    "length_words_no_stop": length_words_no_stop,
+    "r_affect_score": r_affect_score,
+    "normalized_r_score": normalized_r_score,
+    "r_affect_density_score": r_affect_density_score,
+}
+
+
+
+====
+
+The goal of this is to tell the user which words contributed to the
+representational affect, making the api a little more transparent for the end user.
