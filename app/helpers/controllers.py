@@ -1,5 +1,6 @@
 from nltk.corpus import stopwords
 from nltk.tokenize import wordpunct_tokenize
+from nltk.probability import FreqDist
 
 from flask import jsonify
 import requests
@@ -157,6 +158,10 @@ def process_emotion(doc, lang, emotion):
             is_in_order_3+=1
             list_of_order_3.append(word)
 
+    order_1_fdist = FreqDist(list_of_order_1)
+    order_2_fdist = FreqDist(list_of_order_2)
+    order_3_fdist = FreqDist(list_of_order_3)
+
     # Create a rudimentry scores
     # order one gets
 
@@ -168,7 +173,7 @@ def process_emotion(doc, lang, emotion):
     normalized_r_score = calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3)
     r_affect_density_score = calculate_r_density_score(r_affect_score, length_words_no_stop)
 
-    # TODO: Make a model for this?
+    # TODO: Make a model for this? Maybe also not overload it!
     processed_doc_metadata = {
         "emotion": emotion,
         "is_in_order_1": is_in_order_1,
@@ -177,6 +182,9 @@ def process_emotion(doc, lang, emotion):
         'list_of_order_1': list_of_order_1,
         'list_of_order_2': list_of_order_2,
         'list_of_order_3': list_of_order_3,
+        'order_1_fdist': order_1_fdist,
+        'order_2_fdist': order_2_fdist,
+        'order_3_fdist': order_3_fdist,
         "order_1_length": order_1_length,
         "order_2_length": order_2_length,
         "order_3_length": order_3_length,
@@ -210,6 +218,5 @@ def process_emotion_set(doc, lang, emotion_set):
     for emotion in e_set:
         processed_doc_list_metadata.append(process_emotion(doc, lang, emotion))
 
-    print processed_doc_list_metadata
-
+    print '---Creating an affect list!---'
     return processed_doc_list_metadata
