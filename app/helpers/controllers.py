@@ -3,7 +3,7 @@ from nltk.tokenize import wordpunct_tokenize
 from nltk.probability import FreqDist
 
 from flask import jsonify
-import requests
+import requests, operator
 
 from bson.json_util import loads, dumps
 
@@ -71,14 +71,14 @@ metrics
 def calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3):
     ## Score of the affect, based on weights in the order
     r_affect_score = (
-        ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
+        ((is_in_order_1 * 0.7) + (is_in_order_2 * 0.2) + (is_in_order_3 * 0.1))/3
     )
     return r_affect_score
 
 def calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3):
     ## Score of the affect, based on weights in the order
     normalized_r_score = (
-        ((normalized_order_1 * 0.5) + (normalized_order_2 * 0.3) + (normalized_order_3 * 0.2))/3
+        ((normalized_order_1 * 0.7) + (normalized_order_2 * 0.2) + (normalized_order_3 * 0.1))/3
     )
     return normalized_r_score
 
@@ -158,9 +158,13 @@ def process_emotion(doc, lang, emotion):
             is_in_order_3+=1
             list_of_order_3.append(word)
 
-    order_1_fdist = FreqDist(list_of_order_1)
-    order_2_fdist = FreqDist(list_of_order_2)
-    order_3_fdist = FreqDist(list_of_order_3)
+    pre_order_1_fdist = dict(FreqDist(list_of_order_1))
+    pre_order_2_fdist = dict(FreqDist(list_of_order_2))
+    pre_order_3_fdist = dict(FreqDist(list_of_order_3))
+
+    order_1_fdist = sorted(pre_order_1_fdist.items(), key=lambda x: (x[1],x[0]))
+    order_2_fdist = sorted(pre_order_2_fdist.items(), key=lambda x: (x[1],x[0]))
+    order_3_fdist = sorted(pre_order_3_fdist.items(), key=lambda x: (x[1],x[0]))
 
     # Create a rudimentry scores
     # order one gets
