@@ -1,0 +1,18 @@
+
+Sept 22, 2016
+
+
+I added stemming and lemmatizizing today. This improves the main Business Logic
+part of the affect scorer for NLP.
+
+if word in order_3:
+        is_in_order_3+=1
+        list_of_order_3.append(word)
+    elif stemmer.stem(word) in order_3:
+        is_in_order_3+=1
+        list_of_order_3.append(stemmer.stem(word))
+    elif lemma.lemmatize(word) in order_3:
+        is_in_order_3+=1
+        list_of_order_3.append(lemma.lemmatize(word))
+
+Previously, over the past view days I improved the User Interface
