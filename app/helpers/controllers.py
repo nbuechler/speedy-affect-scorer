@@ -2,6 +2,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import wordpunct_tokenize
 from nltk.probability import FreqDist
 from nltk.stem.snowball import SnowballStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
 
 from flask import jsonify
 import requests, operator
@@ -150,7 +151,8 @@ def process_emotion(doc, lang, emotion):
 
     ## Main Business Logic!
     # TODO: Handle language that isn't supported by stemmer!
-    stemmer = SnowballStemmer(lang)
+    stemmer = SnowballStemmer(lang) # This is the stemmer
+    lemma = WordNetLemmatizer() # This is the lemma
     for word in list_of_words:
         if word in order_1:
             is_in_order_1+=1
@@ -158,6 +160,9 @@ def process_emotion(doc, lang, emotion):
         elif stemmer.stem(word) in order_1:
             is_in_order_1+=1
             list_of_order_1.append(stemmer.stem(word))
+        elif lemma.lemmatize(word) in order_1:
+            is_in_order_1+=1
+            list_of_order_1.append(lemma.lemmatize(word))
 
         if word in order_2:
             is_in_order_2+=1
@@ -165,13 +170,19 @@ def process_emotion(doc, lang, emotion):
         elif stemmer.stem(word) in order_2:
             is_in_order_2+=1
             list_of_order_2.append(stemmer.stem(word))
+        elif lemma.lemmatize(word) in order_2:
+            is_in_order_2+=1
+            list_of_order_2.append(lemma.lemmatize(word))
 
         if word in order_3:
             is_in_order_3+=1
             list_of_order_3.append(word)
         elif stemmer.stem(word) in order_3:
             is_in_order_3+=1
-            list_of_order_3.append(stemmer.stem(word)+word)
+            list_of_order_3.append(stemmer.stem(word))
+        elif lemma.lemmatize(word) in order_3:
+            is_in_order_3+=1
+            list_of_order_3.append(lemma.lemmatize(word))
 
     pre_order_1_fdist = dict(FreqDist(list_of_order_1))
     pre_order_2_fdist = dict(FreqDist(list_of_order_2))
@@ -234,8 +245,9 @@ def process_emotion_set(doc, lang, emotion_set):
     if emotion_set == 'big_6':
         e_set = big_6
 
+    print '---Creating an affect list!---'
     for emotion in e_set:
         processed_doc_list_metadata.append(process_emotion(doc, lang, emotion))
+    print '---Finished---'
 
-    print '---Creating an affect list!---'
     return processed_doc_list_metadata
