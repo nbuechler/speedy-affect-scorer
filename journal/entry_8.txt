@@ -1,0 +1,910 @@
+
+Sept 23, 2016
+
+A returned object from the server now has quite a bit more data, the latest
+inclusion has POS (Part-of-speech). See below:
+
+
+{
+  "emotion_set": [
+    {
+      "emotion": "anger",
+      "is_in_order_1": 0,
+      "is_in_order_2": 2,
+      "is_in_order_3": 26,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [],
+      "list_of_order_2": [
+        "see",
+        "provide"
+      ],
+      "list_of_order_3": [
+        "tag",
+        "part",
+        "speech",
+        "see",
+        "open",
+        "text",
+        "investigation",
+        "evidence",
+        "place",
+        "use",
+        "variety",
+        "store",
+        "part",
+        "speech",
+        "tag",
+        "provide",
+        "concern",
+        "fragment",
+        "note",
+        "part",
+        "speech",
+        "tag",
+        "convert",
+        "become",
+        "practice",
+        "publish"
+      ],
+      "normalized_order_1": 0.0,
+      "normalized_order_2": 0.5698005698005698,
+      "normalized_order_3": 0.7620164126611958,
+      "normalized_r_score": 0.06338725174207785,
+      "order_1_fdist": [],
+      "order_1_length": 20,
+      "order_2_fdist": [
+        [
+          [
+            "provide",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VB"
+          ],
+          1
+        ]
+      ],
+      "order_2_length": 351,
+      "order_3_fdist": [
+        [
+          [
+            "become",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "convert",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "evidence",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "fragment",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "investigation",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "note",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "open",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "place",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "practice",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "provide",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "publish",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "store",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "tag",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "text",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "use",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "tag",
+            "NN"
+          ],
+          2
+        ],
+        [
+          [
+            "part",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "speech",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 3412,
+      "r_affect_density_score": 0.6896551724137931,
+      "r_affect_score": 1.0
+    },
+    {
+      "emotion": "disgust",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 14,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [],
+      "list_of_order_2": [],
+      "list_of_order_3": [
+        "see",
+        "open",
+        "file",
+        "place",
+        "use",
+        "variety",
+        "provide",
+        "concern",
+        "file",
+        "contrast",
+        "file",
+        "note",
+        "convert",
+        "become"
+      ],
+      "normalized_order_1": 0.0,
+      "normalized_order_2": 0.0,
+      "normalized_order_3": 0.7128309572301426,
+      "normalized_r_score": 0.023761031907671423,
+      "order_1_fdist": [],
+      "order_1_length": 11,
+      "order_2_fdist": [],
+      "order_2_length": 144,
+      "order_3_fdist": [
+        [
+          [
+            "become",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "contrast",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "convert",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "note",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "open",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "place",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "provide",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VB"
+          ],
+          1
+        ],
+        [
+          [
+            "use",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "file",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 1964,
+      "r_affect_density_score": 0.32183908045977017,
+      "r_affect_score": 0.46666666666666673
+    },
+    {
+      "emotion": "fear",
+      "is_in_order_1": 1,
+      "is_in_order_2": 3,
+      "is_in_order_3": 20,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [
+        "concern"
+      ],
+      "list_of_order_2": [
+        "see",
+        "open",
+        "concern"
+      ],
+      "list_of_order_3": [
+        "tag",
+        "part",
+        "see",
+        "open",
+        "file",
+        "place",
+        "use",
+        "variety",
+        "part",
+        "tag",
+        "provide",
+        "concern",
+        "file",
+        "file",
+        "note",
+        "part",
+        "tag",
+        "convert",
+        "become",
+        "standard"
+      ],
+      "normalized_order_1": 5.263157894736842,
+      "normalized_order_2": 1.3636363636363635,
+      "normalized_order_3": 0.9066183136899365,
+      "normalized_r_score": 1.3491998768040185,
+      "order_1_fdist": [
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ]
+      ],
+      "order_1_length": 19,
+      "order_2_fdist": [
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "open",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VB"
+          ],
+          1
+        ]
+      ],
+      "order_2_length": 220,
+      "order_3_fdist": [
+        [
+          [
+            "become",
+            "VB"
+          ],
+          1
+        ],
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "convert",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "note",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "open",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "place",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "provide",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VB"
+          ],
+          1
+        ],
+        [
+          [
+            "standard",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "tag",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "use",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "tag",
+            "NN"
+          ],
+          2
+        ],
+        [
+          [
+            "file",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "part",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 2206,
+      "r_affect_density_score": 0.7586206896551724,
+      "r_affect_score": 1.0999999999999999
+    },
+    {
+      "emotion": "happiness",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [],
+      "list_of_order_2": [],
+      "list_of_order_3": [
+        "part",
+        "speech",
+        "see",
+        "variety",
+        "part",
+        "speech",
+        "concern",
+        "note",
+        "part",
+        "speech"
+      ],
+      "normalized_order_1": 0.0,
+      "normalized_order_2": 0.0,
+      "normalized_order_3": 1.5174506828528074,
+      "normalized_r_score": 0.05058168942842692,
+      "order_1_fdist": [],
+      "order_1_length": 4,
+      "order_2_fdist": [],
+      "order_2_length": 66,
+      "order_3_fdist": [
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "note",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "part",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "speech",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 659,
+      "r_affect_density_score": 0.22988505747126436,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "sadness",
+      "is_in_order_1": 0,
+      "is_in_order_2": 0,
+      "is_in_order_3": 10,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [],
+      "list_of_order_2": [],
+      "list_of_order_3": [
+        "part",
+        "speech",
+        "see",
+        "variety",
+        "part",
+        "speech",
+        "concern",
+        "note",
+        "part",
+        "speech"
+      ],
+      "normalized_order_1": 0.0,
+      "normalized_order_2": 0.0,
+      "normalized_order_3": 1.7152658662092626,
+      "normalized_r_score": 0.057175528873642086,
+      "order_1_fdist": [],
+      "order_1_length": 7,
+      "order_2_fdist": [],
+      "order_2_length": 56,
+      "order_3_fdist": [
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "note",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "part",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "speech",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 583,
+      "r_affect_density_score": 0.22988505747126436,
+      "r_affect_score": 0.3333333333333333
+    },
+    {
+      "emotion": "surprise",
+      "is_in_order_1": 0,
+      "is_in_order_2": 3,
+      "is_in_order_3": 27,
+      "length_words_no_stop": 145,
+      "list_of_order_1": [],
+      "list_of_order_2": [
+        "variety",
+        "concern",
+        "convert"
+      ],
+      "list_of_order_3": [
+        "part",
+        "speech",
+        "example",
+        "see",
+        "open",
+        "file",
+        "text",
+        "investigation",
+        "evidence",
+        "place",
+        "use",
+        "variety",
+        "store",
+        "part",
+        "speech",
+        "provide",
+        "concern",
+        "differ",
+        "file",
+        "file",
+        "fragment",
+        "part",
+        "speech",
+        "convert",
+        "become",
+        "practice",
+        "publish"
+      ],
+      "normalized_order_1": 0.0,
+      "normalized_order_2": 0.967741935483871,
+      "normalized_order_3": 0.7330980179201738,
+      "normalized_r_score": 0.0889527296295972,
+      "order_1_fdist": [],
+      "order_1_length": 16,
+      "order_2_fdist": [
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "convert",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ]
+      ],
+      "order_2_length": 310,
+      "order_3_fdist": [
+        [
+          [
+            "become",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "concern",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "convert",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "differ",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "evidence",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "example",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "fragment",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "investigation",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "open",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "place",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "practice",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "provide",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "publish",
+            "JJ"
+          ],
+          1
+        ],
+        [
+          [
+            "see",
+            "VBP"
+          ],
+          1
+        ],
+        [
+          [
+            "store",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "text",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "use", 
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "variety",
+            "NN"
+          ],
+          1
+        ],
+        [
+          [
+            "file",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "part",
+            "NN"
+          ],
+          3
+        ],
+        [
+          [
+            "speech",
+            "NN"
+          ],
+          3
+        ]
+      ],
+      "order_3_length": 3683,
+      "r_affect_density_score": 0.7586206896551725,
+      "r_affect_score": 1.1
+    }
+  ],
+  "name": "big_6"
+}
