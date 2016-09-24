@@ -1,3 +1,4 @@
+from nltk import pos_tag
 from nltk.corpus import stopwords
 from nltk.tokenize import wordpunct_tokenize
 from nltk.probability import FreqDist
@@ -184,9 +185,9 @@ def process_emotion(doc, lang, emotion):
             is_in_order_3+=1
             list_of_order_3.append(lemma.lemmatize(word))
 
-    pre_order_1_fdist = dict(FreqDist(list_of_order_1))
-    pre_order_2_fdist = dict(FreqDist(list_of_order_2))
-    pre_order_3_fdist = dict(FreqDist(list_of_order_3))
+    pre_order_1_fdist = dict(FreqDist(pos_tag(list_of_order_1)))
+    pre_order_2_fdist = dict(FreqDist(pos_tag(list_of_order_2)))
+    pre_order_3_fdist = dict(FreqDist(pos_tag(list_of_order_3)))
 
     order_1_fdist = sorted(pre_order_1_fdist.items(), key=lambda x: (x[1],x[0]))
     order_2_fdist = sorted(pre_order_2_fdist.items(), key=lambda x: (x[1],x[0]))
