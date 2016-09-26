@@ -42,7 +42,11 @@ def analyze_emotion(emotion):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
-    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion)
+    # TODO: Add Error Handling
+    natural = r.get('natural')
+    stemmer = r.get('stemmer')
+    lemma = r.get('lemma')
+    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma)
     return jsonify(processed_doc_metadata)
 
 @helpers.route('/analyze_emotion_set/<emotion_set>/', methods=['POST'])
@@ -50,5 +54,9 @@ def analyze_emotion_set(emotion_set):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
-    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set)
+    # TODO: Add Error Handling
+    natural = r.get('natural')
+    stemmer = r.get('stemmer')
+    lemma = r.get('lemma')
+    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma)
     return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
