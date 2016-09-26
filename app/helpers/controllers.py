@@ -127,7 +127,11 @@ Business logic below
 '''
 
 # TODO: Error Handling needed!
-def process_emotion(doc, lang, emotion):
+def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
+
+    naturalFlag = natural
+    stemmerFlag = stemmer
+    lemmaFlag = lemma
 
     # TODO: Make this better
     order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
@@ -166,49 +170,49 @@ def process_emotion(doc, lang, emotion):
     stemmer = SnowballStemmer(lang) # This is the stemmer
     lemma = WordNetLemmatizer() # This is the lemma
     for word in list_of_words:
-        if word in order_1:
+        if naturalFlag == '1' and word in order_1:
             is_in_order_1+=1
             list_of_order_1.append(word)
             natural_list_of_order_1.append(word)
-        elif stemmer.stem(word) in order_1:
+        elif stemmerFlag == '1' and stemmer.stem(word) in order_1:
             is_in_order_1+=1
             list_of_order_1.append(stemmer.stem(word))
             stemmer_list_of_order_1.append(stemmer.stem(word))
-        elif lemma.lemmatize(word) in order_1:
+        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_1:
             is_in_order_1+=1
             list_of_order_1.append(lemma.lemmatize(word))
             lemma_list_of_order_1.append(lemma.lemmatize(word))
 
-        if word in order_2:
+        if naturalFlag == '1' and word in order_2:
             is_in_order_2+=1
             list_of_order_2.append(word)
             natural_list_of_order_2.append(word)
-        elif stemmer.stem(word) in order_2:
+        elif stemmerFlag == '1' and stemmer.stem(word) in order_2:
             is_in_order_2+=1
             list_of_order_2.append(stemmer.stem(word))
             stemmer_list_of_order_2.append(stemmer.stem(word))
-        elif lemma.lemmatize(word) in order_2:
+        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_2:
             is_in_order_2+=1
             list_of_order_2.append(lemma.lemmatize(word))
             lemma_list_of_order_2.append(lemma.lemmatize(word))
 
-        if word in order_3:
+        if naturalFlag == '1' and word in order_3:
             is_in_order_3+=1
             list_of_order_3.append(word)
             natural_list_of_order_3.append(word)
-        elif stemmer.stem(word) in order_3:
+        elif stemmerFlag == '1' and stemmer.stem(word) in order_3:
             is_in_order_3+=1
             list_of_order_3.append(stemmer.stem(word))
             stemmer_list_of_order_3.append(stemmer.stem(word))
-        elif lemma.lemmatize(word) in order_3:
+        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_3:
             is_in_order_3+=1
             list_of_order_3.append(lemma.lemmatize(word))
             lemma_list_of_order_3.append(lemma.lemmatize(word))
 
     pre_order_1_fdist = dict(FreqDist(pos_tag(list_of_order_1)))
     pre_natural_order_1_fdist = dict(FreqDist(pos_tag(natural_list_of_order_1)))
-    pre_stemmer_order_1_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_1)))
-    pre_lemma_order_1_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_1)))
+    pre_stemmer_order_1_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_1)))
+    pre_lemma_order_1_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_1)))
     pre_order_2_fdist = dict(FreqDist(pos_tag(list_of_order_2)))
     pre_natural_order_2_fdist = dict(FreqDist(pos_tag(natural_list_of_order_2)))
     pre_stemmer_order_2_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_2)))
@@ -294,7 +298,7 @@ def process_emotion(doc, lang, emotion):
 
 
 # TODO: Error Handling needed!
-def process_emotion_set(doc, lang, emotion_set):
+def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma):
 
     processed_doc_list_metadata = []
 
@@ -309,7 +313,7 @@ def process_emotion_set(doc, lang, emotion_set):
 
     print '---Creating an affect list!---'
     for emotion in e_set:
-        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion))
+        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion, natural, stemmer, lemma))
     print '---Finished---'
 
     return processed_doc_list_metadata

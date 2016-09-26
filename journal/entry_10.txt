@@ -1,0 +1,14 @@
+
+Sept 25, 2016
+
+
+A lot of improvements to the User Interface when it comes to changing color for
+differing between nouns/verbs/adjectives as general categories. So, I'm making
+the POS tagging apparent to the user so that the user can see the relationship
+between POS and affect via color.
+
+I also improve the User Experience by allowing the User to turn off parts of the
+processing, which can improve the amount of time it takes to understand the affect.
+
+Additionally, I included a 'Ranking Summary' and 'Lagger Summary' to show the way
+in which a set of emotions produces different '[blends]' of affect.
