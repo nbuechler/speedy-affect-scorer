@@ -54,14 +54,13 @@ Make sure to follow the instructions in that git project
 
 # Here is the inital scope, it's small
 
-Score the emotion set based on Paul Eckman's big 6.
+Score the based on the emotion set referenced by Paul Eckman's big 6.
 anticipation,
 disgust,
 fear,
 joy,
 sadness,
-surprise,
-and trust...
+surprise.
 
 (and the addition of lots of other words!)
 
@@ -92,6 +91,11 @@ analytic ----- intutive
 ```
 * Analytically angry, intuitively happy?
 
+* Write a scientific paper about this.
+* Include process in readme
+* Setup a github page to host some of this stuff
+* subdomain or something on other sites
+* remove other stop-emotion-words like the word 'emotion'
 
 # Tech stack
 It will use Flask to do the api, and NLTK to do some of the processing. It will probably also be structured in a way that it can be used in other projects, otherwise this wouldn't be MIT Licensed.
@@ -125,12 +129,6 @@ python app/runserver.py 5000
 * Flask-PyMongo==0.3.1
 * pymongo==2.9.3
 
-
-```
-*Write a scienctific paper about this.
-*Include process in readme
-*Setup a github page to host some of this stuff
-*subdomain or something like that on nb.com?
 
 # License
 
