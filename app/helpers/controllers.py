@@ -141,6 +141,12 @@ def length_no_stop_punct(doc, lang):
 
     return len(list_of_words)
 
+'''
+Find the 'stop words' that are very common in each affect corpus
+'''
+def find_emotion_stop_words():
+    
+    return 'Not implemented'
 
 '''
 Business logic below
