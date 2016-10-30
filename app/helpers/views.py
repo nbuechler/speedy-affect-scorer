@@ -60,3 +60,13 @@ def analyze_emotion_set(emotion_set):
     lemma = r.get('lemma')
     processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma)
     return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
+
+@helpers.route('/stats/<include_word>')
+def display_affect_word_similarities(include_word=None, truncated=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word, truncated=truncated)
+    return jsonify(statistics = result)
+
+@helpers.route('/stats/<include_word>/truncated/<truncated>')
+def display_truncated_affect_word_similarities(include_word=None, truncated=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word, truncated=truncated)
+    return jsonify(statistics = result)

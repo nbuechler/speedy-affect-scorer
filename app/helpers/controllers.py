@@ -92,6 +92,45 @@ dimensions = ['pleasure', 'arousal', 'dominance', 'valence', 'potency', 'unpredi
 
 '''
 ********************************************************************************
+statistics
+********************************************************************************
+'''
+
+def display_affect_word_similarities(include_word=None, truncated=None):
+
+    cursor = mongo_corpus_synopsis.db['affect-word-frequency'].find({})
+
+    final_stats = []
+    stats = []
+    if include_word == "1":
+        for doc in cursor:
+            stats.append({
+                'emotion-count': doc['emotion-count'],
+                'word': doc['word'],
+            })
+    elif include_word == "0":
+        for doc in cursor:
+            stats.append(doc['emotion-count'])
+
+    sorted_stats = sorted(stats, reverse=True)
+
+    j = 0
+    trunc_stats = []
+    if truncated == "1":
+        for stat in sorted_stats:
+            if (j % 160 == 0):
+                trunc_stats.append(stat)
+            j =+ j + 1
+
+    if truncated == "1":
+        final_stats = trunc_stats
+    elif truncated == "0":
+        final_stats = sorted_stats
+
+    return final_stats
+
+'''
+********************************************************************************
 metrics
 ********************************************************************************
 '''
@@ -145,7 +184,7 @@ def length_no_stop_punct(doc, lang):
 Find the 'stop words' that are very common in each affect corpus
 '''
 def find_emotion_stop_words():
-    
+
     return 'Not implemented'
 
 '''
@@ -167,6 +206,7 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
     lemmaFlag = lemma
 
     # TODO: Make this better
+    # TODO: Change lingustic-affects to linguistic-affects
     order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
     order_2 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-2']
     order_3 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-3']
