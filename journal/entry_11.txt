@@ -1,0 +1,527 @@
+
+Oct 29, 2016
+
+I've been working on processing the data I have to work with so that
+I can get a better understanding of it. In this case, I graphed the
+distribution/frequency of all of the words. The 'emotion-count' variable
+is the number of times an emotion appears in a word (the data is below
+this explanation):
+
+==Explanation==
+
+
+The X-axis represents 124 of the 19840 words used as a signal of affect.
+Imagine slicing the data 160 times at equal spacing starting at the first word.
+If we then graph the first word found in each of those slices, we would get a
+graph something like above.
+
+The y-axis is based on the number of times that word signals a representational
+emotion (R-Emotion).
+
+For example, the word state signals 329 emotions in the corpora!
+
+This bar chart shows the frequency distribution of every word used to describe
+the representational emotion (R-Emotion).
+
+==Data==
+
+{
+  "statistics": [
+    {
+      "emotion-count": 329,
+      "word": "state"
+    },
+    {
+      "emotion-count": 175,
+      "word": "end"
+    },
+    {
+      "emotion-count": 144,
+      "word": "physical process"
+    },
+    {
+      "emotion-count": 125,
+      "word": "causal agent"
+    },
+    {
+      "emotion-count": 112,
+      "word": "depute"
+    },
+    {
+      "emotion-count": 103,
+      "word": "bank"
+    },
+    {
+      "emotion-count": 94,
+      "word": "savvy"
+    },
+    {
+      "emotion-count": 87,
+      "word": "can"
+    },
+    {
+      "emotion-count": 81,
+      "word": "devil"
+    },
+    {
+      "emotion-count": 76,
+      "word": "strive"
+    },
+    {
+      "emotion-count": 72,
+      "word": "earn"
+    },
+    {
+      "emotion-count": 67,
+      "word": "hoo-hah"
+    },
+    {
+      "emotion-count": 63,
+      "word": "eat up"
+    },
+    {
+      "emotion-count": 59,
+      "word": "detect"
+    },
+    {
+      "emotion-count": 56,
+      "word": "ail"
+    },
+    {
+      "emotion-count": 52,
+      "word": "tear"
+    },
+    {
+      "emotion-count": 50,
+      "word": "affectedness"
+    },
+    {
+      "emotion-count": 47,
+      "word": "stand firm"
+    },
+    {
+      "emotion-count": 45,
+      "word": "running game"
+    },
+    {
+      "emotion-count": 43,
+      "word": "somatic sensory system"
+    },
+    {
+      "emotion-count": 41,
+      "word": "tire"
+    },
+    {
+      "emotion-count": 39,
+      "word": "solidification"
+    },
+    {
+      "emotion-count": 38,
+      "word": "connective"
+    },
+    {
+      "emotion-count": 36,
+      "word": "joyousness"
+    },
+    {
+      "emotion-count": 34,
+      "word": "wane"
+    },
+    {
+      "emotion-count": 33,
+      "word": "hunting"
+    },
+    {
+      "emotion-count": 32,
+      "word": "draw off"
+    },
+    {
+      "emotion-count": 30,
+      "word": "sewing"
+    },
+    {
+      "emotion-count": 29,
+      "word": "liberty chit"
+    },
+    {
+      "emotion-count": 28,
+      "word": "enquiry"
+    },
+    {
+      "emotion-count": 27,
+      "word": "coating"
+    },
+    {
+      "emotion-count": 25,
+      "word": "written record"
+    },
+    {
+      "emotion-count": 24,
+      "word": "vividness"
+    },
+    {
+      "emotion-count": 24,
+      "word": "bank line"
+    },
+    {
+      "emotion-count": 23,
+      "word": "corrade"
+    },
+    {
+      "emotion-count": 22,
+      "word": "helpfulness"
+    },
+    {
+      "emotion-count": 21,
+      "word": "madness"
+    },
+    {
+      "emotion-count": 20,
+      "word": "misinform"
+    },
+    {
+      "emotion-count": 19,
+      "word": "sit down"
+    },
+    {
+      "emotion-count": 19,
+      "word": "bathroom"
+    },
+    {
+      "emotion-count": 18,
+      "word": "incorporate"
+    },
+    {
+      "emotion-count": 17,
+      "word": "recounting"
+    },
+    {
+      "emotion-count": 17,
+      "word": "bring through"
+    },
+    {
+      "emotion-count": 16,
+      "word": "issuing"
+    },
+    {
+      "emotion-count": 15,
+      "word": "unsuccessful person"
+    },
+    {
+      "emotion-count": 15,
+      "word": "glow"
+    },
+    {
+      "emotion-count": 14,
+      "word": "unwelcome person"
+    },
+    {
+      "emotion-count": 14,
+      "word": "interest group"
+    },
+    {
+      "emotion-count": 14,
+      "word": "German mark"
+    },
+    {
+      "emotion-count": 13,
+      "word": "leap out"
+    },
+    {
+      "emotion-count": 13,
+      "word": "abut"
+    },
+    {
+      "emotion-count": 12,
+      "word": "phonograph record"
+    },
+    {
+      "emotion-count": 12,
+      "word": "crucifixion"
+    },
+    {
+      "emotion-count": 11,
+      "word": "take a firm stand"
+    },
+    {
+      "emotion-count": 11,
+      "word": "misfire"
+    },
+    {
+      "emotion-count": 11,
+      "word": "depreciation"
+    },
+    {
+      "emotion-count": 10,
+      "word": "terpsichore"
+    },
+    {
+      "emotion-count": 10,
+      "word": "memory device"
+    },
+    {
+      "emotion-count": 10,
+      "word": "concomitant"
+    },
+    {
+      "emotion-count": 9,
+      "word": "sterilisation"
+    },
+    {
+      "emotion-count": 9,
+      "word": "manual labor"
+    },
+    {
+      "emotion-count": 9,
+      "word": "computer file"
+    },
+    {
+      "emotion-count": 8,
+      "word": "spreading"
+    },
+    {
+      "emotion-count": 8,
+      "word": "liquify"
+    },
+    {
+      "emotion-count": 8,
+      "word": "disembark"
+    },
+    {
+      "emotion-count": 8,
+      "word": "Death"
+    },
+    {
+      "emotion-count": 7,
+      "word": "retirement savings plan"
+    },
+    {
+      "emotion-count": 7,
+      "word": "leave-taking"
+    },
+    {
+      "emotion-count": 7,
+      "word": "defectiveness"
+    },
+    {
+      "emotion-count": 7,
+      "word": "DOE"
+    },
+    {
+      "emotion-count": 6,
+      "word": "rule of grammar"
+    },
+    {
+      "emotion-count": 6,
+      "word": "knockout"
+    },
+    {
+      "emotion-count": 6,
+      "word": "desertion"
+    },
+    {
+      "emotion-count": 5,
+      "word": "worthlessness"
+    },
+    {
+      "emotion-count": 5,
+      "word": "sledding"
+    },
+    {
+      "emotion-count": 5,
+      "word": "pink slip"
+    },
+    {
+      "emotion-count": 5,
+      "word": "inutility"
+    },
+    {
+      "emotion-count": 5,
+      "word": "estrangement"
+    },
+    {
+      "emotion-count": 5,
+      "word": "brass instrument"
+    },
+    {
+      "emotion-count": 4,
+      "word": "wafture"
+    },
+    {
+      "emotion-count": 4,
+      "word": "small fry"
+    },
+    {
+      "emotion-count": 4,
+      "word": "plump down"
+    },
+    {
+      "emotion-count": 4,
+      "word": "light unit"
+    },
+    {
+      "emotion-count": 4,
+      "word": "frugalness"
+    },
+    {
+      "emotion-count": 4,
+      "word": "decadence"
+    },
+    {
+      "emotion-count": 4,
+      "word": "barge"
+    },
+    {
+      "emotion-count": 3,
+      "word": "vastness"
+    },
+    {
+      "emotion-count": 3,
+      "word": "soothsaying"
+    },
+    {
+      "emotion-count": 3,
+      "word": "precept"
+    },
+    {
+      "emotion-count": 3,
+      "word": "methamphetamine hydrochloride"
+    },
+    {
+      "emotion-count": 3,
+      "word": "hop-skip"
+    },
+    {
+      "emotion-count": 3,
+      "word": "exhaustion"
+    },
+    {
+      "emotion-count": 3,
+      "word": "coercion"
+    },
+    {
+      "emotion-count": 3,
+      "word": "apoplexy"
+    },
+    {
+      "emotion-count": 2,
+      "word": "windstorm"
+    },
+    {
+      "emotion-count": 2,
+      "word": "temporal arrangement"
+    },
+    {
+      "emotion-count": 2,
+      "word": "sezession"
+    },
+    {
+      "emotion-count": 2,
+      "word": "purr"
+    },
+    {
+      "emotion-count": 2,
+      "word": "orchestra pit"
+    },
+    {
+      "emotion-count": 2,
+      "word": "making water"
+    },
+    {
+      "emotion-count": 2,
+      "word": "hydrogen ion concentration"
+    },
+    {
+      "emotion-count": 2,
+      "word": "floor covering"
+    },
+    {
+      "emotion-count": 2,
+      "word": "distend"
+    },
+    {
+      "emotion-count": 2,
+      "word": "commemoration"
+    },
+    {
+      "emotion-count": 2,
+      "word": "be on"
+    },
+    {
+      "emotion-count": 2,
+      "word": "Jack-tar"
+    },
+    {
+      "emotion-count": 1,
+      "word": "ward-heeler"
+    },
+    {
+      "emotion-count": 1,
+      "word": "tormenter"
+    },
+    {
+      "emotion-count": 1,
+      "word": "stage setting"
+    },
+    {
+      "emotion-count": 1,
+      "word": "serial"
+    },
+    {
+      "emotion-count": 1,
+      "word": "relapse"
+    },
+    {
+      "emotion-count": 1,
+      "word": "poignance"
+    },
+    {
+      "emotion-count": 1,
+      "word": "nubbiness"
+    },
+    {
+      "emotion-count": 1,
+      "word": "loveliness"
+    },
+    {
+      "emotion-count": 1,
+      "word": "intriguer"
+    },
+    {
+      "emotion-count": 1,
+      "word": "heroism"
+    },
+    {
+      "emotion-count": 1,
+      "word": "frost"
+    },
+    {
+      "emotion-count": 1,
+      "word": "extraterrestrial being"
+    },
+    {
+      "emotion-count": 1,
+      "word": "divine guidance"
+    },
+    {
+      "emotion-count": 1,
+      "word": "coup de main"
+    },
+    {
+      "emotion-count": 1,
+      "word": "caustic remark"
+    },
+    {
+      "emotion-count": 1,
+      "word": "behemoth"
+    },
+    {
+      "emotion-count": 1,
+      "word": "actuality"
+    },
+    {
+      "emotion-count": 1,
+      "word": "Judgement Day"
+    }
+  ]
+}
