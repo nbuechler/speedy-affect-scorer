@@ -92,6 +92,25 @@ dimensions = ['pleasure', 'arousal', 'dominance', 'valence', 'potency', 'unpredi
 
 '''
 ********************************************************************************
+statistics
+********************************************************************************
+'''
+
+def display_affect_word_similarities():
+
+    cursor = mongo_corpus_synopsis.db['affect-word-frequency'].find({})
+
+    stats = []
+    for doc in cursor:
+        stats.append({
+            'emotion-count': doc['emotion-count'],
+            'word': doc['word'],
+        })
+
+    return sorted(stats, reverse=True)
+
+'''
+********************************************************************************
 metrics
 ********************************************************************************
 '''
@@ -145,7 +164,7 @@ def length_no_stop_punct(doc, lang):
 Find the 'stop words' that are very common in each affect corpus
 '''
 def find_emotion_stop_words():
-    
+
     return 'Not implemented'
 
 '''
@@ -167,6 +186,7 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
     lemmaFlag = lemma
 
     # TODO: Make this better
+    # TODO: Change lingustic-affects to linguistic-affects
     order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
     order_2 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-2']
     order_3 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-3']
