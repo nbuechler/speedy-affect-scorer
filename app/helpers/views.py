@@ -61,7 +61,7 @@ def analyze_emotion_set(emotion_set):
     processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma)
     return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
 
-@helpers.route('/stats')
-def display_affect_word_similarities():
-    result = controllers.display_affect_word_similarities()
+@helpers.route('/stats/<include_word>')
+def display_affect_word_similarities(include_word=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word)
     return jsonify(statistics = result)
