@@ -96,10 +96,11 @@ statistics
 ********************************************************************************
 '''
 
-def display_affect_word_similarities(include_word=None):
+def display_affect_word_similarities(include_word=None, truncated=None):
 
     cursor = mongo_corpus_synopsis.db['affect-word-frequency'].find({})
 
+    final_stats = []
     stats = []
     if include_word == "1":
         for doc in cursor:
@@ -111,7 +112,22 @@ def display_affect_word_similarities(include_word=None):
         for doc in cursor:
             stats.append(doc['emotion-count'])
 
-    return sorted(stats, reverse=True)
+    sorted_stats = sorted(stats, reverse=True)
+
+    j = 0
+    trunc_stats = []
+    if truncated == "1":
+        for stat in sorted_stats:
+            if (j % 160 == 0):
+                trunc_stats.append(stat)
+            j =+ j + 1
+
+    if truncated == "1":
+        final_stats = trunc_stats
+    elif truncated == "0":
+        final_stats = sorted_stats
+
+    return final_stats
 
 '''
 ********************************************************************************
