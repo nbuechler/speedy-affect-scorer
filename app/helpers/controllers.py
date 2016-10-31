@@ -96,7 +96,9 @@ statistics
 ********************************************************************************
 '''
 
-def display_affect_word_similarities(include_word=None, truncated=None):
+import math
+
+def display_affect_word_similarities(include_word=None, truncated=None, upper_bound=None, lower_bound=None):
 
     cursor = mongo_corpus_synopsis.db['affect-word-frequency'].find({})
 
@@ -126,6 +128,18 @@ def display_affect_word_similarities(include_word=None, truncated=None):
         final_stats = trunc_stats
     elif truncated == "0":
         final_stats = sorted_stats
+    else:
+        final_stats = sorted_stats
+
+
+    # There is a little overlap between ranges due to to rounding...
+    if upper_bound != None and lower_bound != None:
+        upper_bound_percent_to_number = int(math.ceil(len(final_stats) * int(upper_bound) / 100))
+        lower_bound_percent_to_number = int(math.ceil(len(final_stats) * int(lower_bound) / 100))
+        print upper_bound_percent_to_number
+        print len(final_stats)-lower_bound_percent_to_number
+        final_stats = final_stats[(upper_bound_percent_to_number):(len(final_stats)-lower_bound_percent_to_number)]
+        print len(final_stats)
 
     return final_stats
 
