@@ -104,7 +104,16 @@ def display_affect_word_similarities(include_word=None, truncated=None, upper_bo
 
     final_stats = []
     stats = []
-    if include_word == "1":
+    if include_word == "3":
+        for doc in cursor:
+            stats.append({
+                'emotion-count': doc['emotion-count'],
+                'word': doc['word'],
+            })
+    elif include_word == "2":
+        for doc in cursor:
+            stats.append(doc['word'])
+    elif include_word == "1":
         for doc in cursor:
             stats.append({
                 'emotion-count': doc['emotion-count'],
@@ -114,7 +123,11 @@ def display_affect_word_similarities(include_word=None, truncated=None, upper_bo
         for doc in cursor:
             stats.append(doc['emotion-count'])
 
-    sorted_stats = sorted(stats, reverse=True)
+
+    if include_word != "2":
+        sorted_stats = sorted(stats, reverse=True)
+    else:
+        sorted_stats = sorted(stats)
 
     j = 0
     trunc_stats = []
@@ -131,7 +144,6 @@ def display_affect_word_similarities(include_word=None, truncated=None, upper_bo
     else:
         final_stats = sorted_stats
 
-
     # There is a little overlap between ranges due to to rounding...
     if upper_bound != None and lower_bound != None:
         upper_bound_percent_to_number = int(math.ceil(len(final_stats) * int(upper_bound) / 100))
@@ -143,6 +155,14 @@ def display_affect_word_similarities(include_word=None, truncated=None, upper_bo
     elif lower_bound != None:
         lower_bound_percent_to_number = int(math.ceil(len(final_stats) * int(lower_bound) / 100))
         final_stats = final_stats[(len(final_stats)-lower_bound_percent_to_number):len(final_stats)]
+
+
+    affect_word_list = []
+    if include_word == "3":
+        for stat in final_stats:
+            affect_word_list.append(stat['word'])
+
+        final_stats = affect_word_list
 
     return final_stats
 
