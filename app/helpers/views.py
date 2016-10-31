@@ -70,3 +70,18 @@ def display_affect_word_similarities(include_word=None, truncated=None):
 def display_truncated_affect_word_similarities(include_word=None, truncated=None):
     result = controllers.display_affect_word_similarities(include_word=include_word, truncated=truncated)
     return jsonify(statistics = result)
+
+@helpers.route('/stats/<include_word>/bounds/<upper_bound>,<lower_bound>/')
+def display_bounds_affect_word_similarities(include_word=None, upper_bound=None, lower_bound=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word, upper_bound=upper_bound, lower_bound=lower_bound)
+    return jsonify(statistics = result)
+
+@helpers.route('/stats/<include_word>/bounds/upper/<upper_bound>/')
+def display_upper_bounds_affect_word_similarities(include_word=None, upper_bound=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word, upper_bound=upper_bound)
+    return jsonify(statistics = result)
+
+@helpers.route('/stats/<include_word>/bounds/lower/<lower_bound>/')
+def display_lower_bounds_affect_word_similarities(include_word=None, lower_bound=None):
+    result = controllers.display_affect_word_similarities(include_word=include_word, lower_bound=lower_bound)
+    return jsonify(statistics = result)
