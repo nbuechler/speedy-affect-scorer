@@ -218,9 +218,14 @@ def length_no_stop_punct(doc, lang):
 '''
 Find the 'stop words' that are very common in each affect corpus
 '''
-def find_emotion_stop_words():
+def find_emotion_stop_words(upper_bound=None, lower_bound=None):
 
-    return 'Not implemented'
+    result = []
+    ub = display_affect_word_similarities(include_word="3", upper_bound=upper_bound)
+    lb = display_affect_word_similarities(include_word="3", lower_bound=lower_bound)
+    result = ub + lb
+
+    return list(set(result))
 
 '''
 Business logic below

@@ -85,3 +85,22 @@ def display_upper_bounds_affect_word_similarities(include_word=None, upper_bound
 def display_lower_bounds_affect_word_similarities(include_word=None, lower_bound=None):
     result = controllers.display_affect_word_similarities(include_word=include_word, lower_bound=lower_bound)
     return jsonify(statistics = result)
+
+'''
+upper_bound > number # The upper bound number means the area above this percent
+lower_bound > number# The lower bound number means the area below this percent
+==
+e.g. upper_bound = 25, lower_bound = 25
+
+==========                    ==========
+0 ------ 25 ------ 50 ------ 75 ------ 100
+
+**The 'shaded' area are the stop_words. The middle 50 percenet are processed words.
+
+==
+returns a list of affect stop words
+'''
+@helpers.route('/stop_words/affect/bounds/<upper_bound>,<lower_bound>/')
+def find_emotion_stop_words(upper_bound=None, lower_bound=None):
+    result = controllers.find_emotion_stop_words(upper_bound=upper_bound, lower_bound=lower_bound)
+    return jsonify(stop_words = result, total_stop_words= len(result))
