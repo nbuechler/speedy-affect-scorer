@@ -42,11 +42,20 @@ def analyze_emotion(emotion):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
+    upper_bound = r.get('ub')
+    lower_bound = r.get('lb')
     # TODO: Add Error Handling
     natural = r.get('natural')
     stemmer = r.get('stemmer')
     lemma = r.get('lemma')
-    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma)
+
+    emotion_stop_words = []
+    if upper_bound == None and lower_bound == None:
+        emotion_stop_words = controllers.find_emotion_stop_words(20,20)
+    else:
+        emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
+
+    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words)
     return jsonify(processed_doc_metadata)
 
 @helpers.route('/analyze_emotion_set/<emotion_set>/', methods=['POST'])
@@ -54,11 +63,20 @@ def analyze_emotion_set(emotion_set):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
+    upper_bound = r.get('ub')
+    lower_bound = r.get('lb')
     # TODO: Add Error Handling
     natural = r.get('natural')
     stemmer = r.get('stemmer')
     lemma = r.get('lemma')
-    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma)
+
+    emotion_stop_words = []
+    if upper_bound == None and lower_bound == None:
+        emotion_stop_words = controllers.find_emotion_stop_words(20,20)
+    else:
+        emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
+
+    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words)
     return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
 
 @helpers.route('/stats/<include_word>')
@@ -85,3 +103,22 @@ def display_upper_bounds_affect_word_similarities(include_word=None, upper_bound
 def display_lower_bounds_affect_word_similarities(include_word=None, lower_bound=None):
     result = controllers.display_affect_word_similarities(include_word=include_word, lower_bound=lower_bound)
     return jsonify(statistics = result)
+
+'''
+upper_bound > number # The upper bound number means the area above this percent
+lower_bound > number# The lower bound number means the area below this percent
+==
+e.g. upper_bound = 25, lower_bound = 25
+
+==========                    ==========
+0 ------ 25 ------ 50 ------ 75 ------ 100
+
+**The 'shaded' area are the stop_words. The middle 50 percenet are processed words.
+
+==
+returns a list of affect stop words
+'''
+@helpers.route('/stop_words/affect/bounds/<upper_bound>,<lower_bound>/')
+def find_emotion_stop_words(upper_bound=None, lower_bound=None):
+    result = controllers.find_emotion_stop_words(upper_bound=upper_bound, lower_bound=lower_bound)
+    return jsonify(stop_words = result, total_stop_words= len(result))

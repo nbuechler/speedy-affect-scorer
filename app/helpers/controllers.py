@@ -6,7 +6,7 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 
 from flask import jsonify
-import requests, operator
+import requests, operator, math
 
 from bson.json_util import loads, dumps
 
@@ -95,8 +95,6 @@ dimensions = ['pleasure', 'arousal', 'dominance', 'valence', 'potency', 'unpredi
 statistics
 ********************************************************************************
 '''
-
-import math
 
 def display_affect_word_similarities(include_word=None, truncated=None, upper_bound=None, lower_bound=None):
 
@@ -220,9 +218,14 @@ def length_no_stop_punct(doc, lang):
 '''
 Find the 'stop words' that are very common in each affect corpus
 '''
-def find_emotion_stop_words():
+def find_emotion_stop_words(upper_bound=None, lower_bound=None):
 
-    return 'Not implemented'
+    result = []
+    ub = display_affect_word_similarities(include_word="3", upper_bound=upper_bound)
+    lb = display_affect_word_similarities(include_word="3", lower_bound=lower_bound)
+    result = ub + lb
+
+    return list(set(result))
 
 '''
 Business logic below
@@ -233,8 +236,8 @@ Business logic below
 4. Repeat for all emotions in a set ---- this is the 'process_emotion_set' method
 '''
 
-# TODO: Error Handling needed!
-def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
+# TODO: Error Handling needed, especially for 'ZeroDivisionError: float division by zero'!
+def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
     print emotion
 
@@ -252,6 +255,8 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
     order_3_length = len(order_3)
 
     stop_words = stopwords.words(lang)
+    stop_words = stop_words + emotion_stop_words
+    # print stop_words
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
 
     is_in_order_1 = 0
@@ -408,7 +413,7 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
 
 
 # TODO: Error Handling needed!
-def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma):
+def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words):
 
     processed_doc_list_metadata = []
 
@@ -438,7 +443,7 @@ def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma):
 
     print '---Creating an affect list!---'
     for emotion in e_set:
-        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion, natural, stemmer, lemma))
+        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words))
     print '---Finished---'
 
     return processed_doc_list_metadata
