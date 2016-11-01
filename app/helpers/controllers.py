@@ -6,7 +6,7 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 
 from flask import jsonify
-import requests, operator
+import requests, operator, math
 
 from bson.json_util import loads, dumps
 
@@ -95,8 +95,6 @@ dimensions = ['pleasure', 'arousal', 'dominance', 'valence', 'potency', 'unpredi
 statistics
 ********************************************************************************
 '''
-
-import math
 
 def display_affect_word_similarities(include_word=None, truncated=None, upper_bound=None, lower_bound=None):
 
