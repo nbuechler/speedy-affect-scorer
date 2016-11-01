@@ -236,7 +236,7 @@ Business logic below
 4. Repeat for all emotions in a set ---- this is the 'process_emotion_set' method
 '''
 
-# TODO: Error Handling needed!
+# TODO: Error Handling needed, especially for 'ZeroDivisionError: float division by zero'!
 def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
     print emotion
