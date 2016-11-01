@@ -237,7 +237,7 @@ Business logic below
 '''
 
 # TODO: Error Handling needed!
-def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
+def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
     print emotion
 
@@ -255,6 +255,8 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
     order_3_length = len(order_3)
 
     stop_words = stopwords.words(lang)
+    stop_words = stop_words + emotion_stop_words
+    # print stop_words
     list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
 
     is_in_order_1 = 0
@@ -411,7 +413,7 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma):
 
 
 # TODO: Error Handling needed!
-def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma):
+def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words):
 
     processed_doc_list_metadata = []
 
@@ -441,7 +443,7 @@ def process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma):
 
     print '---Creating an affect list!---'
     for emotion in e_set:
-        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion, natural, stemmer, lemma))
+        processed_doc_list_metadata.append(process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words))
     print '---Finished---'
 
     return processed_doc_list_metadata

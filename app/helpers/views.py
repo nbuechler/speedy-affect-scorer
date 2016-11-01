@@ -42,11 +42,20 @@ def analyze_emotion(emotion):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
+    upper_bound = r.get('ub')
+    lower_bound = r.get('lb')
     # TODO: Add Error Handling
     natural = r.get('natural')
     stemmer = r.get('stemmer')
     lemma = r.get('lemma')
-    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma)
+
+    emotion_stop_words = []
+    if upper_bound == None and lower_bound == None:
+        emotion_stop_words = controllers.find_emotion_stop_words(20,20)
+    else:
+        emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
+
+    processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words)
     return jsonify(processed_doc_metadata)
 
 @helpers.route('/analyze_emotion_set/<emotion_set>/', methods=['POST'])
@@ -54,11 +63,20 @@ def analyze_emotion_set(emotion_set):
     r = request.get_json()
     doc = r.get('doc')
     lang = r.get('lang')
+    upper_bound = r.get('ub')
+    lower_bound = r.get('lb')
     # TODO: Add Error Handling
     natural = r.get('natural')
     stemmer = r.get('stemmer')
     lemma = r.get('lemma')
-    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma)
+
+    emotion_stop_words = []
+    if upper_bound == None and lower_bound == None:
+        emotion_stop_words = controllers.find_emotion_stop_words(20,20)
+    else:
+        emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
+
+    processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words)
     return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
 
 @helpers.route('/stats/<include_word>')
