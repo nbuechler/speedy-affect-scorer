@@ -237,6 +237,8 @@ Business logic below
 '''
 
 # TODO: Error Handling needed, especially for 'ZeroDivisionError: float division by zero'!
+# TODO: Add more control of this method by making it more module, section for breaking words infection
+# tokens, a section for running each part (stmmer, lemma, etc.)
 def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
     print emotion
