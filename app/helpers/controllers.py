@@ -255,9 +255,33 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     order_3_length = len(order_3)
 
     stop_words = stopwords.words(lang)
-    stop_words = stop_words + emotion_stop_words
-    # print stop_words
-    list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
+    stop_words = stop_words
+
+    # TODO: There is a more efficient way to do this
+    pre_list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
+    pre_lemmatized_list = []
+    pre_stemmed_list = []
+
+    # TODO: Handle language that isn't supported by stemmer!
+    # TODO: Move this outside of the method to make this non-repetative (right now making it do 3times the work)
+    stemmer = SnowballStemmer(lang) # This is the stemmer
+    lemma = WordNetLemmatizer() # This is the lemma
+    for word in pre_list_of_words:
+        pre_lemmatized_list.append(stemmer.stem(word))
+        pre_stemmed_list.append(lemma.lemmatize(word))
+
+
+    # Remove emotion_stop_words
+
+    list_of_words = [i for i in pre_list_of_words if i not in emotion_stop_words]
+    lemmatized_list = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
+    stemmed_list = [i for i in pre_stemmed_list if i not in emotion_stop_words]
+    print pre_list_of_words
+    print pre_lemmatized_list
+    print pre_stemmed_list
+    print list_of_words
+    print lemmatized_list
+    print stemmed_list
 
     is_in_order_1 = 0
     is_in_order_2 = 0
@@ -281,9 +305,6 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     length_words_no_stop = len(list_of_words)
 
     ## Main Business Logic!
-    # TODO: Handle language that isn't supported by stemmer!
-    stemmer = SnowballStemmer(lang) # This is the stemmer
-    lemma = WordNetLemmatizer() # This is the lemma
     for word in list_of_words:
         if naturalFlag == '1' and word in order_1:
             is_in_order_1+=1
