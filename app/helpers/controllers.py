@@ -258,30 +258,24 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     stop_words = stop_words
 
     # TODO: There is a more efficient way to do this
-    pre_list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-    pre_lemmatized_list = []
+    pre_list_of_words = [i.lower() for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
     pre_stemmed_list = []
+    pre_lemmatized_list = []
 
     # TODO: Handle language that isn't supported by stemmer!
     # TODO: Move this outside of the method to make this non-repetative (right now making it do 3times the work)
     stemmer = SnowballStemmer(lang) # This is the stemmer
     lemma = WordNetLemmatizer() # This is the lemma
     for word in pre_list_of_words:
-        pre_lemmatized_list.append(stemmer.stem(word))
         pre_stemmed_list.append(lemma.lemmatize(word))
+        pre_lemmatized_list.append(stemmer.stem(word))
 
 
     # Remove emotion_stop_words
 
     list_of_words = [i for i in pre_list_of_words if i not in emotion_stop_words]
-    lemmatized_list = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
     stemmed_list = [i for i in pre_stemmed_list if i not in emotion_stop_words]
-    print pre_list_of_words
-    print pre_lemmatized_list
-    print pre_stemmed_list
-    print list_of_words
-    print lemmatized_list
-    print stemmed_list
+    lemmatized_list = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
 
     is_in_order_1 = 0
     is_in_order_2 = 0
@@ -304,46 +298,50 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
 
     length_words_no_stop = len(list_of_words)
 
+
     ## Main Business Logic!
-    for word in list_of_words:
-        if naturalFlag == '1' and word in order_1:
-            is_in_order_1+=1
-            list_of_order_1.append(word)
-            natural_list_of_order_1.append(word)
-        elif stemmerFlag == '1' and stemmer.stem(word) in order_1:
-            is_in_order_1+=1
-            list_of_order_1.append(stemmer.stem(word))
-            stemmer_list_of_order_1.append(stemmer.stem(word))
-        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_1:
-            is_in_order_1+=1
-            list_of_order_1.append(lemma.lemmatize(word))
-            lemma_list_of_order_1.append(lemma.lemmatize(word))
-
-        if naturalFlag == '1' and word in order_2:
-            is_in_order_2+=1
-            list_of_order_2.append(word)
-            natural_list_of_order_2.append(word)
-        elif stemmerFlag == '1' and stemmer.stem(word) in order_2:
-            is_in_order_2+=1
-            list_of_order_2.append(stemmer.stem(word))
-            stemmer_list_of_order_2.append(stemmer.stem(word))
-        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_2:
-            is_in_order_2+=1
-            list_of_order_2.append(lemma.lemmatize(word))
-            lemma_list_of_order_2.append(lemma.lemmatize(word))
-
-        if naturalFlag == '1' and word in order_3:
-            is_in_order_3+=1
-            list_of_order_3.append(word)
-            natural_list_of_order_3.append(word)
-        elif stemmerFlag == '1' and stemmer.stem(word) in order_3:
-            is_in_order_3+=1
-            list_of_order_3.append(stemmer.stem(word))
-            stemmer_list_of_order_3.append(stemmer.stem(word))
-        elif lemmaFlag == '1' and lemma.lemmatize(word) in order_3:
-            is_in_order_3+=1
-            list_of_order_3.append(lemma.lemmatize(word))
-            lemma_list_of_order_3.append(lemma.lemmatize(word))
+    if naturalFlag == '1':
+        for word in list_of_words:
+            if word in order_1:
+                is_in_order_1+=1
+                list_of_order_1.append(word)
+                natural_list_of_order_1.append(word)
+            if word in order_2:
+                is_in_order_2+=1
+                list_of_order_2.append(word)
+                natural_list_of_order_2.append(word)
+            if word in order_3:
+                is_in_order_3+=1
+                list_of_order_3.append(word)
+                natural_list_of_order_3.append(word)
+    if stemmerFlag == '1':
+        for stem_word in stemmed_list:
+            if stem_word in order_1:
+                is_in_order_1+=1
+                list_of_order_1.append(stem_word)
+                stemmer_list_of_order_1.append(stem_word)
+            if stem_word in order_2:
+                is_in_order_2+=1
+                list_of_order_2.append(stem_word)
+                stemmer_list_of_order_2.append(stem_word)
+            if stem_word in order_3:
+                is_in_order_3+=1
+                list_of_order_3.append(stem_word)
+                stemmer_list_of_order_3.append(stem_word)
+    if lemmaFlag == '1':
+        for lemma_word in lemmatized_list:
+            if lemma_word in order_1:
+                is_in_order_1+=1
+                list_of_order_1.append(lemma_word)
+                lemma_list_of_order_1.append(lemma_word)
+            if lemma_word in order_2:
+                is_in_order_2+=1
+                list_of_order_2.append(lemma_word)
+                lemma_list_of_order_2.append(lemma_word)
+            if lemma_word in order_3:
+                is_in_order_3+=1
+                list_of_order_3.append(lemma_word)
+                lemma_list_of_order_3.append(lemma_word)
 
     pre_order_1_fdist = dict(FreqDist(pos_tag(list_of_order_1)))
     pre_natural_order_1_fdist = dict(FreqDist(pos_tag(natural_list_of_order_1)))
