@@ -1,0 +1,92 @@
+Nov 02, 2016
+
+As a user, I now have more control over understanding a given passage:
+
+====
+'Hello world, this is about Feelings emotions'
+====
+
+When I run the above statement, I want to have the option to return the lemmatized, stemmmed,
+Unprocessed, and bound by a range of emotion stop words for the given phrase or
+the expression. In this way I can return back different results and scoring. For example:
+
+Where it is the the top 10 emotions for the passage.
+
+=======
+With no (0/0) bounds, and the lemmatized, stemmed, Unprocessed being returned, it follows:
+
+===
+Ranking Summary of the Emotion Set's Top 10
+===
+
+Rank	Emotion	        Normalized Score
+1	    gratitude	      23.5928
+2	    astonishment	  12.1323
+3	    amazement	      12.1323
+4	    passionateness	11.9490
+5	    humility	      8.1684
+6	    hate	          7.2857
+7	    anxiety	        6.8670
+8	    happiness	      6.1515
+9   	unhappiness	    6.1380
+10	  despair	        5.9377
+
+
+=======
+With 20/20 bounds or the middle 60 percent, and the lemmatized, stemmed, Unprocessed being returned, it follows:
+
+===
+Ranking Summary of the Emotion Set's Top 10
+===
+
+Rank	Emotion	        Normalized Score
+1	    aliveness	      0.2940
+2	    animation	      0.2038
+3	    reliability	    0.0654
+4	    pessimism	      0.0457
+5	    nervousness	    0.0431
+6	    spiritedness	  0.0370
+7	    abandonment	    0.0254
+8	    lividness	      0.0248
+9	    optimism	      0.0247
+10	  composure	      0.0246
+
+
+=======
+With 20/20 bounds or the middle 60 percent, and only the Unprocessed being returned, it follows:
+
+===
+Ranking Summary of the Emotion Set's Top 10
+===
+
+Rank	Emotion    	    Normalized Score
+1	    aliveness	      0.0980
+2	    animation	      0.0679
+3	    reliability	    0.0218
+4	    pessimism	      0.0152
+5	    nervousness	    0.0144
+6	    spiritedness	  0.0123
+7	    abandonment	    0.0085
+8	    lividness	      0.0083
+9	    optimism	      0.0082
+10	  composure	      0.0082
+
+
+=======
+With no (0/0) bounds, and only the lemmatized returned, it follows:
+
+===
+Ranking Summary of the Emotion Set's Top 10
+===
+
+Rank	Emotion	       Normalized Score
+1	    joy	           2.3996
+2	    pride	         1.9906
+3	    regret	       1.9864
+4	    anger	         1.1866
+5	    spirit	       0.5469
+6	    jubilance	     0.2961
+7	    arrogance	     0.2948
+8	    remorse	       0.2525
+9	    gratitude	     0.2452
+10	  elation	       0.2330
