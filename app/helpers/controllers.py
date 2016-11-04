@@ -247,14 +247,23 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     stemmerFlag = stemmer
     lemmaFlag = lemma
 
-    # TODO: Make this better
+    # TODO: Make this better, now that its a rambling way to write code
     # TODO: Change lingustic-affects to linguistic-affects
     order_1 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-1']
     order_2 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-2']
     order_3 = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})['order-3']
+    order_1_and_2 = mongo_corpus_synopsis.db['lingustic-affects-order-similarities'].find_one({'word': emotion})['order_1_and_2']
+    order_1_and_3 = mongo_corpus_synopsis.db['lingustic-affects-order-similarities'].find_one({'word': emotion})['order_1_and_3']
+    order_2_and_3 = mongo_corpus_synopsis.db['lingustic-affects-order-similarities'].find_one({'word': emotion})['order_2_and_3']
+    all_orders = mongo_corpus_synopsis.db['lingustic-affects-order-similarities'].find_one({'word': emotion})['all_orders']
+
     order_1_length = len(order_1)
     order_2_length = len(order_2)
     order_3_length = len(order_3)
+    order_1_and_2_length = len(order_1_and_2)
+    order_1_and_3_length = len(order_1_and_3)
+    order_2_and_3_length = len(order_2_and_3)
+    all_orders_length = len(all_orders)
 
     stop_words = stopwords.words(lang)
     stop_words = stop_words
@@ -282,6 +291,10 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     is_in_order_1 = 0
     is_in_order_2 = 0
     is_in_order_3 = 0
+    is_in_order_1_and_2 = 0
+    is_in_order_1_and_3 = 0
+    is_in_order_2_and_3 = 0
+    is_in_all_orders = 0
 
     list_of_order_1 = list()
     natural_list_of_order_1 = list()
@@ -299,7 +312,30 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     lemma_list_of_order_3 = list()
 
     length_words_no_stop = len(list_of_words)
+    list_of_order_1_and_2 = list()
+    natural_list_of_order_1_and_2 = list()
+    stemmer_list_of_order_1_and_2 = list()
+    lemma_list_of_order_1_and_2 = list()
 
+    length_words_no_stop = len(list_of_words)
+    list_of_order_1_and_3 = list()
+    natural_list_of_order_1_and_3 = list()
+    stemmer_list_of_order_1_and_3 = list()
+    lemma_list_of_order_1_and_3 = list()
+
+    length_words_no_stop = len(list_of_words)
+    list_of_order_2_and_3 = list()
+    natural_list_of_order_2_and_3 = list()
+    stemmer_list_of_order_2_and_3 = list()
+    lemma_list_of_order_2_and_3 = list()
+
+    length_words_no_stop = len(list_of_words)
+    list_of_all_orders = list()
+    natural_list_of_all_orders = list()
+    stemmer_list_of_all_orders = list()
+    lemma_list_of_all_orders = list()
+
+    length_words_no_stop = len(list_of_words)
 
     ## Main Business Logic!
     if naturalFlag == '1':
@@ -316,6 +352,22 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
                 is_in_order_3+=1
                 list_of_order_3.append(word)
                 natural_list_of_order_3.append(word)
+            if word in order_1_and_2:
+                is_in_order_1_and_2+=1
+                list_of_order_1_and_2.append(word)
+                natural_list_of_order_1_and_2.append(word)
+            if word in order_1_and_3:
+                is_in_order_1_and_3+=1
+                list_of_order_1_and_3.append(word)
+                natural_list_of_order_1_and_3.append(word)
+            if word in order_2_and_3:
+                is_in_order_2_and_3+=1
+                list_of_order_2_and_3.append(word)
+                natural_list_of_order_2_and_3.append(word)
+            if word in all_orders:
+                is_in_all_orders+=1
+                list_of_all_orders.append(word)
+                natural_list_of_all_orders.append(word)
     if stemmerFlag == '1':
         for stem_word in stemmed_list:
             if stem_word in order_1:
@@ -330,6 +382,22 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
                 is_in_order_3+=1
                 list_of_order_3.append(stem_word)
                 stemmer_list_of_order_3.append(stem_word)
+            if stem_word in order_1_and_2:
+                is_in_order_1_and_2+=1
+                list_of_order_1_and_2.append(stem_word)
+                stemmer_list_of_order_1_and_2.append(stem_word)
+            if stem_word in order_1_and_3:
+                is_in_order_1_and_3+=1
+                list_of_order_1_and_3.append(stem_word)
+                stemmer_list_of_order_1_and_3.append(stem_word)
+            if stem_word in order_2_and_3:
+                is_in_order_2_and_3+=1
+                list_of_order_2_and_3.append(stem_word)
+                stemmer_list_of_order_2_and_3.append(stem_word)
+            if stem_word in all_orders:
+                is_in_all_orders+=1
+                list_of_all_orders.append(stem_word)
+                stemmer_list_of_all_orders.append(stem_word)
     if lemmaFlag == '1':
         for lemma_word in lemmatized_list:
             if lemma_word in order_1:
@@ -344,6 +412,22 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
                 is_in_order_3+=1
                 list_of_order_3.append(lemma_word)
                 lemma_list_of_order_3.append(lemma_word)
+            if lemma_word in order_1_and_2:
+                is_in_order_1_and_2+=1
+                list_of_order_1_and_2.append(lemma_word)
+                lemma_list_of_order_1_and_2.append(lemma_word)
+            if lemma_word in order_1_and_3:
+                is_in_order_1_and_3+=1
+                list_of_order_1_and_3.append(lemma_word)
+                lemma_list_of_order_1_and_3.append(lemma_word)
+            if lemma_word in order_2_and_3:
+                is_in_order_2_and_3+=1
+                list_of_order_2_and_3.append(lemma_word)
+                lemma_list_of_order_2_and_3.append(lemma_word)
+            if lemma_word in all_orders:
+                is_in_all_orders+=1
+                list_of_all_orders.append(lemma_word)
+                lemma_list_of_all_orders.append(lemma_word)
 
     pre_order_1_fdist = dict(FreqDist(pos_tag(list_of_order_1)))
     pre_natural_order_1_fdist = dict(FreqDist(pos_tag(natural_list_of_order_1)))
@@ -357,6 +441,22 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     pre_natural_order_3_fdist = dict(FreqDist(pos_tag(natural_list_of_order_3)))
     pre_stemmer_order_3_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_3)))
     pre_lemma_order_3_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_3)))
+    pre_order_1_and_2_fdist = dict(FreqDist(pos_tag(list_of_order_3)))
+    pre_natural_order_1_and_2_fdist = dict(FreqDist(pos_tag(natural_list_of_order_1_and_2)))
+    pre_stemmer_order_1_and_2_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_1_and_2)))
+    pre_lemma_order_1_and_2_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_1_and_2)))
+    pre_order_1_and_3_fdist = dict(FreqDist(pos_tag(list_of_order_3)))
+    pre_natural_order_1_and_3_fdist = dict(FreqDist(pos_tag(natural_list_of_order_1_and_3)))
+    pre_stemmer_order_1_and_3_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_1_and_3)))
+    pre_lemma_order_1_and_3_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_1_and_3)))
+    pre_order_2_and_3_fdist = dict(FreqDist(pos_tag(list_of_order_3)))
+    pre_natural_order_2_and_3_fdist = dict(FreqDist(pos_tag(natural_list_of_order_2_and_3)))
+    pre_stemmer_order_2_and_3_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order_2_and_3)))
+    pre_lemma_order_2_and_3_fdist = dict(FreqDist(pos_tag(lemma_list_of_order_2_and_3)))
+    pre_all_orders_fdist = dict(FreqDist(pos_tag(list_of_order_3)))
+    pre_natural_all_orders_fdist = dict(FreqDist(pos_tag(natural_list_of_all_orders)))
+    pre_stemmer_all_orders_fdist = dict(FreqDist(pos_tag(stemmer_list_of_all_orders)))
+    pre_lemma_all_orders_fdist = dict(FreqDist(pos_tag(lemma_list_of_all_orders)))
 
     order_1_fdist = sorted(pre_order_1_fdist.items(), key=lambda x: (x[1],x[0]))
     natural_order_1_fdist = sorted(pre_natural_order_1_fdist.items(), key=lambda x: (x[1],x[0]))
@@ -370,13 +470,62 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
     natural_order_3_fdist = sorted(pre_natural_order_3_fdist.items(), key=lambda x: (x[1],x[0]))
     stemmer_order_3_fdist = sorted(pre_stemmer_order_3_fdist.items(), key=lambda x: (x[1],x[0]))
     lemma_order_3_fdist = sorted(pre_lemma_order_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    order_1_and_2_fdist = sorted(pre_order_1_and_2_fdist.items(), key=lambda x: (x[1],x[0]))
+    natural_order_1_and_2_fdist = sorted(pre_natural_order_1_and_2_fdist.items(), key=lambda x: (x[1],x[0]))
+    stemmer_order_1_and_2_fdist = sorted(pre_stemmer_order_1_and_2_fdist.items(), key=lambda x: (x[1],x[0]))
+    lemma_order_1_and_2_fdist = sorted(pre_lemma_order_1_and_2_fdist.items(), key=lambda x: (x[1],x[0]))
+    order_1_and_3_fdist = sorted(pre_order_1_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    natural_order_1_and_3_fdist = sorted(pre_natural_order_1_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    stemmer_order_1_and_3_fdist = sorted(pre_stemmer_order_1_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    lemma_order_1_and_3_fdist = sorted(pre_lemma_order_1_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    order_2_and_3_fdist = sorted(pre_order_2_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    natural_order_2_and_3_fdist = sorted(pre_natural_order_2_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    stemmer_order_2_and_3_fdist = sorted(pre_stemmer_order_2_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    lemma_order_2_and_3_fdist = sorted(pre_lemma_order_2_and_3_fdist.items(), key=lambda x: (x[1],x[0]))
+    all_orders_fdist = sorted(pre_all_orders_fdist.items(), key=lambda x: (x[1],x[0]))
+    natural_all_orders_fdist = sorted(pre_natural_all_orders_fdist.items(), key=lambda x: (x[1],x[0]))
+    stemmer_all_orders_fdist = sorted(pre_stemmer_all_orders_fdist.items(), key=lambda x: (x[1],x[0]))
+    lemma_all_orders_fdist = sorted(pre_lemma_all_orders_fdist.items(), key=lambda x: (x[1],x[0]))
 
     # Create a rudimentry scores
     # order one gets
 
-    normalized_order_1 = float(is_in_order_1)/order_1_length * 100
-    normalized_order_2 = float(is_in_order_2)/order_2_length * 100
-    normalized_order_3 = float(is_in_order_3)/order_3_length * 100
+    normalized_order_1 = 0
+    normalized_order_2 = 0
+    normalized_order_3 = 0
+    normalized_order_1_and_2 = 0
+    normalized_order_1_and_3 = 0
+    normalized_order_2_and_3 = 0
+    normalized_all_orders = 0
+
+    try:
+        normalized_order_1 = float(is_in_order_1)/order_1_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_order_2 = float(is_in_order_2)/order_2_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_order_3 = float(is_in_order_3)/order_3_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_order_1_and_2 = float(is_in_order_1_and_2)/order_1_and_2_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_order_1_and_3 = float(is_in_order_1_and_3)/order_1_and_3_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_order_2_and_3 = float(is_in_order_2_and_3)/order_2_and_3_length * 100
+    except Exception as e:
+        pass
+    try:
+        normalized_all_orders = float(is_in_all_orders)/all_orders_length * 100
+    except Exception as e:
+        pass
 
     r_affect_score = calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3)
     normalized_r_score = calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3)
@@ -422,6 +571,54 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
         'lemma_list_of_order_3': lemma_list_of_order_3,
         'lemma_order_3_fdist': lemma_order_3_fdist,
         "normalized_order_3": normalized_order_3,
+
+        "order_1_and_2_length": order_1_and_2_length,
+        'list_of_order_1_and_2': list_of_order_1_and_2,
+        "is_in_order_1_and_2": is_in_order_1_and_2,
+        'order_1_and_2_fdist': order_1_and_2_fdist,
+        'natural_list_of_order_1_and_2': natural_list_of_order_1_and_2,
+        'natural_order_1_and_2_fdist': natural_order_1_and_2_fdist,
+        'stemmer_list_of_order_1_and_2': stemmer_list_of_order_1_and_2,
+        'stemmer_order_1_and_2_fdist': stemmer_order_1_and_2_fdist,
+        'lemma_list_of_order_1_and_2': lemma_list_of_order_1_and_2,
+        'lemma_order_1_and_2_fdist': lemma_order_1_and_2_fdist,
+        "normalized_order_1_and_2": normalized_order_1_and_2,
+
+        "order_1_and_3_length": order_1_and_3_length,
+        'list_of_order_1_and_3': list_of_order_1_and_3,
+        "is_in_order_1_and_3": is_in_order_1_and_3,
+        'order_1_and_3_fdist': order_1_and_3_fdist,
+        'natural_list_of_order_1_and_3': natural_list_of_order_1_and_3,
+        'natural_order_1_and_3_fdist': natural_order_1_and_3_fdist,
+        'stemmer_list_of_order_1_and_3': stemmer_list_of_order_1_and_3,
+        'stemmer_order_1_and_3_fdist': stemmer_order_1_and_3_fdist,
+        'lemma_list_of_order_1_and_3': lemma_list_of_order_1_and_3,
+        'lemma_order_1_and_3_fdist': lemma_order_1_and_3_fdist,
+        "normalized_order_1_and_3": normalized_order_1_and_3,
+
+        "order_2_and_3_length": order_2_and_3_length,
+        'list_of_order_2_and_3': list_of_order_2_and_3,
+        "is_in_order_2_and_3": is_in_order_2_and_3,
+        'order_2_and_3_fdist': order_2_and_3_fdist,
+        'natural_list_of_order_2_and_3': natural_list_of_order_2_and_3,
+        'natural_order_2_and_3_fdist': natural_order_2_and_3_fdist,
+        'stemmer_list_of_order_2_and_3': stemmer_list_of_order_2_and_3,
+        'stemmer_order_2_and_3_fdist': stemmer_order_2_and_3_fdist,
+        'lemma_list_of_order_2_and_3': lemma_list_of_order_2_and_3,
+        'lemma_order_2_and_3_fdist': lemma_order_2_and_3_fdist,
+        "normalized_order_2_and_3": normalized_order_2_and_3,
+
+        "all_orders_length": all_orders_length,
+        'list_of_all_orders': list_of_all_orders,
+        "is_in_all_orders": is_in_all_orders,
+        'all_orders_fdist': all_orders_fdist,
+        'natural_list_of_all_orders': natural_list_of_all_orders,
+        'natural_all_orders_fdist': natural_all_orders_fdist,
+        'stemmer_list_of_all_orders': stemmer_list_of_all_orders,
+        'stemmer_all_orders_fdist': stemmer_all_orders_fdist,
+        'lemma_list_of_all_orders': lemma_list_of_all_orders,
+        'lemma_all_orders_fdist': lemma_all_orders_fdist,
+        "normalized_all_orders": normalized_all_orders,
 
         "length_words_no_stop": length_words_no_stop,
         "r_affect_score": r_affect_score,
