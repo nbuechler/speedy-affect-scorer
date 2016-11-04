@@ -170,6 +170,7 @@ metrics
 ********************************************************************************
 '''
 
+# TODO Incorporate overlapping orders in some way
 def calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3):
     ## Score of the affect, based on weights in the order
     r_affect_score = (
@@ -177,6 +178,7 @@ def calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3):
     )
     return r_affect_score
 
+# TODO Incorporate overlapping orders in some way
 def calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3):
     ## Score of the affect, based on weights in the order
     normalized_r_score = (
