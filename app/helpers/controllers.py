@@ -238,10 +238,36 @@ Business logic below
 4. Repeat for all emotions in a set ---- this is the 'process_emotion_set' method
 '''
 
+
+def process_order(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words, order):
+
+    processed_order = {
+        "status": "success",
+        "order": order,
+    }
+
+    return processed_order
+
+def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
+
+    valid_orders = ['order_1', 'order_2', 'order_3', 'order_1_and_2', 'order_1_and_3', 'order_2_and_3', 'all_orders']
+
+    processed_doc_metadata = {
+        "status": "success",
+    }
+
+    for order in valid_orders:
+        order_result = process_order(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words, order)
+        if order_result['status'] == 'success':
+            processed_doc_metadata[order] = order_result
+
+    # print process_doc_metadata
+    return processed_doc_metadata
+
 # TODO: Error Handling needed, especially for 'ZeroDivisionError: float division by zero'!
 # TODO: Add more control of this method by making it more module, section for breaking words infection
 # tokens, a section for running each part (stmmer, lemma, etc.)
-def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
+def process_emotion_v1(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
     print emotion
 
