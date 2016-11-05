@@ -238,26 +238,72 @@ Business logic below
 4. Repeat for all emotions in a set ---- this is the 'process_emotion_set' method
 '''
 
-
-def process_order(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words, order):
+'''
+doc > <string>
+lang > <string>
+emotion > <string>
+naturalFlag > <string (number)
+stemmerFlag > <string (number)
+lemmaFlag > <string (number)
+emotion_stop_words > (list of <strings>)
+order > <string>
+==
+Finds the metadata for an order, used and combined with other similar objects to
+find metadata for and emotion, see: process emotion
+RETURNS:
+(In the case of order_1)
+{
+        "order_1_length": order_1_length,
+        'list_of_order_1': list_of_order_1,
+        "is_in_order_1": is_in_order_1,
+        'order_1_fdist': order_1_fdist,
+        'natural_list_of_order_1': natural_list_of_order_1,
+        'natural_order_1_fdist': natural_order_1_fdist,
+        'stemmer_list_of_order_1': stemmer_list_of_order_1,
+        'stemmer_order_1_fdist': stemmer_order_1_fdist,
+        'lemma_list_of_order_1': lemma_list_of_order_1,
+        'lemma_order_1_fdist': lemma_order_1_fdist,
+        "normalized_order_1": normalized_order_1,
+}
+'''
+def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order):
 
     processed_order = {
         "status": "success",
         "order": order,
     }
 
+    # Select the corpora, get the length of the corpora
+    order_corpora = None
+    order_corpora_length = 0
+    if order == 'order-1' or order == 'order-2' or order == 'order-3' :
+        order_corpora = mongo_corpus_synopsis.db['lingustic-affects'].find_one({'word': emotion})[order]
+    else:
+        order_corpora = mongo_corpus_synopsis.db['lingustic-affects-order-similarities'].find_one({'word': emotion})[order]
+
+    order_corpora_length = len(order_corpora)
+
+    
+    processed_order['order_length'] = order_corpora_length = len(order_corpora)
+
     return processed_order
 
 def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words):
 
-    valid_orders = ['order_1', 'order_2', 'order_3', 'order_1_and_2', 'order_1_and_3', 'order_2_and_3', 'all_orders']
+    print emotion
+
+    naturalFlag = natural
+    stemmerFlag = stemmer
+    lemmaFlag = lemma
+
+    valid_orders = ['order-1', 'order-2', 'order-3', 'order_1_and_2', 'order_1_and_3', 'order_2_and_3', 'all_orders']
 
     processed_doc_metadata = {
         "status": "success",
     }
 
     for order in valid_orders:
-        order_result = process_order(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words, order)
+        order_result = process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order)
         if order_result['status'] == 'success':
             processed_doc_metadata[order] = order_result
 
