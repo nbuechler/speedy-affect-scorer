@@ -251,19 +251,18 @@ order > <string>
 Finds the metadata for an order, used and combined with other similar objects to
 find metadata for and emotion, see: process emotion
 RETURNS:
-(In the case of order_1)
 {
-        "order_1_length": order_1_length,
-        'list_of_order_1': list_of_order_1,
-        "is_in_order_1": is_in_order_1,
-        'order_1_fdist': order_1_fdist,
-        'natural_list_of_order_1': natural_list_of_order_1,
-        'natural_order_1_fdist': natural_order_1_fdist,
-        'stemmer_list_of_order_1': stemmer_list_of_order_1,
-        'stemmer_order_1_fdist': stemmer_order_1_fdist,
-        'lemma_list_of_order_1': lemma_list_of_order_1,
-        'lemma_order_1_fdist': lemma_order_1_fdist,
-        "normalized_order_1": normalized_order_1,
+        "order_length": <number>,
+        "list_of_order": <list>,
+        "natural_list_of_order": <list>,
+        "stemmer_list_of_order": <list>,
+        "lemma_list_of_order": <list>,
+        "is_in_order": <number>, # Count of the number of times a word is in the order
+        "order_fdist": <list of [<list>,<number>]>,
+        "natural_order_fdist": <list of [<list>,<number>]>,
+        "stemmer_order_fdist": <list of [<list>,<number>]>,
+        "lemma_order_fdist": <list of [<list>,<number>]>,
+        "normalized_order": <number>, # A score
 }
 '''
 def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order):
@@ -283,8 +282,90 @@ def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emoti
 
     order_corpora_length = len(order_corpora)
 
-    
-    processed_order['order_length'] = order_corpora_length = len(order_corpora)
+    # Stop Words
+    stop_words = stopwords.words(lang)
+    stop_words = stop_words
+
+    #
+    # Find the words lists (But this really should be moved to more appropriate areas of the code!!)
+    #
+    # TODO: There is a more efficient way to do this
+    pre_list_of_words = [i.lower() for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
+    pre_stemmed_list = []
+    pre_lemmatized_list = []
+
+    # TODO: Handle language that isn't supported by stemmer!
+    # TODO: Move this outside of the method to make this non-repetative (right now making it do 3times the work)
+    stemmer = SnowballStemmer(lang) # This is the stemmer
+    lemma = WordNetLemmatizer() # This is the lemma
+    for word in pre_list_of_words:
+        pre_stemmed_list.append(lemma.lemmatize(word))
+        pre_lemmatized_list.append(stemmer.stem(word))
+
+    # Remove emotion_stop_words
+    list_of_words = [i for i in pre_list_of_words if i not in emotion_stop_words]
+    stemmed_list = [i for i in pre_stemmed_list if i not in emotion_stop_words]
+    lemmatized_list = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
+
+    # More of the metadata for the order
+    list_of_order = list()
+    natural_list_of_order = list()
+    stemmer_list_of_order = list()
+    lemma_list_of_order = list()
+    is_in_order = 0
+
+    add_to_list_of_order = False
+    if naturalFlag == '1':
+        for word in list_of_words:
+            if word in order_corpora:
+                is_in_order+=1
+                add_to_list_of_order = True
+                natural_list_of_order.append(word)
+    if stemmerFlag == '1':
+        for stem_word in stemmed_list:
+            if stem_word in order_corpora:
+                is_in_order+=1
+                add_to_list_of_order = True
+                stemmer_list_of_order.append(stem_word)
+    if lemmaFlag == '1':
+        for lemma_word in lemmatized_list:
+            if lemma_word in order_corpora:
+                is_in_order+=1
+                add_to_list_of_order = True
+                lemma_list_of_order.append(lemma_word)
+
+    # Add to list of order only if added to another list somewhere else
+    if add_to_list_of_order:
+        list_of_order.append(word)
+
+    # Calculate Frequency Dist
+    pre_order_fdist = dict(FreqDist(pos_tag(list_of_order)))
+    pre_natural_order_fdist = dict(FreqDist(pos_tag(natural_list_of_order)))
+    pre_stemmer_order_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order)))
+    pre_lemma_order_fdist = dict(FreqDist(pos_tag(lemma_list_of_order)))
+    order_fdist = sorted(pre_order_fdist.items(), key=lambda x: (x[1],x[0]))
+    natural_order_fdist = sorted(pre_natural_order_fdist.items(), key=lambda x: (x[1],x[0]))
+    stemmer_order_fdist = sorted(pre_stemmer_order_fdist.items(), key=lambda x: (x[1],x[0]))
+    lemma_order_fdist = sorted(pre_lemma_order_fdist.items(), key=lambda x: (x[1],x[0]))
+
+    # Calculate Normalized Order
+    normalized_order = 0
+    try:
+        normalized_order = float(is_in_order)/order_corpora_length * 100
+    except Exception as e:
+        pass
+
+    processed_order['order_length'] = order_corpora_length
+    processed_order['list_of_order'] = list_of_order
+    processed_order['natural_list_of_order'] = natural_list_of_order
+    processed_order['stemmer_list_of_order'] = stemmer_list_of_order
+    processed_order['lemma_list_of_order'] = lemma_list_of_order
+    processed_order['is_in_order'] = is_in_order
+    processed_order['order_fdist'] = order_fdist
+    processed_order['natural_order_fdist'] = natural_order_fdist
+    processed_order['stemmer_order_fdist'] = stemmer_order_fdist
+    processed_order['lemma_order_fdist'] = lemma_order_fdist
+    processed_order['normalized_order'] = normalized_order
 
     return processed_order
 
@@ -306,6 +387,27 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
         order_result = process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order)
         if order_result['status'] == 'success':
             processed_doc_metadata[order] = order_result
+
+    # TODO: This needs to be moved
+    list_of_words_no_stop = [i for i in wordpunct_tokenize(doc) if i.lower()]
+    length_words_no_stop = len(list_of_words_no_stop)
+
+    # Find some scores for each order
+    is_in_order_1 = processed_doc_metadata['order-1']['is_in_order']
+    is_in_order_2 = processed_doc_metadata['order-2']['is_in_order']
+    is_in_order_3 = processed_doc_metadata['order-3']['is_in_order']
+    normalized_order_1 = processed_doc_metadata['order-1']['normalized_order']
+    normalized_order_2 = processed_doc_metadata['order-2']['normalized_order']
+    normalized_order_3 = processed_doc_metadata['order-3']['normalized_order']
+
+    r_affect_score = calculate_r_score(is_in_order_1, is_in_order_2, is_in_order_3)
+    normalized_r_score = calculate_normalized_r_score(normalized_order_1, normalized_order_2, normalized_order_3)
+    r_affect_density_score = calculate_r_density_score(r_affect_score, length_words_no_stop)
+
+    processed_doc_metadata['r_affect_score'] = r_affect_score
+    processed_doc_metadata['normalized_r_score'] = normalized_r_score
+    processed_doc_metadata['r_affect_density_score'] = r_affect_density_score
+    processed_doc_metadata['length_words_no_stop'] = length_words_no_stop
 
     # print process_doc_metadata
     return processed_doc_metadata
@@ -385,25 +487,21 @@ def process_emotion_v1(doc, lang, emotion, natural, stemmer, lemma, emotion_stop
     stemmer_list_of_order_3 = list()
     lemma_list_of_order_3 = list()
 
-    length_words_no_stop = len(list_of_words)
     list_of_order_1_and_2 = list()
     natural_list_of_order_1_and_2 = list()
     stemmer_list_of_order_1_and_2 = list()
     lemma_list_of_order_1_and_2 = list()
 
-    length_words_no_stop = len(list_of_words)
     list_of_order_1_and_3 = list()
     natural_list_of_order_1_and_3 = list()
     stemmer_list_of_order_1_and_3 = list()
     lemma_list_of_order_1_and_3 = list()
 
-    length_words_no_stop = len(list_of_words)
     list_of_order_2_and_3 = list()
     natural_list_of_order_2_and_3 = list()
     stemmer_list_of_order_2_and_3 = list()
     lemma_list_of_order_2_and_3 = list()
 
-    length_words_no_stop = len(list_of_words)
     list_of_all_orders = list()
     natural_list_of_all_orders = list()
     stemmer_list_of_all_orders = list()
