@@ -381,6 +381,7 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
 
     processed_doc_metadata = {
         "status": "success",
+        "emotion": emotion,
     }
 
     for order in valid_orders:
