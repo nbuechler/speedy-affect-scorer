@@ -5,114 +5,158 @@ The idea is to score basic affects - quickly!
 #### Affect
 Affect is the measurable observation of an emotion.
 
-	> e.g. A particularly relevant affect is natural language
+	 e.g. A particularly relevant affect is natural language
 
-	> Suggestion:  Learn about Affective Computing
+	 Suggestion:  Learn about Affective Computing
 
 Affects are defined by the observed reality (via some kind of sign) of a person.
 
-	> Suggestion:  Learn about Semiotics
+	 Suggestion:  Learn about Semiotics
 
-	Examples of affect include a facial expression, natural language sentence (Syntagam), tone, body temperature and/or another aspect of their person.
+	Examples of affect include a facial expression, natural language sentence (Syntagram), tone, body temperature and/or another aspect of their person.
 
 #### 'Representational' Emotions (R-EMOTION)
 Linguistic labels (signifier/signified pairs) used to define an emotion.
 
-	> Affects can be recorded and observed in sets of multiple R-EMOTION s.
+	 Affects can be recorded and observed in sets of multiple R-EMOTION s.
 
-	> e.g. A particularly popular set: Paul Ekman's Big 6
+	 e.g. A particularly popular set: Paul Ekman's Big 6
 
-	> Suggestion:  Learn about EmotionML, see: https://www.w3.org/TR/emotion-voc/xml
+	 Suggestion:  Learn about EmotionML, see: https://www.w3.org/TR/emotion-voc/xml
 
 #### 'Inferential' Emotions (I-EMOTION)
 I-EMOTION s are an interpretation of how culture (as an emergent quality of human systems) constructs signifier/signified pairs of emotion where I-EMOTION s represent these as a vector of multiple R-EMOTION s.
 
-	> Suggestion:  Learn about Anthropology
+	 Suggestion:  Learn about Anthropology
 
-	> Suggestion:  Learn about Complexity Theory
+	 Suggestion:  Learn about Complexity Theory
 
-	> Important: R-EMOTION s are symbolic and are not the same as 'Inferential' Emotions (I-EMOTION).
+	 Important: R-EMOTION s are symbolic and are not the same as 'Inferential' Emotions (I-EMOTION).
 
-## History
-The project originally included a file called 'corpus_builder.py' file which was separated into a different project called: copious-affect-corpus
+# History
+The project originally included a file called 'corpus_builder.py' file which was separated into a different project called: 'copious-affect-corpus'
 
 Find the project here: https://github.com/nbuechler/copious-affect-corpus
 
-* Appoximately 400 representational emotions are categorized by speedy-affect-scorer, these do not absolutely map to the inferential emotion of a human, which will be described later
+* Approximately 400 representational emotions are categorized by speedy-affect-scorer, these do not absolutely map to the inferential emotion of a human, which will be described later
 * A representation of an emotion is a label like 'Love' which reminds us humans of signifier/signified pairs (see semiotics)
 * Usually, one human maps their signifier/signified pairs to single a representation
 * This project introduces the newer concept of an 'Inferential Emotion'
 * The emotion that humans experience via the 'lens of culture' are not representational but rather inferential - and to best understand the meaning we ought to rely more on a scientific process rather than a simple signifier/signified pairs (label) that acts as a representation.
 * One-to-one relationships of 'Inferential Emotion' to 'Representational Emotions' are not common with culture due to the 'Complexity of Culture'. Humans might sometimes confuse and argue with each other about emotions due to this complexity, and their lack of understanding of emergence (see complexity theory). Remember, a label/word is only a representation (sign) of an idea. 'Anger' - the word/label - is not an inferential emotion (in all but a one case, where culture is homogeneously angry). The inferential emotion therefore might be represented by something like a set of words; e.g. A combination of n-set of labels (Anger, Sadness, Fear, etc.)
 
+# Build your database/corpus
+Build your database/corpus by also cloning 'copious-affect-corpus' here: https://github.com/nbuechler/copious-affect-corpus
 
-## Build your database/corpus by also downloading copious-affect-corpus (the previously mentioned sister project)
+Make sure to follow the instructions in that git project.
 
-Here is the link: https://github.com/nbuechler/copious-affect-corpus
+# Completed Phases
+#### Scope 1
+Score based on the emotion set referenced by Paul Eckman's big 6: anger, happiness, surprise, disgust, sadness, and fear.
 
-Make sure to follow the instructions in that git project
+#### Scope 2
+Score based on the addition of lots of emotion sets and words which includes the 400 representational emotions mentioned above.
 
-# Here is the inital scope, it's small
-
-Score the based on the emotion set referenced by Paul Eckman's big 6.
-anticipation,
-disgust,
-fear,
-joy,
-sadness,
-surprise.
-
-(and the addition of lots of other words!)
-
-# The extended scope includes a better scoring like so
-
-## Score of the affect, based on weights in the order
-```
-r_affect_score = (
-    ((is_in_order_1 * 0.5) + (is_in_order_2 * 0.3) + (is_in_order_3 * 0.2))/3
-)
-```
-
-## But this one is based on density
-```
-r_affect_density_score = r_affect_score/length_words_no_stop * 100
-```
-
-## Additionaly scope goals
+#### Additionaly scope goals
 * The set of scope includes a corpus of ~400 r-emotions only mapping to semantic data. (DONE)
+* Include process in README (DONE)
+* Remove other stop-emotion-words like the word 'emotion' (DONE)
 * Identify better metrics to use (affectics? or emometrics?)
 * Use ML to make even more metrics (maybe a different project)
 * Do something useful with the data (maybe a different project)
-* Research this, challenge it: https://en.wikipedia.org/wiki/Robert_Plutchik
+* Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
 
-* Also do think about different kinds of emotional state like this spectrum
+* Also, think about different kinds of emotional state. For example like this spectrum
 ```
 analytic ----- intutive
 ```
-* Analytically angry, intuitively happy?
+* Ask more questions like this: Is it possible to analytically angry or intuitively happy?
+* Write a scientific paper about this to gain insight from the academic community
+* Setup a github page to host some of this content, it could be a sub-domain or something on other sites
+* We can also move past linguistic/semantic data into other kinds of emotive data
 
-* Write a scientific paper about this.
-* Include process in readme
-* Setup a github page to host some of this stuff
-* subdomain or something on other sites
-* remove other stop-emotion-words like the word 'emotion'
+# Most exciting future plans
+If I begin working with a friend of mine (likely 2016), it would be useful to intercept the data and send it to a machine learning model to notice trends in affect. This machine learning model would be in a separate project.
 
-# Tech stack
-It will use Flask to do the api, and NLTK to do some of the processing. It will probably also be structured in a way that it can be used in other projects, otherwise this wouldn't be MIT Licensed.
+# Process for making the initial corpora
+* Write the script and coding, and tweak the technical implementation of gathering all the synonyms
+* Make sure that all the Emotions in emotionML are nouns. There are anywhere between a small number, like 4, to an infinite amount of emotions -- similar to that of color... or sounds, etc.
+* Run the querying, from big huge thesaurus. Doing no more than 1000 per day. This made it easier and less redundant for me, but also made me think more about what I was doing. The limit of 1000 is because the API is free to use below that amount.
+
+Here's the endpoint and an example JSON form to submit:
+
+'''
+-root-/corpus/y
+
+{
+    "words":  [
+		"courageousness"
+	],
+    "key": "YOUR_API_KEY",
+    "collection": "courageousness-corpus-only-syn-unq",
+    "levels": "3",
+    "include_synonyms": "1",
+    "include_antonyms": "0"
+}
+'''
+
+* Stored the result with a logfile (as an extra and redundant storage mechanism), and also in MongoDB (specifically in  affect-corpus as a database name).
+
+# Process for making the synopsis
+* Write an API to make the _affect-corpus_ more understandable, it allows for calling each collection in _affect-corpus_.
+* Use the API to take the flat words in _affect-corpus_ and organize them in _affect-synopsis_.
+
+# Getting Started
+* First, install virtualenv if not done so already -- https://virtualenv.pypa.io/en/latest/installation.html(https://virtualenv.pypa.io/en/latest/installation.html)
+* Then, run this command:
+<pre>
+  <code>
+    $ virtualenv venv
+  </code>
+</pre>
+* Next, activate the virtual environment (make sure you get the'.'):
+<pre>
+  <code>
+    $ . venv/bin/activate
+  </code>
+</pre>
+* Last, install the requirements with pip:
+<pre>
+  <code>
+    $ pip install -r requirements.txt
+  </code>
+</pre>
 
 
-# Steps
-* first, install virtualenv if not done so already -- https://virtualenv.pypa.io/en/latest/installation.html(https://virtualenv.pypa.io/en/latest/installation.html)
-* then, run this command: $ virtualenv venv
-* (make sure you get the'.'): $ . venv/bin/activate
-* pip install -r requirements.txt
+# Start databases - if they are not already running
+_From a terminal, start mongo:_
+<pre>
+  <code>
+    mongod
+  </code>
+</pre>
+
+_From a terminal start Neo4j:_
+<pre>
+  <code>
+    sudo /etc/init.d/neo4j-service start
+  </code>
+</pre>
+
+# Run the application
+<pre>
+  <code>
+    python app/runserver.py 5000
+  </code>
+</pre>
 
 # Run Server
 
-```
+<pre>
+  <code>
 python app/runserver.py 5000
-```
-
+	</code>
+</pre>
 
 # Requirements
 
@@ -129,7 +173,8 @@ python app/runserver.py 5000
 * Flask-PyMongo==0.3.1
 * pymongo==2.9.3
 
+# Tech stack
+The project uses Flask to do the RESTful API, and NLTK to do some of the processing. It is also structured in a way that it can be used in other projects.
 
 # License
-
 MIT
