@@ -57,7 +57,7 @@ Score based on the emotion set referenced by Paul Eckman's big 6: anger, happine
 #### Scope 2
 Score based on the addition of lots of emotion sets and words which includes the 400 representational emotions mentioned above.
 
-#### Additionaly scope goals
+# Additional scope goals
 * The set of scope includes a corpus of ~400 r-emotions only mapping to semantic data. (DONE)
 * Include process in README (DONE)
 * Remove other stop-emotion-words like the word 'emotion' (DONE)
@@ -65,7 +65,6 @@ Score based on the addition of lots of emotion sets and words which includes the
 * Use ML to make even more metrics (maybe a different project)
 * Do something useful with the data (maybe a different project)
 * Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
-
 * Also, think about different kinds of emotional state. For example like this spectrum
 ```
 analytic ----- intutive
@@ -76,7 +75,7 @@ analytic ----- intutive
 * We can also move past linguistic/semantic data into other kinds of emotive data
 
 # Most exciting future plans
-If I begin working with a friend of mine (likely 2016), it would be useful to intercept the data and send it to a machine learning model to notice trends in affect. This machine learning model would be in a separate project.
+If I begin working with a friend of mine (likely 2016), it would be useful to intercept the data and send it to a machine learning model to notice trends in affect. This machine learning model would be in a separate project. (in 2016)
 
 # Process for making the initial corpora
 * Write the script and coding, and tweak the technical implementation of gathering all the synonyms
@@ -85,7 +84,7 @@ If I begin working with a friend of mine (likely 2016), it would be useful to in
 
 Here's the endpoint and an example JSON form to submit:
 
-'''
+```
 -root-/corpus/y
 
 {
@@ -98,7 +97,7 @@ Here's the endpoint and an example JSON form to submit:
     "include_synonyms": "1",
     "include_antonyms": "0"
 }
-'''
+```
 
 * Stored the result with a logfile (as an extra and redundant storage mechanism), and also in MongoDB (specifically in  affect-corpus as a database name).
 
