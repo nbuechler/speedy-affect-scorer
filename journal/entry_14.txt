@@ -1,0 +1,46 @@
+Nov 09, 2016
+3:51AM
+
+Looking at Facebook posts, someone who is a friend-of-a-friend, who I don't
+know personally share this post:
+
+
+====
+Listen Millennials
+
+I don't think it's time for us to follow our fucking dreams anymore.
+
+It's time to work.
+
+If you call yourself an artist, you need to create music, dance, paintings, sketches, theater, films, books that rage, revolt, grind, pound, scream of oppression and flood with grief and outrage. You need to bring your work to THE PEOPLE not to goddamn donors.
+
+If you're a crafter you need to find sustainable reusable ways to thread, knit, build, cast, cook, plant, grow, harvest, feast, hammer.
+
+If you're a manager you need to new create ways of organizing, demanding justice in the workspace, ways of protesting and democratizing your landscape.
+
+If you're an educator you need to find ways to restore and heal rather than criminalize and persecute. We need educators to teach kindness along with math, agency along with collaboration, creativity beyond a fucking scantron, what it means to honor, respect and cherish one another.
+
+If you're a parent regroup with your community. Find new and old sage books to read your children, find new ways to care and spend more time listening to them, find new means of what it means to grow and care for life that will live in a time of devastating climate catastrophe.
+
+We need to work, not dream.
+We need to buckle up. Read. Listen. THINK. Empathize. Act urgently but listen. Act thoughtfully but not get stuck.
+
+We need to move. Not for next goddamn election. Now.
+
+Sending love. May not sound like it but this is coming from fucking love.
+====
+
+I got these results with bounds set to 1-UB, 1-LB, Included Stemmed, Lemmatized, and Unprocessed
+
+Ranking Summary of the Emotion Set's Top 10
+Rank	 Emotion	      Normalized Score
+1	     motivation	    72.0898
+2	     impulse	      28.2968
+3	     adoration	    20.8223
+4	     infatuation	  20.8143
+5	     endurance	    14.7103
+6	     inducement	    13.0036
+7	     compulsion	    12.8889
+8	     devotion	      12.3352
+9	     aliveness	    12.2036
+10	   exuberance	    11.0199
