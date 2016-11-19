@@ -153,7 +153,7 @@ _From a terminal start Neo4j:_
 
 <pre>
   <code>
-python app/runserver.py 5000
+		python app/runserver.py 5000
 	</code>
 </pre>
 
