@@ -201,22 +201,6 @@ def default():
     print 'Here'
     return 'Thanks controller, hello helpers!'
 
-def verify_bhl_api(api_key):
-    r = requests.get('http://words.bighugelabs.com/api/2/' + api_key + '/affect/json')
-    if(r.raise_for_status()):
-        return 'error'
-    else:
-        return jsonify(r.json())
-
-def length_no_stop_punct(doc, lang):
-
-    stop_words = set(stopwords.words(lang))
-    stop_words.update(['.', ',', '"', "'", '?', '!', ':', ';', '(', ')', '[', ']', '{', '}']) # remove it if you need punctuation
-
-    list_of_words = [i for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-
-    return len(list_of_words)
-
 '''
 Find the 'stop words' that are very common in each affect corpus
 '''
@@ -242,10 +226,19 @@ Business logic below
 doc > <string>
 lang > <string>
 emotion > <string>
-naturalFlag > <string (number)
-stemmerFlag > <string (number)
-lemmaFlag > <string (number)
+flags <dict>:
+    {
+        naturalFlag > <string> (number)
+        stemmerFlag > <string> (number)
+        lemmaFlag > <string> (number)
+    }
 emotion_stop_words > (list of <strings>)
+word_lists_no_emotion_stop <dict>:
+    {
+        list_of_words > (list of <strings>)
+        stemmed_list > (list of <strings>)
+        lemmatized_list > (list of <strings>)
+    }
 order > <string>
 ==
 Finds the metadata for an order, used and combined with other similar objects to
@@ -265,7 +258,7 @@ RETURNS:
         "normalized_order": <number>, # A score
 }
 '''
-def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order):
+def process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_emotion_stop, order):
 
     processed_order = {
         "status": "success",
@@ -282,31 +275,6 @@ def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emoti
 
     order_corpora_length = len(order_corpora)
 
-    # Stop Words
-    stop_words = stopwords.words(lang)
-    stop_words = stop_words
-
-    #
-    # Find the words lists (But this really should be moved to more appropriate areas of the code!!)
-    #
-    # TODO: There is a more efficient way to do this
-    pre_list_of_words = [i.lower() for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
-    pre_stemmed_list = []
-    pre_lemmatized_list = []
-
-    # TODO: Handle language that isn't supported by stemmer!
-    # TODO: Move this outside of the method to make this non-repetative (right now making it do 3times the work)
-    stemmer = SnowballStemmer(lang) # This is the stemmer
-    lemma = WordNetLemmatizer() # This is the lemma
-    for word in pre_list_of_words:
-        pre_stemmed_list.append(lemma.lemmatize(word))
-        pre_lemmatized_list.append(stemmer.stem(word))
-
-    # Remove emotion_stop_words
-    list_of_words = [i for i in pre_list_of_words if i not in emotion_stop_words]
-    stemmed_list = [i for i in pre_stemmed_list if i not in emotion_stop_words]
-    lemmatized_list = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
-
     # More of the metadata for the order
     list_of_order = list()
     natural_list_of_order = list()
@@ -315,20 +283,20 @@ def process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emoti
     is_in_order = 0
 
     add_to_list_of_order = False
-    if naturalFlag == '1':
-        for word in list_of_words:
+    if flags['naturalFlag'] == '1':
+        for word in word_lists_no_emotion_stop['list_of_words']:
             if word in order_corpora:
                 is_in_order+=1
                 add_to_list_of_order = True
                 natural_list_of_order.append(word)
-    if stemmerFlag == '1':
-        for stem_word in stemmed_list:
+    if flags['stemmerFlag'] == '1':
+        for stem_word in word_lists_no_emotion_stop['stemmed_list']:
             if stem_word in order_corpora:
                 is_in_order+=1
                 add_to_list_of_order = True
                 stemmer_list_of_order.append(stem_word)
-    if lemmaFlag == '1':
-        for lemma_word in lemmatized_list:
+    if flags['lemmaFlag'] == '1':
+        for lemma_word in word_lists_no_emotion_stop['lemmatized_list']:
             if lemma_word in order_corpora:
                 is_in_order+=1
                 add_to_list_of_order = True
@@ -373,10 +341,6 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
 
     print emotion
 
-    naturalFlag = natural
-    stemmerFlag = stemmer
-    lemmaFlag = lemma
-
     valid_orders = ['order-1', 'order-2', 'order-3', 'order_1_and_2', 'order_1_and_3', 'order_2_and_3', 'all_orders']
 
     processed_doc_metadata = {
@@ -384,10 +348,58 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
         "emotion": emotion,
     }
 
+    # Stop Words
+    stop_words = stopwords.words(lang)
+
+    '''
+    Remove emotion stop words and then return the words lists
+    '''
+    # TODO: There is a more efficient way to do this
+    pre_list_of_words = [i.lower() for i in wordpunct_tokenize(doc) if i.lower() not in stop_words]
+    pre_stemmed_list = []
+    pre_lemmatized_list = []
+
+    # TODO: Handle language that isn't supported by stemmer!
+    stemmer = SnowballStemmer(lang) # This is the stemmer
+    lemma = WordNetLemmatizer() # This is the lemma
+    for word in pre_list_of_words:
+        pre_stemmed_list.append(lemma.lemmatize(word))
+        pre_lemmatized_list.append(stemmer.stem(word))
+
+    # Create a dictionary of the three lists without emotion based stop words
+    word_lists_no_emotion_stop = {
+        'list_of_words': [],
+        'stemmed_list': [],
+        'lemmatized_list': [],
+    }
+    # Remove emotion_stop_words
+    if natural == '1':
+        print natural, 'natural'
+        word_lists_no_emotion_stop['list_of_words'] = [i for i in pre_list_of_words if i not in emotion_stop_words]
+    if stemmer == '1':
+        print stemmer, 'stemmer'
+        word_lists_no_emotion_stop['stemmed_list'] = [i for i in pre_stemmed_list if i not in emotion_stop_words]
+    if lemma == '1':
+        print lemma, 'lemma'
+        word_lists_no_emotion_stop['lemmatized_list'] = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
+
+    flags = {}
+    flags['naturalFlag'] = natural
+    flags['stemmerFlag'] = stemmer
+    flags['lemmaFlag'] = lemma
+
+    print natural == '1', 'natural'
+    print stemmer == '1', 'stemmer'
+    print lemma == '1', 'lemma'
+
+
     for order in valid_orders:
-        order_result = process_order(doc, lang, emotion, naturalFlag, stemmerFlag, lemmaFlag, emotion_stop_words, order)
+        order_result = process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_emotion_stop, order)
         if order_result['status'] == 'success':
             processed_doc_metadata[order] = order_result
+
+
+
 
     # TODO: This needs to be moved
     list_of_words_no_stop = [i for i in wordpunct_tokenize(doc) if i.lower()]
