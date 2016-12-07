@@ -302,9 +302,14 @@ def process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_e
                 add_to_list_of_order = True
                 lemma_list_of_order.append(lemma_word)
 
-    # Add to list of order only if added to another list somewhere else
+    # Add to list of order only if added to another list somewhere else, the flag
+    # is set the way it is because I get the real list from passed into this method
     if add_to_list_of_order:
-        list_of_order.append(word)
+        if flags['naturalFlag'] == '0':
+            for word in word_lists_no_emotion_stop['list_of_words']:
+                list_of_order.append(word)
+        else:
+            list_of_order.append(word)
 
     # Calculate Frequency Dist
     pre_order_fdist = dict(FreqDist(pos_tag(list_of_order)))
@@ -341,6 +346,11 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
 
     print emotion
 
+    flags = {}
+    flags['naturalFlag'] = natural
+    flags['stemmerFlag'] = stemmer
+    flags['lemmaFlag'] = lemma
+
     valid_orders = ['order-1', 'order-2', 'order-3', 'order_1_and_2', 'order_1_and_3', 'order_2_and_3', 'all_orders']
 
     processed_doc_metadata = {
@@ -368,38 +378,20 @@ def process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_wo
 
     # Create a dictionary of the three lists without emotion based stop words
     word_lists_no_emotion_stop = {
-        'list_of_words': [],
+        'list_of_words': [i for i in pre_list_of_words if i not in emotion_stop_words],
         'stemmed_list': [],
         'lemmatized_list': [],
     }
-    # Remove emotion_stop_words
-    if natural == '1':
-        print natural, 'natural'
-        word_lists_no_emotion_stop['list_of_words'] = [i for i in pre_list_of_words if i not in emotion_stop_words]
-    if stemmer == '1':
-        print stemmer, 'stemmer'
+    # Remove emotion_stop_words only for these if the flag is set to true
+    if flags['stemmerFlag'] == '1':
         word_lists_no_emotion_stop['stemmed_list'] = [i for i in pre_stemmed_list if i not in emotion_stop_words]
-    if lemma == '1':
-        print lemma, 'lemma'
+    if flags['lemmaFlag'] == '1':
         word_lists_no_emotion_stop['lemmatized_list'] = [i for i in pre_lemmatized_list if i not in emotion_stop_words]
-
-    flags = {}
-    flags['naturalFlag'] = natural
-    flags['stemmerFlag'] = stemmer
-    flags['lemmaFlag'] = lemma
-
-    print natural == '1', 'natural'
-    print stemmer == '1', 'stemmer'
-    print lemma == '1', 'lemma'
-
 
     for order in valid_orders:
         order_result = process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_emotion_stop, order)
         if order_result['status'] == 'success':
             processed_doc_metadata[order] = order_result
-
-
-
 
     # TODO: This needs to be moved
     list_of_words_no_stop = [i for i in wordpunct_tokenize(doc) if i.lower()]
