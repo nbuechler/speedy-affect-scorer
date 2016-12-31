@@ -304,6 +304,8 @@ def process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_e
 
     # Add to list of order only if added to another list somewhere else, the flag
     # is set the way it is because I get the real list from passed into this method
+    # TODO: Figure out what this is for! (21.Dec.2016), I think it is meant to be all
+    # of the words in the order... maybe?
     if add_to_list_of_order:
         if flags['naturalFlag'] == '0':
             for word in word_lists_no_emotion_stop['list_of_words']:
