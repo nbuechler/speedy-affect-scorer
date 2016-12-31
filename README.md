@@ -149,14 +149,6 @@ _From a terminal start Neo4j:_
   </code>
 </pre>
 
-# Run Server
-
-<pre>
-  <code>
-    python app/runserver.py 5000
-  </code>
-</pre>
-
 # Requirements
 
 * Flask==0.10.1
