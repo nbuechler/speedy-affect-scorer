@@ -1,7 +1,11 @@
 from flask import Blueprint
 from flask import render_template, redirect, url_for, jsonify, request
 
+from datetime import datetime
+
 import controllers
+
+utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
 
 helpers = Blueprint('helpers', __name__)
 
@@ -56,6 +60,8 @@ def analyze_emotion(emotion):
         emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
 
     processed_doc_metadata = controllers.process_emotion(doc, lang, emotion, natural, stemmer, lemma, emotion_stop_words)
+
+    print processed_doc_metadata
     return jsonify(processed_doc_metadata)
 
 @helpers.route('/analyze_emotion_set/<emotion_set>/', methods=['POST'])
@@ -77,7 +83,7 @@ def analyze_emotion_set(emotion_set):
         emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
 
     processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words)
-    return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set)
+    return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set, date = utc)
 
 @helpers.route('/stats/<include_word>')
 def display_affect_word_similarities(include_word=None, truncated=None):
