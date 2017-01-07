@@ -83,7 +83,7 @@ def analyze_emotion_set(emotion_set):
         emotion_stop_words = controllers.find_emotion_stop_words(upper_bound,lower_bound)
 
     processed_doc_list_metadata = controllers.process_emotion_set(doc, lang, emotion_set, natural, stemmer, lemma, emotion_stop_words)
-    return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set, date = utc)
+    return jsonify(emotion_set = processed_doc_list_metadata, name = emotion_set, date = utc, doc = doc)
 
 @helpers.route('/stats/<include_word>')
 def display_affect_word_similarities(include_word=None, truncated=None):
