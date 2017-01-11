@@ -246,7 +246,6 @@ find metadata for and emotion, see: process emotion
 RETURNS:
 {
         "order_length": <number>,
-        "list_of_order": <list>,
         "natural_list_of_order": <list>,
         "stemmer_list_of_order": <list>,
         "lemma_list_of_order": <list>,
@@ -276,49 +275,32 @@ def process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_e
     order_corpora_length = len(order_corpora)
 
     # More of the metadata for the order
-    list_of_order = list()
     natural_list_of_order = list()
     stemmer_list_of_order = list()
     lemma_list_of_order = list()
     is_in_order = 0
 
-    add_to_list_of_order = False
     if flags['naturalFlag'] == '1':
         for word in word_lists_no_emotion_stop['list_of_words']:
             if word in order_corpora:
                 is_in_order+=1
-                add_to_list_of_order = True
                 natural_list_of_order.append(word)
     if flags['stemmerFlag'] == '1':
         for stem_word in word_lists_no_emotion_stop['stemmed_list']:
             if stem_word in order_corpora:
                 is_in_order+=1
-                add_to_list_of_order = True
                 stemmer_list_of_order.append(stem_word)
     if flags['lemmaFlag'] == '1':
         for lemma_word in word_lists_no_emotion_stop['lemmatized_list']:
             if lemma_word in order_corpora:
                 is_in_order+=1
-                add_to_list_of_order = True
                 lemma_list_of_order.append(lemma_word)
 
-    # Add to list of order only if added to another list somewhere else, the flag
-    # is set the way it is because I get the real list from passed into this method
-    # TODO: Figure out what this is for! (21.Dec.2016), I think it is meant to be all
-    # of the words in the order... maybe?
-    if add_to_list_of_order:
-        if flags['naturalFlag'] == '0':
-            for word in word_lists_no_emotion_stop['list_of_words']:
-                list_of_order.append(word)
-        else:
-            list_of_order.append(word)
 
     # Calculate Frequency Dist
-    pre_order_fdist = dict(FreqDist(pos_tag(list_of_order)))
     pre_natural_order_fdist = dict(FreqDist(pos_tag(natural_list_of_order)))
     pre_stemmer_order_fdist = dict(FreqDist(pos_tag(stemmer_list_of_order)))
     pre_lemma_order_fdist = dict(FreqDist(pos_tag(lemma_list_of_order)))
-    order_fdist = sorted(pre_order_fdist.items(), key=lambda x: (x[1],x[0]))
     natural_order_fdist = sorted(pre_natural_order_fdist.items(), key=lambda x: (x[1],x[0]))
     stemmer_order_fdist = sorted(pre_stemmer_order_fdist.items(), key=lambda x: (x[1],x[0]))
     lemma_order_fdist = sorted(pre_lemma_order_fdist.items(), key=lambda x: (x[1],x[0]))
@@ -331,12 +313,10 @@ def process_order(doc, lang, emotion, flags, emotion_stop_words, word_lists_no_e
         pass
 
     processed_order['order_length'] = order_corpora_length
-    processed_order['list_of_order'] = list_of_order
     processed_order['natural_list_of_order'] = natural_list_of_order
     processed_order['stemmer_list_of_order'] = stemmer_list_of_order
     processed_order['lemma_list_of_order'] = lemma_list_of_order
     processed_order['is_in_order'] = is_in_order
-    processed_order['order_fdist'] = order_fdist
     processed_order['natural_order_fdist'] = natural_order_fdist
     processed_order['stemmer_order_fdist'] = stemmer_order_fdist
     processed_order['lemma_order_fdist'] = lemma_order_fdist
