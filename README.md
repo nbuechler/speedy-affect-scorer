@@ -61,7 +61,6 @@ Score based on the addition of lots of emotion sets and words which includes the
 * The set of scope includes a corpus of ~400 r-emotions only mapping to semantic data. (DONE)
 * Include process in README (DONE)
 * Remove other stop-emotion-words like the word 'emotion' (DONE)
-* Identify better metrics to use (affectics? or emometrics?)
 * Use ML to make even more metrics (maybe a different project)
 * Do something useful with the data (maybe a different project)
 * Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
