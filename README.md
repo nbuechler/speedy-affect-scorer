@@ -61,8 +61,8 @@ Score based on the addition of lots of emotion sets and words which includes the
 * The set of scope includes a corpus of ~400 r-emotions only mapping to semantic data. (DONE)
 * Include process in README (DONE)
 * Remove other stop-emotion-words like the word 'emotion' (DONE)
-* Use ML to make even more metrics (maybe a different project)
-* Do something useful with the data (maybe a different project)
+* Use ML to make even more metrics (likely a different project)
+* Do something useful with the data (likely a different project)
 * Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
 * Also, think about different kinds of emotional state. For example like this spectrum
 ```
