@@ -65,6 +65,7 @@ Score based on the addition of lots of emotion sets and words which includes the
 * Do something useful with the data (likely a different project)
 * Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
 * Also, think about different kinds of emotional state. For example like this spectrum
+* Think about async processes, and consider how I would handle making the app scale. Flask does not handle async as well as other frameworks. i.e. Tornado
 ```
 analytic ----- intutive
 ```
