@@ -57,15 +57,16 @@ Score based on the emotion set referenced by Paul Eckman's big 6: anger, happine
 #### Scope 2
 Score based on the addition of lots of emotion sets and words which includes the 400 representational emotions mentioned above.
 
+#### Scope 3
+Use AI to make an enhanced version of this scoring method (see OmegaHorizonResearch)
+
 # Additional scope goals
 * The set of scope includes a corpus of ~400 r-emotions only mapping to semantic data. (DONE)
 * Include process in README (DONE)
 * Remove other stop-emotion-words like the word 'emotion' (DONE)
-* Use ML to make even more metrics (likely a different project)
-* Do something useful with the data (likely a different project)
+* Visualize the data (DONE - see ample-affect-exhibit)
 * Research this, critique it: https://en.wikipedia.org/wiki/Robert_Plutchik
 * Also, think about different kinds of emotional state. For example like this spectrum
-* Think about async processes, and consider how I would handle making the app scale. Flask does not handle async as well as other frameworks. i.e. Tornado
 ```
 analytic ----- intutive
 ```
